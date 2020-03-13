@@ -30,7 +30,7 @@ body{
   overflow-x:hidden;
 }
 .top-bar {
-  background: rgb(0, 138, 255);
+  background:rgb(0, 138, 255);
   color: white;
   padding: 10px;
   position: relative;
@@ -105,8 +105,8 @@ body{
 }
 
 .btn-primary{
-    color: rgb(0, 138, 255);
-    box-shadow: rgb(0, 94, 173) 0px 1px 1px 0px, rgb(239, 239, 239) 0px 3px 13px 0px;
+    color: rgb(0, 255, 234);
+    box-shadow: rgb(0, 173, 164) 0px 1px 1px 0px, rgb(239, 239, 239) 0px 3px 13px 0px;
     border-radius: 0px;
     color:white;
     padding:7.5px;

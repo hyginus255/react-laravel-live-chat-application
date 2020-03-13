@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import './Chart.css';
+import axios from 'axios';
+
 
 const Chart = () => {
-    return (
-        <div className="row">
+
+    const [token, setToken] = useState();
+    const name = "Hyginus";
+
+    useEffect(() => {
+
+        //generate token
+        axios.post("api/generate_token",{name})
+        .then(({ data }) => {
+            setToken(data.token);
+        });
+
+        //
+
+
+      }, []);
+      
+      return (
+          <div className="row">
             <div className="container">
                 <div className="row chat-window col-xs-5 col-md-3 p-0" id="chat_window_1" style={{marginLeft:'10px'}}>
                     <div className="col-xs-12 col-md-12 p-0">

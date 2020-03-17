@@ -17,8 +17,47 @@ class ChatMessagesController extends Controller
     }
 
     public function generateToken(Request $request){
-        return response()->json([
-            'token' => $this->client->createToken($request->name)
-        ], 200);
+
+        try{
+            return response()->json([
+                'token' => $this->client->createToken($request->name)
+            ], 200);
+        }catch(\Exception $e){
+            return response()->json([
+                'errorMessage' => $e->getMessage()
+            ],500);
+        }
+        
+    }
+
+    public function getChannel(Request $request){
+
+        try{
+
+            $from = $request->from;
+            $to = $request->to;
+
+            
+            $from_username = $request->from_username;
+            $to_username = $request->to_username;
+            
+            $channel_name = "livechat-{$from_username}-{$to_username}";
+            
+            $channel = $this->client->getChannel("messaging", $channel_name);
+            // dd( $channel);
+            $channel->create($from_username, [$to_username]);
+
+            return response()->json([
+                'channel' => $channel_name
+            ], 200);
+
+        }catch(\Exception $e){
+
+            return response()->json([
+                'errorMessage' => $e->getMessage()
+            ],500);
+
+        }
+
     }
 }

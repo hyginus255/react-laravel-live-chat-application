@@ -86,6 +86,159 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
+module.exports = _asyncToGenerator;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -161,6 +314,35 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
@@ -175,6 +357,231 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+    return;
+  }
+
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+module.exports = _nonIterableRest;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var objectWithoutPropertiesLoose = __webpack_require__(/*! ./objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js");
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
 
 /***/ }),
 
@@ -1987,6 +2394,170 @@ module.exports = {
   extend: extend,
   trim: trim
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/base64-js/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/base64-js/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.byteLength = byteLength
+exports.toByteArray = toByteArray
+exports.fromByteArray = fromByteArray
+
+var lookup = []
+var revLookup = []
+var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
+
+var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+for (var i = 0, len = code.length; i < len; ++i) {
+  lookup[i] = code[i]
+  revLookup[code.charCodeAt(i)] = i
+}
+
+// Support decoding URL-safe base64 strings, as Node.js does.
+// See: https://en.wikipedia.org/wiki/Base64#URL_applications
+revLookup['-'.charCodeAt(0)] = 62
+revLookup['_'.charCodeAt(0)] = 63
+
+function getLens (b64) {
+  var len = b64.length
+
+  if (len % 4 > 0) {
+    throw new Error('Invalid string. Length must be a multiple of 4')
+  }
+
+  // Trim off extra bytes after placeholder bytes are found
+  // See: https://github.com/beatgammit/base64-js/issues/42
+  var validLen = b64.indexOf('=')
+  if (validLen === -1) validLen = len
+
+  var placeHoldersLen = validLen === len
+    ? 0
+    : 4 - (validLen % 4)
+
+  return [validLen, placeHoldersLen]
+}
+
+// base64 is 4/3 + up to two characters of the original data
+function byteLength (b64) {
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
+}
+
+function _byteLength (b64, validLen, placeHoldersLen) {
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
+}
+
+function toByteArray (b64) {
+  var tmp
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
+
+  var arr = new Arr(_byteLength(b64, validLen, placeHoldersLen))
+
+  var curByte = 0
+
+  // if there are placeholders, only get up to the last complete 4 chars
+  var len = placeHoldersLen > 0
+    ? validLen - 4
+    : validLen
+
+  var i
+  for (i = 0; i < len; i += 4) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 18) |
+      (revLookup[b64.charCodeAt(i + 1)] << 12) |
+      (revLookup[b64.charCodeAt(i + 2)] << 6) |
+      revLookup[b64.charCodeAt(i + 3)]
+    arr[curByte++] = (tmp >> 16) & 0xFF
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  if (placeHoldersLen === 2) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 2) |
+      (revLookup[b64.charCodeAt(i + 1)] >> 4)
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  if (placeHoldersLen === 1) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 10) |
+      (revLookup[b64.charCodeAt(i + 1)] << 4) |
+      (revLookup[b64.charCodeAt(i + 2)] >> 2)
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  return arr
+}
+
+function tripletToBase64 (num) {
+  return lookup[num >> 18 & 0x3F] +
+    lookup[num >> 12 & 0x3F] +
+    lookup[num >> 6 & 0x3F] +
+    lookup[num & 0x3F]
+}
+
+function encodeChunk (uint8, start, end) {
+  var tmp
+  var output = []
+  for (var i = start; i < end; i += 3) {
+    tmp =
+      ((uint8[i] << 16) & 0xFF0000) +
+      ((uint8[i + 1] << 8) & 0xFF00) +
+      (uint8[i + 2] & 0xFF)
+    output.push(tripletToBase64(tmp))
+  }
+  return output.join('')
+}
+
+function fromByteArray (uint8) {
+  var tmp
+  var len = uint8.length
+  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
+  var parts = []
+  var maxChunkLength = 16383 // must be multiple of 3
+
+  // go through the array every three bytes, we'll deal with trailing stuff later
+  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
+    parts.push(encodeChunk(
+      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
+    ))
+  }
+
+  // pad the end with zeros, but make sure to not forget the extra bytes
+  if (extraBytes === 1) {
+    tmp = uint8[len - 1]
+    parts.push(
+      lookup[tmp >> 2] +
+      lookup[(tmp << 4) & 0x3F] +
+      '=='
+    )
+  } else if (extraBytes === 2) {
+    tmp = (uint8[len - 2] << 8) + uint8[len - 1]
+    parts.push(
+      lookup[tmp >> 10] +
+      lookup[(tmp >> 4) & 0x3F] +
+      lookup[(tmp << 2) & 0x3F] +
+      '='
+    )
+  }
+
+  return parts.join('')
+}
 
 
 /***/ }),
@@ -6522,6 +7093,2364 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/buffer/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/buffer/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+/* eslint-disable no-proto */
+
+
+
+var base64 = __webpack_require__(/*! base64-js */ "./node_modules/base64-js/index.js")
+var ieee754 = __webpack_require__(/*! ieee754 */ "./node_modules/ieee754/index.js")
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+
+exports.Buffer = Buffer
+exports.SlowBuffer = SlowBuffer
+exports.INSPECT_MAX_BYTES = 50
+
+/**
+ * If `Buffer.TYPED_ARRAY_SUPPORT`:
+ *   === true    Use Uint8Array implementation (fastest)
+ *   === false   Use Object implementation (most compatible, even IE6)
+ *
+ * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
+ * Opera 11.6+, iOS 4.2+.
+ *
+ * Due to various browser bugs, sometimes the Object implementation will be used even
+ * when the browser supports typed arrays.
+ *
+ * Note:
+ *
+ *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
+ *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
+ *
+ *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
+ *
+ *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
+ *     incorrect length in some situations.
+
+ * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
+ * get the Object implementation, which is slower but behaves correctly.
+ */
+Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+  ? global.TYPED_ARRAY_SUPPORT
+  : typedArraySupport()
+
+/*
+ * Export kMaxLength after typed array support is determined.
+ */
+exports.kMaxLength = kMaxLength()
+
+function typedArraySupport () {
+  try {
+    var arr = new Uint8Array(1)
+    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
+    return arr.foo() === 42 && // typed array instances can be augmented
+        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
+        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
+  } catch (e) {
+    return false
+  }
+}
+
+function kMaxLength () {
+  return Buffer.TYPED_ARRAY_SUPPORT
+    ? 0x7fffffff
+    : 0x3fffffff
+}
+
+function createBuffer (that, length) {
+  if (kMaxLength() < length) {
+    throw new RangeError('Invalid typed array length')
+  }
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    that = new Uint8Array(length)
+    that.__proto__ = Buffer.prototype
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    if (that === null) {
+      that = new Buffer(length)
+    }
+    that.length = length
+  }
+
+  return that
+}
+
+/**
+ * The Buffer constructor returns instances of `Uint8Array` that have their
+ * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
+ * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
+ * and the `Uint8Array` methods. Square bracket notation works as expected -- it
+ * returns a single octet.
+ *
+ * The `Uint8Array` prototype remains unmodified.
+ */
+
+function Buffer (arg, encodingOrOffset, length) {
+  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
+    return new Buffer(arg, encodingOrOffset, length)
+  }
+
+  // Common case.
+  if (typeof arg === 'number') {
+    if (typeof encodingOrOffset === 'string') {
+      throw new Error(
+        'If encoding is specified then the first argument must be a string'
+      )
+    }
+    return allocUnsafe(this, arg)
+  }
+  return from(this, arg, encodingOrOffset, length)
+}
+
+Buffer.poolSize = 8192 // not used by this implementation
+
+// TODO: Legacy, not needed anymore. Remove in next major version.
+Buffer._augment = function (arr) {
+  arr.__proto__ = Buffer.prototype
+  return arr
+}
+
+function from (that, value, encodingOrOffset, length) {
+  if (typeof value === 'number') {
+    throw new TypeError('"value" argument must not be a number')
+  }
+
+  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+    return fromArrayBuffer(that, value, encodingOrOffset, length)
+  }
+
+  if (typeof value === 'string') {
+    return fromString(that, value, encodingOrOffset)
+  }
+
+  return fromObject(that, value)
+}
+
+/**
+ * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
+ * if value is a number.
+ * Buffer.from(str[, encoding])
+ * Buffer.from(array)
+ * Buffer.from(buffer)
+ * Buffer.from(arrayBuffer[, byteOffset[, length]])
+ **/
+Buffer.from = function (value, encodingOrOffset, length) {
+  return from(null, value, encodingOrOffset, length)
+}
+
+if (Buffer.TYPED_ARRAY_SUPPORT) {
+  Buffer.prototype.__proto__ = Uint8Array.prototype
+  Buffer.__proto__ = Uint8Array
+  if (typeof Symbol !== 'undefined' && Symbol.species &&
+      Buffer[Symbol.species] === Buffer) {
+    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
+    Object.defineProperty(Buffer, Symbol.species, {
+      value: null,
+      configurable: true
+    })
+  }
+}
+
+function assertSize (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('"size" argument must be a number')
+  } else if (size < 0) {
+    throw new RangeError('"size" argument must not be negative')
+  }
+}
+
+function alloc (that, size, fill, encoding) {
+  assertSize(size)
+  if (size <= 0) {
+    return createBuffer(that, size)
+  }
+  if (fill !== undefined) {
+    // Only pay attention to encoding if it's a string. This
+    // prevents accidentally sending in a number that would
+    // be interpretted as a start offset.
+    return typeof encoding === 'string'
+      ? createBuffer(that, size).fill(fill, encoding)
+      : createBuffer(that, size).fill(fill)
+  }
+  return createBuffer(that, size)
+}
+
+/**
+ * Creates a new filled Buffer instance.
+ * alloc(size[, fill[, encoding]])
+ **/
+Buffer.alloc = function (size, fill, encoding) {
+  return alloc(null, size, fill, encoding)
+}
+
+function allocUnsafe (that, size) {
+  assertSize(size)
+  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+    for (var i = 0; i < size; ++i) {
+      that[i] = 0
+    }
+  }
+  return that
+}
+
+/**
+ * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
+ * */
+Buffer.allocUnsafe = function (size) {
+  return allocUnsafe(null, size)
+}
+/**
+ * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
+ */
+Buffer.allocUnsafeSlow = function (size) {
+  return allocUnsafe(null, size)
+}
+
+function fromString (that, string, encoding) {
+  if (typeof encoding !== 'string' || encoding === '') {
+    encoding = 'utf8'
+  }
+
+  if (!Buffer.isEncoding(encoding)) {
+    throw new TypeError('"encoding" must be a valid string encoding')
+  }
+
+  var length = byteLength(string, encoding) | 0
+  that = createBuffer(that, length)
+
+  var actual = that.write(string, encoding)
+
+  if (actual !== length) {
+    // Writing a hex string, for example, that contains invalid characters will
+    // cause everything after the first invalid character to be ignored. (e.g.
+    // 'abxxcd' will be treated as 'ab')
+    that = that.slice(0, actual)
+  }
+
+  return that
+}
+
+function fromArrayLike (that, array) {
+  var length = array.length < 0 ? 0 : checked(array.length) | 0
+  that = createBuffer(that, length)
+  for (var i = 0; i < length; i += 1) {
+    that[i] = array[i] & 255
+  }
+  return that
+}
+
+function fromArrayBuffer (that, array, byteOffset, length) {
+  array.byteLength // this throws if `array` is not a valid ArrayBuffer
+
+  if (byteOffset < 0 || array.byteLength < byteOffset) {
+    throw new RangeError('\'offset\' is out of bounds')
+  }
+
+  if (array.byteLength < byteOffset + (length || 0)) {
+    throw new RangeError('\'length\' is out of bounds')
+  }
+
+  if (byteOffset === undefined && length === undefined) {
+    array = new Uint8Array(array)
+  } else if (length === undefined) {
+    array = new Uint8Array(array, byteOffset)
+  } else {
+    array = new Uint8Array(array, byteOffset, length)
+  }
+
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    that = array
+    that.__proto__ = Buffer.prototype
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    that = fromArrayLike(that, array)
+  }
+  return that
+}
+
+function fromObject (that, obj) {
+  if (Buffer.isBuffer(obj)) {
+    var len = checked(obj.length) | 0
+    that = createBuffer(that, len)
+
+    if (that.length === 0) {
+      return that
+    }
+
+    obj.copy(that, 0, 0, len)
+    return that
+  }
+
+  if (obj) {
+    if ((typeof ArrayBuffer !== 'undefined' &&
+        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
+      if (typeof obj.length !== 'number' || isnan(obj.length)) {
+        return createBuffer(that, 0)
+      }
+      return fromArrayLike(that, obj)
+    }
+
+    if (obj.type === 'Buffer' && isArray(obj.data)) {
+      return fromArrayLike(that, obj.data)
+    }
+  }
+
+  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+}
+
+function checked (length) {
+  // Note: cannot use `length < kMaxLength()` here because that fails when
+  // length is NaN (which is otherwise coerced to zero.)
+  if (length >= kMaxLength()) {
+    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
+  }
+  return length | 0
+}
+
+function SlowBuffer (length) {
+  if (+length != length) { // eslint-disable-line eqeqeq
+    length = 0
+  }
+  return Buffer.alloc(+length)
+}
+
+Buffer.isBuffer = function isBuffer (b) {
+  return !!(b != null && b._isBuffer)
+}
+
+Buffer.compare = function compare (a, b) {
+  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
+    throw new TypeError('Arguments must be Buffers')
+  }
+
+  if (a === b) return 0
+
+  var x = a.length
+  var y = b.length
+
+  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
+    if (a[i] !== b[i]) {
+      x = a[i]
+      y = b[i]
+      break
+    }
+  }
+
+  if (x < y) return -1
+  if (y < x) return 1
+  return 0
+}
+
+Buffer.isEncoding = function isEncoding (encoding) {
+  switch (String(encoding).toLowerCase()) {
+    case 'hex':
+    case 'utf8':
+    case 'utf-8':
+    case 'ascii':
+    case 'latin1':
+    case 'binary':
+    case 'base64':
+    case 'ucs2':
+    case 'ucs-2':
+    case 'utf16le':
+    case 'utf-16le':
+      return true
+    default:
+      return false
+  }
+}
+
+Buffer.concat = function concat (list, length) {
+  if (!isArray(list)) {
+    throw new TypeError('"list" argument must be an Array of Buffers')
+  }
+
+  if (list.length === 0) {
+    return Buffer.alloc(0)
+  }
+
+  var i
+  if (length === undefined) {
+    length = 0
+    for (i = 0; i < list.length; ++i) {
+      length += list[i].length
+    }
+  }
+
+  var buffer = Buffer.allocUnsafe(length)
+  var pos = 0
+  for (i = 0; i < list.length; ++i) {
+    var buf = list[i]
+    if (!Buffer.isBuffer(buf)) {
+      throw new TypeError('"list" argument must be an Array of Buffers')
+    }
+    buf.copy(buffer, pos)
+    pos += buf.length
+  }
+  return buffer
+}
+
+function byteLength (string, encoding) {
+  if (Buffer.isBuffer(string)) {
+    return string.length
+  }
+  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
+      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
+    return string.byteLength
+  }
+  if (typeof string !== 'string') {
+    string = '' + string
+  }
+
+  var len = string.length
+  if (len === 0) return 0
+
+  // Use a for loop to avoid recursion
+  var loweredCase = false
+  for (;;) {
+    switch (encoding) {
+      case 'ascii':
+      case 'latin1':
+      case 'binary':
+        return len
+      case 'utf8':
+      case 'utf-8':
+      case undefined:
+        return utf8ToBytes(string).length
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return len * 2
+      case 'hex':
+        return len >>> 1
+      case 'base64':
+        return base64ToBytes(string).length
+      default:
+        if (loweredCase) return utf8ToBytes(string).length // assume utf8
+        encoding = ('' + encoding).toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+Buffer.byteLength = byteLength
+
+function slowToString (encoding, start, end) {
+  var loweredCase = false
+
+  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
+  // property of a typed array.
+
+  // This behaves neither like String nor Uint8Array in that we set start/end
+  // to their upper/lower bounds if the value passed is out of range.
+  // undefined is handled specially as per ECMA-262 6th Edition,
+  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
+  if (start === undefined || start < 0) {
+    start = 0
+  }
+  // Return early if start > this.length. Done here to prevent potential uint32
+  // coercion fail below.
+  if (start > this.length) {
+    return ''
+  }
+
+  if (end === undefined || end > this.length) {
+    end = this.length
+  }
+
+  if (end <= 0) {
+    return ''
+  }
+
+  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
+  end >>>= 0
+  start >>>= 0
+
+  if (end <= start) {
+    return ''
+  }
+
+  if (!encoding) encoding = 'utf8'
+
+  while (true) {
+    switch (encoding) {
+      case 'hex':
+        return hexSlice(this, start, end)
+
+      case 'utf8':
+      case 'utf-8':
+        return utf8Slice(this, start, end)
+
+      case 'ascii':
+        return asciiSlice(this, start, end)
+
+      case 'latin1':
+      case 'binary':
+        return latin1Slice(this, start, end)
+
+      case 'base64':
+        return base64Slice(this, start, end)
+
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return utf16leSlice(this, start, end)
+
+      default:
+        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        encoding = (encoding + '').toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+
+// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
+// Buffer instances.
+Buffer.prototype._isBuffer = true
+
+function swap (b, n, m) {
+  var i = b[n]
+  b[n] = b[m]
+  b[m] = i
+}
+
+Buffer.prototype.swap16 = function swap16 () {
+  var len = this.length
+  if (len % 2 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 16-bits')
+  }
+  for (var i = 0; i < len; i += 2) {
+    swap(this, i, i + 1)
+  }
+  return this
+}
+
+Buffer.prototype.swap32 = function swap32 () {
+  var len = this.length
+  if (len % 4 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 32-bits')
+  }
+  for (var i = 0; i < len; i += 4) {
+    swap(this, i, i + 3)
+    swap(this, i + 1, i + 2)
+  }
+  return this
+}
+
+Buffer.prototype.swap64 = function swap64 () {
+  var len = this.length
+  if (len % 8 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 64-bits')
+  }
+  for (var i = 0; i < len; i += 8) {
+    swap(this, i, i + 7)
+    swap(this, i + 1, i + 6)
+    swap(this, i + 2, i + 5)
+    swap(this, i + 3, i + 4)
+  }
+  return this
+}
+
+Buffer.prototype.toString = function toString () {
+  var length = this.length | 0
+  if (length === 0) return ''
+  if (arguments.length === 0) return utf8Slice(this, 0, length)
+  return slowToString.apply(this, arguments)
+}
+
+Buffer.prototype.equals = function equals (b) {
+  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+  if (this === b) return true
+  return Buffer.compare(this, b) === 0
+}
+
+Buffer.prototype.inspect = function inspect () {
+  var str = ''
+  var max = exports.INSPECT_MAX_BYTES
+  if (this.length > 0) {
+    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
+    if (this.length > max) str += ' ... '
+  }
+  return '<Buffer ' + str + '>'
+}
+
+Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
+  if (!Buffer.isBuffer(target)) {
+    throw new TypeError('Argument must be a Buffer')
+  }
+
+  if (start === undefined) {
+    start = 0
+  }
+  if (end === undefined) {
+    end = target ? target.length : 0
+  }
+  if (thisStart === undefined) {
+    thisStart = 0
+  }
+  if (thisEnd === undefined) {
+    thisEnd = this.length
+  }
+
+  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
+    throw new RangeError('out of range index')
+  }
+
+  if (thisStart >= thisEnd && start >= end) {
+    return 0
+  }
+  if (thisStart >= thisEnd) {
+    return -1
+  }
+  if (start >= end) {
+    return 1
+  }
+
+  start >>>= 0
+  end >>>= 0
+  thisStart >>>= 0
+  thisEnd >>>= 0
+
+  if (this === target) return 0
+
+  var x = thisEnd - thisStart
+  var y = end - start
+  var len = Math.min(x, y)
+
+  var thisCopy = this.slice(thisStart, thisEnd)
+  var targetCopy = target.slice(start, end)
+
+  for (var i = 0; i < len; ++i) {
+    if (thisCopy[i] !== targetCopy[i]) {
+      x = thisCopy[i]
+      y = targetCopy[i]
+      break
+    }
+  }
+
+  if (x < y) return -1
+  if (y < x) return 1
+  return 0
+}
+
+// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
+// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
+//
+// Arguments:
+// - buffer - a Buffer to search
+// - val - a string, Buffer, or number
+// - byteOffset - an index into `buffer`; will be clamped to an int32
+// - encoding - an optional encoding, relevant is val is a string
+// - dir - true for indexOf, false for lastIndexOf
+function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
+  // Empty buffer means no match
+  if (buffer.length === 0) return -1
+
+  // Normalize byteOffset
+  if (typeof byteOffset === 'string') {
+    encoding = byteOffset
+    byteOffset = 0
+  } else if (byteOffset > 0x7fffffff) {
+    byteOffset = 0x7fffffff
+  } else if (byteOffset < -0x80000000) {
+    byteOffset = -0x80000000
+  }
+  byteOffset = +byteOffset  // Coerce to Number.
+  if (isNaN(byteOffset)) {
+    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
+    byteOffset = dir ? 0 : (buffer.length - 1)
+  }
+
+  // Normalize byteOffset: negative offsets start from the end of the buffer
+  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
+  if (byteOffset >= buffer.length) {
+    if (dir) return -1
+    else byteOffset = buffer.length - 1
+  } else if (byteOffset < 0) {
+    if (dir) byteOffset = 0
+    else return -1
+  }
+
+  // Normalize val
+  if (typeof val === 'string') {
+    val = Buffer.from(val, encoding)
+  }
+
+  // Finally, search either indexOf (if dir is true) or lastIndexOf
+  if (Buffer.isBuffer(val)) {
+    // Special case: looking for empty string/buffer always fails
+    if (val.length === 0) {
+      return -1
+    }
+    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
+  } else if (typeof val === 'number') {
+    val = val & 0xFF // Search for a byte value [0-255]
+    if (Buffer.TYPED_ARRAY_SUPPORT &&
+        typeof Uint8Array.prototype.indexOf === 'function') {
+      if (dir) {
+        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
+      } else {
+        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
+      }
+    }
+    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
+  }
+
+  throw new TypeError('val must be string, number or Buffer')
+}
+
+function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
+  var indexSize = 1
+  var arrLength = arr.length
+  var valLength = val.length
+
+  if (encoding !== undefined) {
+    encoding = String(encoding).toLowerCase()
+    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
+        encoding === 'utf16le' || encoding === 'utf-16le') {
+      if (arr.length < 2 || val.length < 2) {
+        return -1
+      }
+      indexSize = 2
+      arrLength /= 2
+      valLength /= 2
+      byteOffset /= 2
+    }
+  }
+
+  function read (buf, i) {
+    if (indexSize === 1) {
+      return buf[i]
+    } else {
+      return buf.readUInt16BE(i * indexSize)
+    }
+  }
+
+  var i
+  if (dir) {
+    var foundIndex = -1
+    for (i = byteOffset; i < arrLength; i++) {
+      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
+        if (foundIndex === -1) foundIndex = i
+        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
+      } else {
+        if (foundIndex !== -1) i -= i - foundIndex
+        foundIndex = -1
+      }
+    }
+  } else {
+    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
+    for (i = byteOffset; i >= 0; i--) {
+      var found = true
+      for (var j = 0; j < valLength; j++) {
+        if (read(arr, i + j) !== read(val, j)) {
+          found = false
+          break
+        }
+      }
+      if (found) return i
+    }
+  }
+
+  return -1
+}
+
+Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
+  return this.indexOf(val, byteOffset, encoding) !== -1
+}
+
+Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
+  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
+}
+
+Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
+  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
+}
+
+function hexWrite (buf, string, offset, length) {
+  offset = Number(offset) || 0
+  var remaining = buf.length - offset
+  if (!length) {
+    length = remaining
+  } else {
+    length = Number(length)
+    if (length > remaining) {
+      length = remaining
+    }
+  }
+
+  // must be an even number of digits
+  var strLen = string.length
+  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
+
+  if (length > strLen / 2) {
+    length = strLen / 2
+  }
+  for (var i = 0; i < length; ++i) {
+    var parsed = parseInt(string.substr(i * 2, 2), 16)
+    if (isNaN(parsed)) return i
+    buf[offset + i] = parsed
+  }
+  return i
+}
+
+function utf8Write (buf, string, offset, length) {
+  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
+}
+
+function asciiWrite (buf, string, offset, length) {
+  return blitBuffer(asciiToBytes(string), buf, offset, length)
+}
+
+function latin1Write (buf, string, offset, length) {
+  return asciiWrite(buf, string, offset, length)
+}
+
+function base64Write (buf, string, offset, length) {
+  return blitBuffer(base64ToBytes(string), buf, offset, length)
+}
+
+function ucs2Write (buf, string, offset, length) {
+  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
+}
+
+Buffer.prototype.write = function write (string, offset, length, encoding) {
+  // Buffer#write(string)
+  if (offset === undefined) {
+    encoding = 'utf8'
+    length = this.length
+    offset = 0
+  // Buffer#write(string, encoding)
+  } else if (length === undefined && typeof offset === 'string') {
+    encoding = offset
+    length = this.length
+    offset = 0
+  // Buffer#write(string, offset[, length][, encoding])
+  } else if (isFinite(offset)) {
+    offset = offset | 0
+    if (isFinite(length)) {
+      length = length | 0
+      if (encoding === undefined) encoding = 'utf8'
+    } else {
+      encoding = length
+      length = undefined
+    }
+  // legacy write(string, encoding, offset, length) - remove in v0.13
+  } else {
+    throw new Error(
+      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
+    )
+  }
+
+  var remaining = this.length - offset
+  if (length === undefined || length > remaining) length = remaining
+
+  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+    throw new RangeError('Attempt to write outside buffer bounds')
+  }
+
+  if (!encoding) encoding = 'utf8'
+
+  var loweredCase = false
+  for (;;) {
+    switch (encoding) {
+      case 'hex':
+        return hexWrite(this, string, offset, length)
+
+      case 'utf8':
+      case 'utf-8':
+        return utf8Write(this, string, offset, length)
+
+      case 'ascii':
+        return asciiWrite(this, string, offset, length)
+
+      case 'latin1':
+      case 'binary':
+        return latin1Write(this, string, offset, length)
+
+      case 'base64':
+        // Warning: maxLength not taken into account in base64Write
+        return base64Write(this, string, offset, length)
+
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return ucs2Write(this, string, offset, length)
+
+      default:
+        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        encoding = ('' + encoding).toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+
+Buffer.prototype.toJSON = function toJSON () {
+  return {
+    type: 'Buffer',
+    data: Array.prototype.slice.call(this._arr || this, 0)
+  }
+}
+
+function base64Slice (buf, start, end) {
+  if (start === 0 && end === buf.length) {
+    return base64.fromByteArray(buf)
+  } else {
+    return base64.fromByteArray(buf.slice(start, end))
+  }
+}
+
+function utf8Slice (buf, start, end) {
+  end = Math.min(buf.length, end)
+  var res = []
+
+  var i = start
+  while (i < end) {
+    var firstByte = buf[i]
+    var codePoint = null
+    var bytesPerSequence = (firstByte > 0xEF) ? 4
+      : (firstByte > 0xDF) ? 3
+      : (firstByte > 0xBF) ? 2
+      : 1
+
+    if (i + bytesPerSequence <= end) {
+      var secondByte, thirdByte, fourthByte, tempCodePoint
+
+      switch (bytesPerSequence) {
+        case 1:
+          if (firstByte < 0x80) {
+            codePoint = firstByte
+          }
+          break
+        case 2:
+          secondByte = buf[i + 1]
+          if ((secondByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
+            if (tempCodePoint > 0x7F) {
+              codePoint = tempCodePoint
+            }
+          }
+          break
+        case 3:
+          secondByte = buf[i + 1]
+          thirdByte = buf[i + 2]
+          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
+            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
+              codePoint = tempCodePoint
+            }
+          }
+          break
+        case 4:
+          secondByte = buf[i + 1]
+          thirdByte = buf[i + 2]
+          fourthByte = buf[i + 3]
+          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
+            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
+              codePoint = tempCodePoint
+            }
+          }
+      }
+    }
+
+    if (codePoint === null) {
+      // we did not generate a valid codePoint so insert a
+      // replacement char (U+FFFD) and advance only 1 byte
+      codePoint = 0xFFFD
+      bytesPerSequence = 1
+    } else if (codePoint > 0xFFFF) {
+      // encode to utf16 (surrogate pair dance)
+      codePoint -= 0x10000
+      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
+      codePoint = 0xDC00 | codePoint & 0x3FF
+    }
+
+    res.push(codePoint)
+    i += bytesPerSequence
+  }
+
+  return decodeCodePointsArray(res)
+}
+
+// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+// the lowest limit is Chrome, with 0x10000 args.
+// We go 1 magnitude less, for safety
+var MAX_ARGUMENTS_LENGTH = 0x1000
+
+function decodeCodePointsArray (codePoints) {
+  var len = codePoints.length
+  if (len <= MAX_ARGUMENTS_LENGTH) {
+    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
+  }
+
+  // Decode in chunks to avoid "call stack size exceeded".
+  var res = ''
+  var i = 0
+  while (i < len) {
+    res += String.fromCharCode.apply(
+      String,
+      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
+    )
+  }
+  return res
+}
+
+function asciiSlice (buf, start, end) {
+  var ret = ''
+  end = Math.min(buf.length, end)
+
+  for (var i = start; i < end; ++i) {
+    ret += String.fromCharCode(buf[i] & 0x7F)
+  }
+  return ret
+}
+
+function latin1Slice (buf, start, end) {
+  var ret = ''
+  end = Math.min(buf.length, end)
+
+  for (var i = start; i < end; ++i) {
+    ret += String.fromCharCode(buf[i])
+  }
+  return ret
+}
+
+function hexSlice (buf, start, end) {
+  var len = buf.length
+
+  if (!start || start < 0) start = 0
+  if (!end || end < 0 || end > len) end = len
+
+  var out = ''
+  for (var i = start; i < end; ++i) {
+    out += toHex(buf[i])
+  }
+  return out
+}
+
+function utf16leSlice (buf, start, end) {
+  var bytes = buf.slice(start, end)
+  var res = ''
+  for (var i = 0; i < bytes.length; i += 2) {
+    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
+  }
+  return res
+}
+
+Buffer.prototype.slice = function slice (start, end) {
+  var len = this.length
+  start = ~~start
+  end = end === undefined ? len : ~~end
+
+  if (start < 0) {
+    start += len
+    if (start < 0) start = 0
+  } else if (start > len) {
+    start = len
+  }
+
+  if (end < 0) {
+    end += len
+    if (end < 0) end = 0
+  } else if (end > len) {
+    end = len
+  }
+
+  if (end < start) end = start
+
+  var newBuf
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    newBuf = this.subarray(start, end)
+    newBuf.__proto__ = Buffer.prototype
+  } else {
+    var sliceLen = end - start
+    newBuf = new Buffer(sliceLen, undefined)
+    for (var i = 0; i < sliceLen; ++i) {
+      newBuf[i] = this[i + start]
+    }
+  }
+
+  return newBuf
+}
+
+/*
+ * Need to make sure that buffer isn't trying to write out of bounds.
+ */
+function checkOffset (offset, ext, length) {
+  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
+  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
+}
+
+Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var val = this[offset]
+  var mul = 1
+  var i = 0
+  while (++i < byteLength && (mul *= 0x100)) {
+    val += this[offset + i] * mul
+  }
+
+  return val
+}
+
+Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    checkOffset(offset, byteLength, this.length)
+  }
+
+  var val = this[offset + --byteLength]
+  var mul = 1
+  while (byteLength > 0 && (mul *= 0x100)) {
+    val += this[offset + --byteLength] * mul
+  }
+
+  return val
+}
+
+Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 1, this.length)
+  return this[offset]
+}
+
+Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  return this[offset] | (this[offset + 1] << 8)
+}
+
+Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  return (this[offset] << 8) | this[offset + 1]
+}
+
+Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return ((this[offset]) |
+      (this[offset + 1] << 8) |
+      (this[offset + 2] << 16)) +
+      (this[offset + 3] * 0x1000000)
+}
+
+Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset] * 0x1000000) +
+    ((this[offset + 1] << 16) |
+    (this[offset + 2] << 8) |
+    this[offset + 3])
+}
+
+Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var val = this[offset]
+  var mul = 1
+  var i = 0
+  while (++i < byteLength && (mul *= 0x100)) {
+    val += this[offset + i] * mul
+  }
+  mul *= 0x80
+
+  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+  return val
+}
+
+Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var i = byteLength
+  var mul = 1
+  var val = this[offset + --i]
+  while (i > 0 && (mul *= 0x100)) {
+    val += this[offset + --i] * mul
+  }
+  mul *= 0x80
+
+  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+  return val
+}
+
+Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 1, this.length)
+  if (!(this[offset] & 0x80)) return (this[offset])
+  return ((0xff - this[offset] + 1) * -1)
+}
+
+Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  var val = this[offset] | (this[offset + 1] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
+}
+
+Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  var val = this[offset + 1] | (this[offset] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
+}
+
+Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset]) |
+    (this[offset + 1] << 8) |
+    (this[offset + 2] << 16) |
+    (this[offset + 3] << 24)
+}
+
+Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset] << 24) |
+    (this[offset + 1] << 16) |
+    (this[offset + 2] << 8) |
+    (this[offset + 3])
+}
+
+Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, true, 23, 4)
+}
+
+Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, false, 23, 4)
+}
+
+Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, true, 52, 8)
+}
+
+Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, false, 52, 8)
+}
+
+function checkInt (buf, value, offset, ext, max, min) {
+  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
+  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
+  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+}
+
+Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+    checkInt(this, value, offset, byteLength, maxBytes, 0)
+  }
+
+  var mul = 1
+  var i = 0
+  this[offset] = value & 0xFF
+  while (++i < byteLength && (mul *= 0x100)) {
+    this[offset + i] = (value / mul) & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+    checkInt(this, value, offset, byteLength, maxBytes, 0)
+  }
+
+  var i = byteLength - 1
+  var mul = 1
+  this[offset + i] = value & 0xFF
+  while (--i >= 0 && (mul *= 0x100)) {
+    this[offset + i] = (value / mul) & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+  this[offset] = (value & 0xff)
+  return offset + 1
+}
+
+function objectWriteUInt16 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
+    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+      (littleEndian ? i : 1 - i) * 8
+  }
+}
+
+Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+  } else {
+    objectWriteUInt16(this, value, offset, true)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = (value & 0xff)
+  } else {
+    objectWriteUInt16(this, value, offset, false)
+  }
+  return offset + 2
+}
+
+function objectWriteUInt32 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffffffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
+    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
+  }
+}
+
+Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset + 3] = (value >>> 24)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 1] = (value >>> 8)
+    this[offset] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, true)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, false)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) {
+    var limit = Math.pow(2, 8 * byteLength - 1)
+
+    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+  }
+
+  var i = 0
+  var mul = 1
+  var sub = 0
+  this[offset] = value & 0xFF
+  while (++i < byteLength && (mul *= 0x100)) {
+    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
+      sub = 1
+    }
+    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) {
+    var limit = Math.pow(2, 8 * byteLength - 1)
+
+    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+  }
+
+  var i = byteLength - 1
+  var mul = 1
+  var sub = 0
+  this[offset + i] = value & 0xFF
+  while (--i >= 0 && (mul *= 0x100)) {
+    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
+      sub = 1
+    }
+    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+  if (value < 0) value = 0xff + value + 1
+  this[offset] = (value & 0xff)
+  return offset + 1
+}
+
+Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+  } else {
+    objectWriteUInt16(this, value, offset, true)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = (value & 0xff)
+  } else {
+    objectWriteUInt16(this, value, offset, false)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 3] = (value >>> 24)
+  } else {
+    objectWriteUInt32(this, value, offset, true)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (value < 0) value = 0xffffffff + value + 1
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, false)
+  }
+  return offset + 4
+}
+
+function checkIEEE754 (buf, value, offset, ext, max, min) {
+  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+  if (offset < 0) throw new RangeError('Index out of range')
+}
+
+function writeFloat (buf, value, offset, littleEndian, noAssert) {
+  if (!noAssert) {
+    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
+  }
+  ieee754.write(buf, value, offset, littleEndian, 23, 4)
+  return offset + 4
+}
+
+Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
+  return writeFloat(this, value, offset, true, noAssert)
+}
+
+Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
+  return writeFloat(this, value, offset, false, noAssert)
+}
+
+function writeDouble (buf, value, offset, littleEndian, noAssert) {
+  if (!noAssert) {
+    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
+  }
+  ieee754.write(buf, value, offset, littleEndian, 52, 8)
+  return offset + 8
+}
+
+Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
+  return writeDouble(this, value, offset, true, noAssert)
+}
+
+Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
+  return writeDouble(this, value, offset, false, noAssert)
+}
+
+// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+  if (!start) start = 0
+  if (!end && end !== 0) end = this.length
+  if (targetStart >= target.length) targetStart = target.length
+  if (!targetStart) targetStart = 0
+  if (end > 0 && end < start) end = start
+
+  // Copy 0 bytes; we're done
+  if (end === start) return 0
+  if (target.length === 0 || this.length === 0) return 0
+
+  // Fatal error conditions
+  if (targetStart < 0) {
+    throw new RangeError('targetStart out of bounds')
+  }
+  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+  if (end < 0) throw new RangeError('sourceEnd out of bounds')
+
+  // Are we oob?
+  if (end > this.length) end = this.length
+  if (target.length - targetStart < end - start) {
+    end = target.length - targetStart + start
+  }
+
+  var len = end - start
+  var i
+
+  if (this === target && start < targetStart && targetStart < end) {
+    // descending copy from end
+    for (i = len - 1; i >= 0; --i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
+    // ascending copy from start
+    for (i = 0; i < len; ++i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else {
+    Uint8Array.prototype.set.call(
+      target,
+      this.subarray(start, start + len),
+      targetStart
+    )
+  }
+
+  return len
+}
+
+// Usage:
+//    buffer.fill(number[, offset[, end]])
+//    buffer.fill(buffer[, offset[, end]])
+//    buffer.fill(string[, offset[, end]][, encoding])
+Buffer.prototype.fill = function fill (val, start, end, encoding) {
+  // Handle string cases:
+  if (typeof val === 'string') {
+    if (typeof start === 'string') {
+      encoding = start
+      start = 0
+      end = this.length
+    } else if (typeof end === 'string') {
+      encoding = end
+      end = this.length
+    }
+    if (val.length === 1) {
+      var code = val.charCodeAt(0)
+      if (code < 256) {
+        val = code
+      }
+    }
+    if (encoding !== undefined && typeof encoding !== 'string') {
+      throw new TypeError('encoding must be a string')
+    }
+    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
+      throw new TypeError('Unknown encoding: ' + encoding)
+    }
+  } else if (typeof val === 'number') {
+    val = val & 255
+  }
+
+  // Invalid ranges are not set to a default, so can range check early.
+  if (start < 0 || this.length < start || this.length < end) {
+    throw new RangeError('Out of range index')
+  }
+
+  if (end <= start) {
+    return this
+  }
+
+  start = start >>> 0
+  end = end === undefined ? this.length : end >>> 0
+
+  if (!val) val = 0
+
+  var i
+  if (typeof val === 'number') {
+    for (i = start; i < end; ++i) {
+      this[i] = val
+    }
+  } else {
+    var bytes = Buffer.isBuffer(val)
+      ? val
+      : utf8ToBytes(new Buffer(val, encoding).toString())
+    var len = bytes.length
+    for (i = 0; i < end - start; ++i) {
+      this[i + start] = bytes[i % len]
+    }
+  }
+
+  return this
+}
+
+// HELPER FUNCTIONS
+// ================
+
+var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
+
+function base64clean (str) {
+  // Node strips out invalid characters like \n and \t from the string, base64-js does not
+  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
+  // Node converts strings with length < 2 to ''
+  if (str.length < 2) return ''
+  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
+  while (str.length % 4 !== 0) {
+    str = str + '='
+  }
+  return str
+}
+
+function stringtrim (str) {
+  if (str.trim) return str.trim()
+  return str.replace(/^\s+|\s+$/g, '')
+}
+
+function toHex (n) {
+  if (n < 16) return '0' + n.toString(16)
+  return n.toString(16)
+}
+
+function utf8ToBytes (string, units) {
+  units = units || Infinity
+  var codePoint
+  var length = string.length
+  var leadSurrogate = null
+  var bytes = []
+
+  for (var i = 0; i < length; ++i) {
+    codePoint = string.charCodeAt(i)
+
+    // is surrogate component
+    if (codePoint > 0xD7FF && codePoint < 0xE000) {
+      // last char was a lead
+      if (!leadSurrogate) {
+        // no lead yet
+        if (codePoint > 0xDBFF) {
+          // unexpected trail
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        } else if (i + 1 === length) {
+          // unpaired lead
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        }
+
+        // valid lead
+        leadSurrogate = codePoint
+
+        continue
+      }
+
+      // 2 leads in a row
+      if (codePoint < 0xDC00) {
+        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+        leadSurrogate = codePoint
+        continue
+      }
+
+      // valid surrogate pair
+      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
+    } else if (leadSurrogate) {
+      // valid bmp char, but last char was a lead
+      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+    }
+
+    leadSurrogate = null
+
+    // encode utf8
+    if (codePoint < 0x80) {
+      if ((units -= 1) < 0) break
+      bytes.push(codePoint)
+    } else if (codePoint < 0x800) {
+      if ((units -= 2) < 0) break
+      bytes.push(
+        codePoint >> 0x6 | 0xC0,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x10000) {
+      if ((units -= 3) < 0) break
+      bytes.push(
+        codePoint >> 0xC | 0xE0,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x110000) {
+      if ((units -= 4) < 0) break
+      bytes.push(
+        codePoint >> 0x12 | 0xF0,
+        codePoint >> 0xC & 0x3F | 0x80,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else {
+      throw new Error('Invalid code point')
+    }
+  }
+
+  return bytes
+}
+
+function asciiToBytes (str) {
+  var byteArray = []
+  for (var i = 0; i < str.length; ++i) {
+    // Node's code seems to be doing this and not & 0x7F..
+    byteArray.push(str.charCodeAt(i) & 0xFF)
+  }
+  return byteArray
+}
+
+function utf16leToBytes (str, units) {
+  var c, hi, lo
+  var byteArray = []
+  for (var i = 0; i < str.length; ++i) {
+    if ((units -= 2) < 0) break
+
+    c = str.charCodeAt(i)
+    hi = c >> 8
+    lo = c % 256
+    byteArray.push(lo)
+    byteArray.push(hi)
+  }
+
+  return byteArray
+}
+
+function base64ToBytes (str) {
+  return base64.toByteArray(base64clean(str))
+}
+
+function blitBuffer (src, dst, offset, length) {
+  for (var i = 0; i < length; ++i) {
+    if ((i + offset >= dst.length) || (i >= src.length)) break
+    dst[i + offset] = src[i]
+  }
+  return i
+}
+
+function isnan (val) {
+  return val !== val // eslint-disable-line no-self-compare
+}
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/cross-fetch/dist/browser-ponyfill.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/cross-fetch/dist/browser-ponyfill.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var __self__ = (function (root) {
+function F() {
+this.fetch = false;
+this.DOMException = root.DOMException
+}
+F.prototype = root;
+return new F();
+})(typeof self !== 'undefined' ? self : this);
+(function(self) {
+
+var irrelevant = (function (exports) {
+  var support = {
+    searchParams: 'URLSearchParams' in self,
+    iterable: 'Symbol' in self && 'iterator' in Symbol,
+    blob:
+      'FileReader' in self &&
+      'Blob' in self &&
+      (function() {
+        try {
+          new Blob();
+          return true
+        } catch (e) {
+          return false
+        }
+      })(),
+    formData: 'FormData' in self,
+    arrayBuffer: 'ArrayBuffer' in self
+  };
+
+  function isDataView(obj) {
+    return obj && DataView.prototype.isPrototypeOf(obj)
+  }
+
+  if (support.arrayBuffer) {
+    var viewClasses = [
+      '[object Int8Array]',
+      '[object Uint8Array]',
+      '[object Uint8ClampedArray]',
+      '[object Int16Array]',
+      '[object Uint16Array]',
+      '[object Int32Array]',
+      '[object Uint32Array]',
+      '[object Float32Array]',
+      '[object Float64Array]'
+    ];
+
+    var isArrayBufferView =
+      ArrayBuffer.isView ||
+      function(obj) {
+        return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
+      };
+  }
+
+  function normalizeName(name) {
+    if (typeof name !== 'string') {
+      name = String(name);
+    }
+    if (/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(name)) {
+      throw new TypeError('Invalid character in header field name')
+    }
+    return name.toLowerCase()
+  }
+
+  function normalizeValue(value) {
+    if (typeof value !== 'string') {
+      value = String(value);
+    }
+    return value
+  }
+
+  // Build a destructive iterator for the value list
+  function iteratorFor(items) {
+    var iterator = {
+      next: function() {
+        var value = items.shift();
+        return {done: value === undefined, value: value}
+      }
+    };
+
+    if (support.iterable) {
+      iterator[Symbol.iterator] = function() {
+        return iterator
+      };
+    }
+
+    return iterator
+  }
+
+  function Headers(headers) {
+    this.map = {};
+
+    if (headers instanceof Headers) {
+      headers.forEach(function(value, name) {
+        this.append(name, value);
+      }, this);
+    } else if (Array.isArray(headers)) {
+      headers.forEach(function(header) {
+        this.append(header[0], header[1]);
+      }, this);
+    } else if (headers) {
+      Object.getOwnPropertyNames(headers).forEach(function(name) {
+        this.append(name, headers[name]);
+      }, this);
+    }
+  }
+
+  Headers.prototype.append = function(name, value) {
+    name = normalizeName(name);
+    value = normalizeValue(value);
+    var oldValue = this.map[name];
+    this.map[name] = oldValue ? oldValue + ', ' + value : value;
+  };
+
+  Headers.prototype['delete'] = function(name) {
+    delete this.map[normalizeName(name)];
+  };
+
+  Headers.prototype.get = function(name) {
+    name = normalizeName(name);
+    return this.has(name) ? this.map[name] : null
+  };
+
+  Headers.prototype.has = function(name) {
+    return this.map.hasOwnProperty(normalizeName(name))
+  };
+
+  Headers.prototype.set = function(name, value) {
+    this.map[normalizeName(name)] = normalizeValue(value);
+  };
+
+  Headers.prototype.forEach = function(callback, thisArg) {
+    for (var name in this.map) {
+      if (this.map.hasOwnProperty(name)) {
+        callback.call(thisArg, this.map[name], name, this);
+      }
+    }
+  };
+
+  Headers.prototype.keys = function() {
+    var items = [];
+    this.forEach(function(value, name) {
+      items.push(name);
+    });
+    return iteratorFor(items)
+  };
+
+  Headers.prototype.values = function() {
+    var items = [];
+    this.forEach(function(value) {
+      items.push(value);
+    });
+    return iteratorFor(items)
+  };
+
+  Headers.prototype.entries = function() {
+    var items = [];
+    this.forEach(function(value, name) {
+      items.push([name, value]);
+    });
+    return iteratorFor(items)
+  };
+
+  if (support.iterable) {
+    Headers.prototype[Symbol.iterator] = Headers.prototype.entries;
+  }
+
+  function consumed(body) {
+    if (body.bodyUsed) {
+      return Promise.reject(new TypeError('Already read'))
+    }
+    body.bodyUsed = true;
+  }
+
+  function fileReaderReady(reader) {
+    return new Promise(function(resolve, reject) {
+      reader.onload = function() {
+        resolve(reader.result);
+      };
+      reader.onerror = function() {
+        reject(reader.error);
+      };
+    })
+  }
+
+  function readBlobAsArrayBuffer(blob) {
+    var reader = new FileReader();
+    var promise = fileReaderReady(reader);
+    reader.readAsArrayBuffer(blob);
+    return promise
+  }
+
+  function readBlobAsText(blob) {
+    var reader = new FileReader();
+    var promise = fileReaderReady(reader);
+    reader.readAsText(blob);
+    return promise
+  }
+
+  function readArrayBufferAsText(buf) {
+    var view = new Uint8Array(buf);
+    var chars = new Array(view.length);
+
+    for (var i = 0; i < view.length; i++) {
+      chars[i] = String.fromCharCode(view[i]);
+    }
+    return chars.join('')
+  }
+
+  function bufferClone(buf) {
+    if (buf.slice) {
+      return buf.slice(0)
+    } else {
+      var view = new Uint8Array(buf.byteLength);
+      view.set(new Uint8Array(buf));
+      return view.buffer
+    }
+  }
+
+  function Body() {
+    this.bodyUsed = false;
+
+    this._initBody = function(body) {
+      this._bodyInit = body;
+      if (!body) {
+        this._bodyText = '';
+      } else if (typeof body === 'string') {
+        this._bodyText = body;
+      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+        this._bodyBlob = body;
+      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+        this._bodyFormData = body;
+      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+        this._bodyText = body.toString();
+      } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+        this._bodyArrayBuffer = bufferClone(body.buffer);
+        // IE 10-11 can't handle a DataView body.
+        this._bodyInit = new Blob([this._bodyArrayBuffer]);
+      } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+        this._bodyArrayBuffer = bufferClone(body);
+      } else {
+        this._bodyText = body = Object.prototype.toString.call(body);
+      }
+
+      if (!this.headers.get('content-type')) {
+        if (typeof body === 'string') {
+          this.headers.set('content-type', 'text/plain;charset=UTF-8');
+        } else if (this._bodyBlob && this._bodyBlob.type) {
+          this.headers.set('content-type', this._bodyBlob.type);
+        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        }
+      }
+    };
+
+    if (support.blob) {
+      this.blob = function() {
+        var rejected = consumed(this);
+        if (rejected) {
+          return rejected
+        }
+
+        if (this._bodyBlob) {
+          return Promise.resolve(this._bodyBlob)
+        } else if (this._bodyArrayBuffer) {
+          return Promise.resolve(new Blob([this._bodyArrayBuffer]))
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as blob')
+        } else {
+          return Promise.resolve(new Blob([this._bodyText]))
+        }
+      };
+
+      this.arrayBuffer = function() {
+        if (this._bodyArrayBuffer) {
+          return consumed(this) || Promise.resolve(this._bodyArrayBuffer)
+        } else {
+          return this.blob().then(readBlobAsArrayBuffer)
+        }
+      };
+    }
+
+    this.text = function() {
+      var rejected = consumed(this);
+      if (rejected) {
+        return rejected
+      }
+
+      if (this._bodyBlob) {
+        return readBlobAsText(this._bodyBlob)
+      } else if (this._bodyArrayBuffer) {
+        return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer))
+      } else if (this._bodyFormData) {
+        throw new Error('could not read FormData body as text')
+      } else {
+        return Promise.resolve(this._bodyText)
+      }
+    };
+
+    if (support.formData) {
+      this.formData = function() {
+        return this.text().then(decode)
+      };
+    }
+
+    this.json = function() {
+      return this.text().then(JSON.parse)
+    };
+
+    return this
+  }
+
+  // HTTP methods whose capitalization should be normalized
+  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
+
+  function normalizeMethod(method) {
+    var upcased = method.toUpperCase();
+    return methods.indexOf(upcased) > -1 ? upcased : method
+  }
+
+  function Request(input, options) {
+    options = options || {};
+    var body = options.body;
+
+    if (input instanceof Request) {
+      if (input.bodyUsed) {
+        throw new TypeError('Already read')
+      }
+      this.url = input.url;
+      this.credentials = input.credentials;
+      if (!options.headers) {
+        this.headers = new Headers(input.headers);
+      }
+      this.method = input.method;
+      this.mode = input.mode;
+      this.signal = input.signal;
+      if (!body && input._bodyInit != null) {
+        body = input._bodyInit;
+        input.bodyUsed = true;
+      }
+    } else {
+      this.url = String(input);
+    }
+
+    this.credentials = options.credentials || this.credentials || 'same-origin';
+    if (options.headers || !this.headers) {
+      this.headers = new Headers(options.headers);
+    }
+    this.method = normalizeMethod(options.method || this.method || 'GET');
+    this.mode = options.mode || this.mode || null;
+    this.signal = options.signal || this.signal;
+    this.referrer = null;
+
+    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+      throw new TypeError('Body not allowed for GET or HEAD requests')
+    }
+    this._initBody(body);
+  }
+
+  Request.prototype.clone = function() {
+    return new Request(this, {body: this._bodyInit})
+  };
+
+  function decode(body) {
+    var form = new FormData();
+    body
+      .trim()
+      .split('&')
+      .forEach(function(bytes) {
+        if (bytes) {
+          var split = bytes.split('=');
+          var name = split.shift().replace(/\+/g, ' ');
+          var value = split.join('=').replace(/\+/g, ' ');
+          form.append(decodeURIComponent(name), decodeURIComponent(value));
+        }
+      });
+    return form
+  }
+
+  function parseHeaders(rawHeaders) {
+    var headers = new Headers();
+    // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
+    // https://tools.ietf.org/html/rfc7230#section-3.2
+    var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
+    preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
+      var parts = line.split(':');
+      var key = parts.shift().trim();
+      if (key) {
+        var value = parts.join(':').trim();
+        headers.append(key, value);
+      }
+    });
+    return headers
+  }
+
+  Body.call(Request.prototype);
+
+  function Response(bodyInit, options) {
+    if (!options) {
+      options = {};
+    }
+
+    this.type = 'default';
+    this.status = options.status === undefined ? 200 : options.status;
+    this.ok = this.status >= 200 && this.status < 300;
+    this.statusText = 'statusText' in options ? options.statusText : 'OK';
+    this.headers = new Headers(options.headers);
+    this.url = options.url || '';
+    this._initBody(bodyInit);
+  }
+
+  Body.call(Response.prototype);
+
+  Response.prototype.clone = function() {
+    return new Response(this._bodyInit, {
+      status: this.status,
+      statusText: this.statusText,
+      headers: new Headers(this.headers),
+      url: this.url
+    })
+  };
+
+  Response.error = function() {
+    var response = new Response(null, {status: 0, statusText: ''});
+    response.type = 'error';
+    return response
+  };
+
+  var redirectStatuses = [301, 302, 303, 307, 308];
+
+  Response.redirect = function(url, status) {
+    if (redirectStatuses.indexOf(status) === -1) {
+      throw new RangeError('Invalid status code')
+    }
+
+    return new Response(null, {status: status, headers: {location: url}})
+  };
+
+  exports.DOMException = self.DOMException;
+  try {
+    new exports.DOMException();
+  } catch (err) {
+    exports.DOMException = function(message, name) {
+      this.message = message;
+      this.name = name;
+      var error = Error(message);
+      this.stack = error.stack;
+    };
+    exports.DOMException.prototype = Object.create(Error.prototype);
+    exports.DOMException.prototype.constructor = exports.DOMException;
+  }
+
+  function fetch(input, init) {
+    return new Promise(function(resolve, reject) {
+      var request = new Request(input, init);
+
+      if (request.signal && request.signal.aborted) {
+        return reject(new exports.DOMException('Aborted', 'AbortError'))
+      }
+
+      var xhr = new XMLHttpRequest();
+
+      function abortXhr() {
+        xhr.abort();
+      }
+
+      xhr.onload = function() {
+        var options = {
+          status: xhr.status,
+          statusText: xhr.statusText,
+          headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+        };
+        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
+        var body = 'response' in xhr ? xhr.response : xhr.responseText;
+        resolve(new Response(body, options));
+      };
+
+      xhr.onerror = function() {
+        reject(new TypeError('Network request failed'));
+      };
+
+      xhr.ontimeout = function() {
+        reject(new TypeError('Network request failed'));
+      };
+
+      xhr.onabort = function() {
+        reject(new exports.DOMException('Aborted', 'AbortError'));
+      };
+
+      xhr.open(request.method, request.url, true);
+
+      if (request.credentials === 'include') {
+        xhr.withCredentials = true;
+      } else if (request.credentials === 'omit') {
+        xhr.withCredentials = false;
+      }
+
+      if ('responseType' in xhr && support.blob) {
+        xhr.responseType = 'blob';
+      }
+
+      request.headers.forEach(function(value, name) {
+        xhr.setRequestHeader(name, value);
+      });
+
+      if (request.signal) {
+        request.signal.addEventListener('abort', abortXhr);
+
+        xhr.onreadystatechange = function() {
+          // DONE (success or failure)
+          if (xhr.readyState === 4) {
+            request.signal.removeEventListener('abort', abortXhr);
+          }
+        };
+      }
+
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
+    })
+  }
+
+  fetch.polyfill = true;
+
+  if (!self.fetch) {
+    self.fetch = fetch;
+    self.Headers = Headers;
+    self.Request = Request;
+    self.Response = Response;
+  }
+
+  exports.Headers = Headers;
+  exports.Request = Request;
+  exports.Response = Response;
+  exports.fetch = fetch;
+
+  return exports;
+
+}({}));
+})(__self__);
+delete __self__.fetch.polyfill
+exports = __self__.fetch // To enable: import fetch from 'cross-fetch'
+exports.default = __self__.fetch // For TypeScript consumers without esModuleInterop.
+exports.fetch = __self__.fetch // To enable: import {fetch} from 'cross-fetch'
+exports.Headers = __self__.Headers
+exports.Request = __self__.Request
+exports.Response = __self__.Response
+module.exports = exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Admin/AdminChart.css":
 /*!**************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Admin/AdminChart.css ***!
@@ -6643,6 +9572,19 @@ function toComment(sourceMap) {
 
 	return '/*# ' + data + ' */';
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/form-data/lib/browser.js":
+/*!***********************************************!*\
+  !*** ./node_modules/form-data/lib/browser.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* eslint-env browser */
+module.exports = typeof self == 'object' ? self.FormData : window.FormData;
 
 
 /***/ }),
@@ -7724,6 +10666,146 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
+
+/***/ }),
+
+/***/ "./node_modules/ieee754/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/ieee754/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+exports.read = function (buffer, offset, isLE, mLen, nBytes) {
+  var e, m
+  var eLen = (nBytes * 8) - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var nBits = -7
+  var i = isLE ? (nBytes - 1) : 0
+  var d = isLE ? -1 : 1
+  var s = buffer[offset + i]
+
+  i += d
+
+  e = s & ((1 << (-nBits)) - 1)
+  s >>= (-nBits)
+  nBits += eLen
+  for (; nBits > 0; e = (e * 256) + buffer[offset + i], i += d, nBits -= 8) {}
+
+  m = e & ((1 << (-nBits)) - 1)
+  e >>= (-nBits)
+  nBits += mLen
+  for (; nBits > 0; m = (m * 256) + buffer[offset + i], i += d, nBits -= 8) {}
+
+  if (e === 0) {
+    e = 1 - eBias
+  } else if (e === eMax) {
+    return m ? NaN : ((s ? -1 : 1) * Infinity)
+  } else {
+    m = m + Math.pow(2, mLen)
+    e = e - eBias
+  }
+  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
+}
+
+exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
+  var e, m, c
+  var eLen = (nBytes * 8) - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
+  var i = isLE ? 0 : (nBytes - 1)
+  var d = isLE ? 1 : -1
+  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
+
+  value = Math.abs(value)
+
+  if (isNaN(value) || value === Infinity) {
+    m = isNaN(value) ? 1 : 0
+    e = eMax
+  } else {
+    e = Math.floor(Math.log(value) / Math.LN2)
+    if (value * (c = Math.pow(2, -e)) < 1) {
+      e--
+      c *= 2
+    }
+    if (e + eBias >= 1) {
+      value += rt / c
+    } else {
+      value += rt * Math.pow(2, 1 - eBias)
+    }
+    if (value * c >= 2) {
+      e++
+      c /= 2
+    }
+
+    if (e + eBias >= eMax) {
+      m = 0
+      e = eMax
+    } else if (e + eBias >= 1) {
+      m = ((value * c) - 1) * Math.pow(2, mLen)
+      e = e + eBias
+    } else {
+      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
+      e = 0
+    }
+  }
+
+  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+
+  e = (e << mLen) | m
+  eLen += mLen
+  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
+  buffer[offset + i - d] |= s * 128
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/isarray/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/isarray/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/isomorphic-ws/browser.js":
+/*!***********************************************!*\
+  !*** ./node_modules/isomorphic-ws/browser.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {// https://github.com/maxogden/websocket-stream/blob/48dc3ddf943e5ada668c31ccd94e9186f02fafbd/ws-fallback.js
+
+var ws = null
+
+if (typeof WebSocket !== 'undefined') {
+  ws = WebSocket
+} else if (typeof MozWebSocket !== 'undefined') {
+  ws = MozWebSocket
+} else if (typeof global !== 'undefined') {
+  ws = global.WebSocket || global.MozWebSocket
+} else if (typeof window !== 'undefined') {
+  ws = window.WebSocket || window.MozWebSocket
+} else if (typeof self !== 'undefined') {
+  ws = self.WebSocket || self.MozWebSocket
+}
+
+module.exports = ws
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -71430,6 +74512,743 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList)
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : undefined
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/resolve-pathname/esm/resolve-pathname.js":
 /*!***************************************************************!*\
   !*** ./node_modules/resolve-pathname/esm/resolve-pathname.js ***!
@@ -72903,6 +76722,8576 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/seamless-immutable/seamless-immutable.development.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/seamless-immutable/seamless-immutable.development.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;(function() {
+  "use strict";
+
+function immutableInit(config) {
+
+  // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L21
+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');
+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;
+
+  var globalConfig = {
+    use_static: false
+  };
+  if (isObject(config)) {
+      if (config.use_static !== undefined) {
+          globalConfig.use_static = Boolean(config.use_static);
+      }
+  }
+
+  function isObject(data) {
+    return (
+      typeof data === 'object' &&
+      !Array.isArray(data) &&
+      data !== null
+    );
+  }
+
+  function instantiateEmptyObject(obj) {
+      var prototype = Object.getPrototypeOf(obj);
+      if (!prototype) {
+          return {};
+      } else {
+          return Object.create(prototype);
+      }
+  }
+
+  function addPropertyTo(target, methodName, value) {
+    Object.defineProperty(target, methodName, {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: value
+    });
+  }
+
+  function banProperty(target, methodName) {
+    addPropertyTo(target, methodName, function() {
+      throw new ImmutableError("The " + methodName +
+        " method cannot be invoked on an Immutable data structure.");
+    });
+  }
+
+  var immutabilityTag = "__immutable_invariants_hold";
+
+  function addImmutabilityTag(target) {
+    addPropertyTo(target, immutabilityTag, true);
+  }
+
+  function isImmutable(target) {
+    if (typeof target === "object") {
+      return target === null || Boolean(
+        Object.getOwnPropertyDescriptor(target, immutabilityTag)
+      );
+    } else {
+      // In JavaScript, only objects are even potentially mutable.
+      // strings, numbers, null, and undefined are all naturally immutable.
+      return true;
+    }
+  }
+
+  function isEqual(a, b) {
+    // Avoid false positives due to (NaN !== NaN) evaluating to true
+    return (a === b || (a !== a && b !== b));
+  }
+
+  function isMergableObject(target) {
+    return target !== null && typeof target === "object" && !(Array.isArray(target)) && !(target instanceof Date);
+  }
+
+  var mutatingObjectMethods = [
+    "setPrototypeOf"
+  ];
+
+  var nonMutatingObjectMethods = [
+    "keys"
+  ];
+
+  var mutatingArrayMethods = mutatingObjectMethods.concat([
+    "push", "pop", "sort", "splice", "shift", "unshift", "reverse"
+  ]);
+
+  var nonMutatingArrayMethods = nonMutatingObjectMethods.concat([
+    "map", "filter", "slice", "concat", "reduce", "reduceRight"
+  ]);
+
+  var mutatingDateMethods = mutatingObjectMethods.concat([
+    "setDate", "setFullYear", "setHours", "setMilliseconds", "setMinutes", "setMonth", "setSeconds",
+    "setTime", "setUTCDate", "setUTCFullYear", "setUTCHours", "setUTCMilliseconds", "setUTCMinutes",
+    "setUTCMonth", "setUTCSeconds", "setYear"
+  ]);
+
+  function ImmutableError(message) {
+    this.name = 'MyError';
+    this.message = message;
+    this.stack = (new Error()).stack;
+  }
+  ImmutableError.prototype = new Error();
+  ImmutableError.prototype.constructor = Error;
+
+  function makeImmutable(obj, bannedMethods) {
+    // Tag it so we can quickly tell it's immutable later.
+    addImmutabilityTag(obj);
+
+    if (true) {
+      // Make all mutating methods throw exceptions.
+      for (var index in bannedMethods) {
+        if (bannedMethods.hasOwnProperty(index)) {
+          banProperty(obj, bannedMethods[index]);
+        }
+      }
+
+      // Freeze it and return it.
+      Object.freeze(obj);
+    }
+
+    return obj;
+  }
+
+  function makeMethodReturnImmutable(obj, methodName) {
+    var currentMethod = obj[methodName];
+
+    addPropertyTo(obj, methodName, function() {
+      return Immutable(currentMethod.apply(obj, arguments));
+    });
+  }
+
+  function arraySet(idx, value, config) {
+    var deep          = config && config.deep;
+
+    if (idx in this) {
+      if (deep && this[idx] !== value && isMergableObject(value) && isMergableObject(this[idx])) {
+        value = Immutable.merge(this[idx], value, {deep: true, mode: 'replace'});
+      }
+      if (isEqual(this[idx], value)) {
+        return this;
+      }
+    }
+
+    var mutable = asMutableArray.call(this);
+    mutable[idx] = Immutable(value);
+    return makeImmutableArray(mutable);
+  }
+
+  var immutableEmptyArray = Immutable([]);
+
+  function arraySetIn(pth, value, config) {
+    var head = pth[0];
+
+    if (pth.length === 1) {
+      return arraySet.call(this, head, value, config);
+    } else {
+      var tail = pth.slice(1);
+      var thisHead = this[head];
+      var newValue;
+
+      if (typeof(thisHead) === "object" && thisHead !== null) {
+        // Might (validly) be object or array
+        newValue = Immutable.setIn(thisHead, tail, value);
+      } else {
+        var nextHead = tail[0];
+        // If the next path part is a number, then we are setting into an array, else an object.
+        if (nextHead !== '' && isFinite(nextHead)) {
+          newValue = arraySetIn.call(immutableEmptyArray, tail, value);
+        } else {
+          newValue = objectSetIn.call(immutableEmptyObject, tail, value);
+        }
+      }
+
+      if (head in this && thisHead === newValue) {
+        return this;
+      }
+
+      var mutable = asMutableArray.call(this);
+      mutable[head] = newValue;
+      return makeImmutableArray(mutable);
+    }
+  }
+
+  function makeImmutableArray(array) {
+    // Don't change their implementations, but wrap these functions to make sure
+    // they always return an immutable value.
+    for (var index in nonMutatingArrayMethods) {
+      if (nonMutatingArrayMethods.hasOwnProperty(index)) {
+        var methodName = nonMutatingArrayMethods[index];
+        makeMethodReturnImmutable(array, methodName);
+      }
+    }
+
+    if (!globalConfig.use_static) {
+      addPropertyTo(array, "flatMap",  flatMap);
+      addPropertyTo(array, "asObject", asObject);
+      addPropertyTo(array, "asMutable", asMutableArray);
+      addPropertyTo(array, "set", arraySet);
+      addPropertyTo(array, "setIn", arraySetIn);
+      addPropertyTo(array, "update", update);
+      addPropertyTo(array, "updateIn", updateIn);
+      addPropertyTo(array, "getIn", getIn);
+    }
+
+    for(var i = 0, length = array.length; i < length; i++) {
+      array[i] = Immutable(array[i]);
+    }
+
+    return makeImmutable(array, mutatingArrayMethods);
+  }
+
+  function makeImmutableDate(date) {
+    if (!globalConfig.use_static) {
+      addPropertyTo(date, "asMutable", asMutableDate);
+    }
+
+    return makeImmutable(date, mutatingDateMethods);
+  }
+
+  function asMutableDate() {
+    return new Date(this.getTime());
+  }
+
+  /**
+   * Effectively performs a map() over the elements in the array, using the
+   * provided iterator, except that whenever the iterator returns an array, that
+   * array's elements are added to the final result instead of the array itself.
+   *
+   * @param {function} iterator - The iterator function that will be invoked on each element in the array. It will receive three arguments: the current value, the current index, and the current object.
+   */
+  function flatMap(iterator) {
+    // Calling .flatMap() with no arguments is a no-op. Don't bother cloning.
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    var result = [],
+        length = this.length,
+        index;
+
+    for (index = 0; index < length; index++) {
+      var iteratorResult = iterator(this[index], index, this);
+
+      if (Array.isArray(iteratorResult)) {
+        // Concatenate Array results into the return value we're building up.
+        result.push.apply(result, iteratorResult);
+      } else {
+        // Handle non-Array results the same way map() does.
+        result.push(iteratorResult);
+      }
+    }
+
+    return makeImmutableArray(result);
+  }
+
+  /**
+   * Returns an Immutable copy of the object without the given keys included.
+   *
+   * @param {array} keysToRemove - A list of strings representing the keys to exclude in the return value. Instead of providing a single array, this method can also be called by passing multiple strings as separate arguments.
+   */
+  function without(remove) {
+    // Calling .without() with no arguments is a no-op. Don't bother cloning.
+    if (typeof remove === "undefined" && arguments.length === 0) {
+      return this;
+    }
+
+    if (typeof remove !== "function") {
+      // If we weren't given an array, use the arguments list.
+      var keysToRemoveArray = (Array.isArray(remove)) ?
+         remove.slice() : Array.prototype.slice.call(arguments);
+
+      // Convert numeric keys to strings since that's how they'll
+      // come from the enumeration of the object.
+      keysToRemoveArray.forEach(function(el, idx, arr) {
+        if(typeof(el) === "number") {
+          arr[idx] = el.toString();
+        }
+      });
+
+      remove = function(val, key) {
+        return keysToRemoveArray.indexOf(key) !== -1;
+      };
+    }
+
+    var result = instantiateEmptyObject(this);
+
+    for (var key in this) {
+      if (this.hasOwnProperty(key) && remove(this[key], key) === false) {
+        result[key] = this[key];
+      }
+    }
+
+    return makeImmutableObject(result);
+  }
+
+  function asMutableArray(opts) {
+    var result = [], i, length;
+
+    if(opts && opts.deep) {
+      for(i = 0, length = this.length; i < length; i++) {
+        result.push(asDeepMutable(this[i]));
+      }
+    } else {
+      for(i = 0, length = this.length; i < length; i++) {
+        result.push(this[i]);
+      }
+    }
+
+    return result;
+  }
+
+  /**
+   * Effectively performs a [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) over the elements in the array, expecting that the iterator function
+   * will return an array of two elements - the first representing a key, the other
+   * a value. Then returns an Immutable Object constructed of those keys and values.
+   *
+   * @param {function} iterator - A function which should return an array of two elements - the first representing the desired key, the other the desired value.
+   */
+  function asObject(iterator) {
+    // If no iterator was provided, assume the identity function
+    // (suggesting this array is already a list of key/value pairs.)
+    if (typeof iterator !== "function") {
+      iterator = function(value) { return value; };
+    }
+
+    var result = {},
+        length = this.length,
+        index;
+
+    for (index = 0; index < length; index++) {
+      var pair  = iterator(this[index], index, this),
+          key   = pair[0],
+          value = pair[1];
+
+      result[key] = value;
+    }
+
+    return makeImmutableObject(result);
+  }
+
+  function asDeepMutable(obj) {
+    if (
+      (!obj) ||
+      (typeof obj !== 'object') ||
+      (!Object.getOwnPropertyDescriptor(obj, immutabilityTag)) ||
+      (obj instanceof Date)
+    ) { return obj; }
+    return Immutable.asMutable(obj, {deep: true});
+  }
+
+  function quickCopy(src, dest) {
+    for (var key in src) {
+      if (Object.getOwnPropertyDescriptor(src, key)) {
+        dest[key] = src[key];
+      }
+    }
+
+    return dest;
+  }
+
+  /**
+   * Returns an Immutable Object containing the properties and values of both
+   * this object and the provided object, prioritizing the provided object's
+   * values whenever the same key is present in both objects.
+   *
+   * @param {object} other - The other object to merge. Multiple objects can be passed as an array. In such a case, the later an object appears in that list, the higher its priority.
+   * @param {object} config - Optional config object that contains settings. Supported settings are: {deep: true} for deep merge and {merger: mergerFunc} where mergerFunc is a function
+   *                          that takes a property from both objects. If anything is returned it overrides the normal merge behaviour.
+   */
+  function merge(other, config) {
+    // Calling .merge() with no arguments is a no-op. Don't bother cloning.
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    if (other === null || (typeof other !== "object")) {
+      throw new TypeError("Immutable#merge can only be invoked with objects or arrays, not " + JSON.stringify(other));
+    }
+
+    var receivedArray = (Array.isArray(other)),
+        deep          = config && config.deep,
+        mode          = config && config.mode || 'merge',
+        merger        = config && config.merger,
+        result;
+
+    // Use the given key to extract a value from the given object, then place
+    // that value in the result object under the same key. If that resulted
+    // in a change from this object's value at that key, set anyChanges = true.
+    function addToResult(currentObj, otherObj, key) {
+      var immutableValue = Immutable(otherObj[key]);
+      var mergerResult = merger && merger(currentObj[key], immutableValue, config);
+      var currentValue = currentObj[key];
+
+      if ((result !== undefined) ||
+        (mergerResult !== undefined) ||
+        (!currentObj.hasOwnProperty(key)) ||
+        !isEqual(immutableValue, currentValue)) {
+
+        var newValue;
+
+        if (mergerResult !== undefined) {
+          newValue = mergerResult;
+        } else if (deep && isMergableObject(currentValue) && isMergableObject(immutableValue)) {
+          newValue = Immutable.merge(currentValue, immutableValue, config);
+        } else {
+          newValue = immutableValue;
+        }
+
+        if (!isEqual(currentValue, newValue) || !currentObj.hasOwnProperty(key)) {
+          if (result === undefined) {
+            // Make a shallow clone of the current object.
+            result = quickCopy(currentObj, instantiateEmptyObject(currentObj));
+          }
+
+          result[key] = newValue;
+        }
+      }
+    }
+
+    function clearDroppedKeys(currentObj, otherObj) {
+      for (var key in currentObj) {
+        if (!otherObj.hasOwnProperty(key)) {
+          if (result === undefined) {
+            // Make a shallow clone of the current object.
+            result = quickCopy(currentObj, instantiateEmptyObject(currentObj));
+          }
+          delete result[key];
+        }
+      }
+    }
+
+    var key;
+
+    // Achieve prioritization by overriding previous values that get in the way.
+    if (!receivedArray) {
+      // The most common use case: just merge one object into the existing one.
+      for (key in other) {
+        if (Object.getOwnPropertyDescriptor(other, key)) {
+          addToResult(this, other, key);
+        }
+      }
+      if (mode === 'replace') {
+        clearDroppedKeys(this, other);
+      }
+    } else {
+      // We also accept an Array
+      for (var index = 0, length = other.length; index < length; index++) {
+        var otherFromArray = other[index];
+
+        for (key in otherFromArray) {
+          if (otherFromArray.hasOwnProperty(key)) {
+            addToResult(result !== undefined ? result : this, otherFromArray, key);
+          }
+        }
+      }
+    }
+
+    if (result === undefined) {
+      return this;
+    } else {
+      return makeImmutableObject(result);
+    }
+  }
+
+  function objectReplace(value, config) {
+    var deep          = config && config.deep;
+
+    // Calling .replace() with no arguments is a no-op. Don't bother cloning.
+    if (arguments.length === 0) {
+      return this;
+    }
+
+    if (value === null || typeof value !== "object") {
+      throw new TypeError("Immutable#replace can only be invoked with objects or arrays, not " + JSON.stringify(value));
+    }
+
+    return Immutable.merge(this, value, {deep: deep, mode: 'replace'});
+  }
+
+  var immutableEmptyObject = Immutable({});
+
+  function objectSetIn(path, value, config) {
+    if (!(Array.isArray(path)) || path.length === 0) {
+      throw new TypeError("The first argument to Immutable#setIn must be an array containing at least one \"key\" string.");
+    }
+
+    var head = path[0];
+    if (path.length === 1) {
+      return objectSet.call(this, head, value, config);
+    }
+
+    var tail = path.slice(1);
+    var newValue;
+    var thisHead = this[head];
+
+    if (this.hasOwnProperty(head) && typeof(thisHead) === "object" && thisHead !== null) {
+      // Might (validly) be object or array
+      newValue = Immutable.setIn(thisHead, tail, value);
+    } else {
+      newValue = objectSetIn.call(immutableEmptyObject, tail, value);
+    }
+
+    if (this.hasOwnProperty(head) && thisHead === newValue) {
+      return this;
+    }
+
+    var mutable = quickCopy(this, instantiateEmptyObject(this));
+    mutable[head] = newValue;
+    return makeImmutableObject(mutable);
+  }
+
+  function objectSet(property, value, config) {
+    var deep          = config && config.deep;
+
+    if (this.hasOwnProperty(property)) {
+      if (deep && this[property] !== value && isMergableObject(value) && isMergableObject(this[property])) {
+        value = Immutable.merge(this[property], value, {deep: true, mode: 'replace'});
+      }
+      if (isEqual(this[property], value)) {
+        return this;
+      }
+    }
+
+    var mutable = quickCopy(this, instantiateEmptyObject(this));
+    mutable[property] = Immutable(value);
+    return makeImmutableObject(mutable);
+  }
+
+  function update(property, updater) {
+    var restArgs = Array.prototype.slice.call(arguments, 2);
+    var initialVal = this[property];
+    return Immutable.set(this, property, updater.apply(initialVal, [initialVal].concat(restArgs)));
+  }
+
+  function getInPath(obj, path) {
+    /*jshint eqnull:true */
+    for (var i = 0, l = path.length; obj != null && i < l; i++) {
+      obj = obj[path[i]];
+    }
+
+    return (i && i == l) ? obj : undefined;
+  }
+
+  function updateIn(path, updater) {
+    var restArgs = Array.prototype.slice.call(arguments, 2);
+    var initialVal = getInPath(this, path);
+
+    return Immutable.setIn(this, path, updater.apply(initialVal, [initialVal].concat(restArgs)));
+  }
+
+  function getIn(path, defaultValue) {
+    var value = getInPath(this, path);
+    return value === undefined ? defaultValue : value;
+  }
+
+  function asMutableObject(opts) {
+    var result = instantiateEmptyObject(this), key;
+
+    if(opts && opts.deep) {
+      for (key in this) {
+        if (this.hasOwnProperty(key)) {
+          result[key] = asDeepMutable(this[key]);
+        }
+      }
+    } else {
+      for (key in this) {
+        if (this.hasOwnProperty(key)) {
+          result[key] = this[key];
+        }
+      }
+    }
+
+    return result;
+  }
+
+  // Creates plain object to be used for cloning
+  function instantiatePlainObject() {
+    return {};
+  }
+
+  // Finalizes an object with immutable methods, freezes it, and returns it.
+  function makeImmutableObject(obj) {
+    if (!globalConfig.use_static) {
+      addPropertyTo(obj, "merge", merge);
+      addPropertyTo(obj, "replace", objectReplace);
+      addPropertyTo(obj, "without", without);
+      addPropertyTo(obj, "asMutable", asMutableObject);
+      addPropertyTo(obj, "set", objectSet);
+      addPropertyTo(obj, "setIn", objectSetIn);
+      addPropertyTo(obj, "update", update);
+      addPropertyTo(obj, "updateIn", updateIn);
+      addPropertyTo(obj, "getIn", getIn);
+    }
+
+    return makeImmutable(obj, mutatingObjectMethods);
+  }
+
+  // Returns true if object is a valid react element
+  // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L326
+  function isReactElement(obj) {
+    return typeof obj === 'object' &&
+           obj !== null &&
+           (obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE);
+  }
+
+  function isFileObject(obj) {
+    return typeof File !== 'undefined' &&
+           obj instanceof File;
+  }
+
+  function isBlobObject(obj) {
+    return typeof Blob !== 'undefined' &&
+           obj instanceof Blob;
+  }
+
+  function isPromise(obj) {
+    return typeof obj === 'object' &&
+           typeof obj.then === 'function';
+  }
+
+  function isError(obj) {
+    return obj instanceof Error;
+  }
+
+  function Immutable(obj, options, stackRemaining) {
+    if (isImmutable(obj) || isReactElement(obj) || isFileObject(obj) || isBlobObject(obj) || isError(obj)) {
+      return obj;
+    } else if (isPromise(obj)) {
+      return obj.then(Immutable);
+    } else if (Array.isArray(obj)) {
+      return makeImmutableArray(obj.slice());
+    } else if (obj instanceof Date) {
+      return makeImmutableDate(new Date(obj.getTime()));
+    } else {
+      // Don't freeze the object we were given; make a clone and use that.
+      var prototype = options && options.prototype;
+      var instantiateEmptyObject =
+        (!prototype || prototype === Object.prototype) ?
+          instantiatePlainObject : (function() { return Object.create(prototype); });
+      var clone = instantiateEmptyObject();
+
+      if (true) {
+        /*jshint eqnull:true */
+        if (stackRemaining == null) {
+          stackRemaining = 64;
+        }
+        if (stackRemaining <= 0) {
+          throw new ImmutableError("Attempt to construct Immutable from a deeply nested object was detected." +
+            " Have you tried to wrap an object with circular references (e.g. React element)?" +
+            " See https://github.com/rtfeldman/seamless-immutable/wiki/Deeply-nested-object-was-detected for details.");
+        }
+        stackRemaining -= 1;
+      }
+
+      for (var key in obj) {
+        if (Object.getOwnPropertyDescriptor(obj, key)) {
+          clone[key] = Immutable(obj[key], undefined, stackRemaining);
+        }
+      }
+
+      return makeImmutableObject(clone);
+    }
+  }
+
+  // Wrapper to allow the use of object methods as static methods of Immutable.
+  function toStatic(fn) {
+    function staticWrapper() {
+      var args = [].slice.call(arguments);
+      var self = args.shift();
+      return fn.apply(self, args);
+    }
+
+    return staticWrapper;
+  }
+
+  // Wrapper to allow the use of object methods as static methods of Immutable.
+  // with the additional condition of choosing which function to call depending
+  // if argument is an array or an object.
+  function toStaticObjectOrArray(fnObject, fnArray) {
+    function staticWrapper() {
+      var args = [].slice.call(arguments);
+      var self = args.shift();
+      if (Array.isArray(self)) {
+          return fnArray.apply(self, args);
+      } else {
+          return fnObject.apply(self, args);
+      }
+    }
+
+    return staticWrapper;
+  }
+
+  // Wrapper to allow the use of object methods as static methods of Immutable.
+  // with the additional condition of choosing which function to call depending
+  // if argument is an array or an object or a date.
+  function toStaticObjectOrDateOrArray(fnObject, fnArray, fnDate) {
+    function staticWrapper() {
+      var args = [].slice.call(arguments);
+      var self = args.shift();
+      if (Array.isArray(self)) {
+          return fnArray.apply(self, args);
+      } else if (self instanceof Date) {
+          return fnDate.apply(self, args);
+      } else {
+          return fnObject.apply(self, args);
+      }
+    }
+
+    return staticWrapper;
+  }
+
+  // Export the library
+  Immutable.from           = Immutable;
+  Immutable.isImmutable    = isImmutable;
+  Immutable.ImmutableError = ImmutableError;
+  Immutable.merge          = toStatic(merge);
+  Immutable.replace        = toStatic(objectReplace);
+  Immutable.without        = toStatic(without);
+  Immutable.asMutable      = toStaticObjectOrDateOrArray(asMutableObject, asMutableArray, asMutableDate);
+  Immutable.set            = toStaticObjectOrArray(objectSet, arraySet);
+  Immutable.setIn          = toStaticObjectOrArray(objectSetIn, arraySetIn);
+  Immutable.update         = toStatic(update);
+  Immutable.updateIn       = toStatic(updateIn);
+  Immutable.getIn          = toStatic(getIn);
+  Immutable.flatMap        = toStatic(flatMap);
+  Immutable.asObject       = toStatic(asObject);
+  if (!globalConfig.use_static) {
+      Immutable.static = immutableInit({
+          use_static: true
+      });
+  }
+
+  Object.freeze(Immutable);
+
+  return Immutable;
+}
+
+  var Immutable = immutableInit();
+  /* istanbul ignore if */
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+      return Immutable;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})();
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/dist/browser.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/stream-chat/dist/browser.es.js ***!
+  \*****************************************************/
+/*! exports provided: StreamChat, logChatPromiseExecution, ClientState, Channel, ChannelState, Allow, Deny, AnyResource, AnyRole, MaxPriority, MinPriority, Permission, AllowAll, DenyAll, EVENT_MAP, isValidEventType, JWTUserToken, JWTServerToken, UserFromToken, DevToken, CheckSignature, encodeBase64, decodeBase64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(Buffer, process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreamChat", function() { return StreamChat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logChatPromiseExecution", function() { return logChatPromiseExecution; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientState", function() { return ClientState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Channel", function() { return Channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChannelState", function() { return ChannelState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Allow", function() { return Allow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Deny", function() { return Deny; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnyResource", function() { return AnyResource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnyRole", function() { return AnyRole; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaxPriority", function() { return MaxPriority; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MinPriority", function() { return MinPriority; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Permission", function() { return Permission; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllowAll", function() { return AllowAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DenyAll", function() { return DenyAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EVENT_MAP", function() { return EVENT_MAP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidEventType", function() { return isValidEventType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JWTUserToken", function() { return JWTUserToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JWTServerToken", function() { return JWTServerToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserFromToken", function() { return UserFromToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DevToken", function() { return DevToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckSignature", function() { return CheckSignature; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeBase64", function() { return encodeBase64; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decodeBase64", function() { return decodeBase64; });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "./node_modules/stream-chat/node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var seamless_immutable__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! seamless-immutable */ "./node_modules/seamless-immutable/seamless-immutable.development.js");
+/* harmony import */ var seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(seamless_immutable__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var isomorphic_ws__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! isomorphic-ws */ "./node_modules/isomorphic-ws/browser.js");
+/* harmony import */ var isomorphic_ws__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(isomorphic_ws__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var base64_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! base64-js */ "./node_modules/base64-js/index.js");
+/* harmony import */ var base64_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(base64_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var cross_fetch__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! cross-fetch */ "./node_modules/cross-fetch/dist/browser-ponyfill.js");
+/* harmony import */ var cross_fetch__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(cross_fetch__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var form_data__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! form-data */ "./node_modules/form-data/lib/browser.js");
+/* harmony import */ var form_data__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(form_data__WEBPACK_IMPORTED_MODULE_16__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * ChannelState - A container class for the channel state.
+ */
+
+function byDate(a, b) {
+  return a.created_at - b.created_at;
+}
+
+var ChannelState =
+/*#__PURE__*/
+function () {
+  function ChannelState(channel) {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, ChannelState);
+
+    this._channel = channel;
+    this.watcher_count = 0;
+    this.typing = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({});
+    this.read = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({});
+    this.messages = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()([]);
+    this.threads = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({}); // a list of users to hide messages from
+
+    this.mutedUsers = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()([]);
+    this.watchers = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({});
+    this.members = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({});
+    this.last_message_at = channel.last_message_at != null ? new Date(channel.last_message_at) : null;
+  }
+  /**
+   * addMessageSorted - Add a message to the state
+   *
+   * @param {object} newMessage A new message
+   *
+   */
+
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default()(ChannelState, [{
+    key: "addMessageSorted",
+    value: function addMessageSorted(newMessage) {
+      return this.addMessagesSorted([newMessage]);
+    }
+    /**
+     * messageToImmutable - Takes the message object. Parses the dates, sets __html
+     * and sets the status to received if missing. Returns an immutable message object
+     *
+     * @param {object} message an Immutable message object
+     *
+     */
+
+  }, {
+    key: "messageToImmutable",
+    value: function messageToImmutable(message) {
+      message.__html = message.html; // parse the date..
+
+      message.created_at = new Date(message.created_at);
+      message.updated_at = new Date(message.updated_at);
+
+      if (!message.status) {
+        message.status = 'received';
+      }
+
+      return seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(message);
+    }
+    /**
+     * addMessagesSorted - Add the list of messages to state and resorts the messages
+     *
+     * @param {array}   newMessages    A list of messages
+     * @param {boolean} initializing   Weather channel is being initialized.
+     *
+     */
+
+  }, {
+    key: "addMessagesSorted",
+    value: function addMessagesSorted(newMessages) {
+      var initializing = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      // parse all the new message dates and add __html for react
+      var parsedMessages = [];
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = newMessages[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var message = _step.value;
+
+          if (initializing && this.threads[message.id]) {
+            // If we are initializing the state of channel (e.g., in case of connection recovery),
+            // then in that case we remove thread related to this message from threads object.
+            // This way we can ensure that we don't have any stale data in thread object
+            // and consumer can refetch the replies.
+            this.threads = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default.a.without(this.threads, message.id);
+          }
+
+          var parsedMsg = this.messageToImmutable(message);
+          parsedMessages.push(parsedMsg);
+
+          if (parsedMsg.created_at > this.last_message_at) {
+            this.last_message_at = parsedMsg.created_at;
+          }
+        } // update or append the messages...
+
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return != null) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      var updatedThreads = [];
+
+      for (var _i = 0, _parsedMessages = parsedMessages; _i < _parsedMessages.length; _i++) {
+        var _message = _parsedMessages[_i];
+        var isThreadReply = _message.parent_id && !_message.show_in_channel; // add to the main message list
+
+        if (!isThreadReply) {
+          this.messages = this._addToMessageList(this.messages, _message);
+        } // add to the thread if applicable..
+
+
+        var parentID = _message.parent_id;
+
+        if (parentID) {
+          var thread = this.threads[parentID] || seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()([]);
+
+          var threadMessages = this._addToMessageList(thread, _message);
+
+          this.threads = this.threads.set(parentID, threadMessages);
+          updatedThreads.push(parentID);
+        }
+      } // Resort the main messages and the threads that changed...
+
+
+      var messages = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(this.messages);
+
+      messages.sort(byDate);
+      this.messages = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(messages);
+
+      for (var _i2 = 0, _updatedThreads = updatedThreads; _i2 < _updatedThreads.length; _i2++) {
+        var _parentID = _updatedThreads[_i2];
+
+        var _threadMessages = this.threads[_parentID] ? _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(this.threads[_parentID]) : [];
+
+        _threadMessages.sort(byDate);
+
+        this.threads = this.threads.set(_parentID, _threadMessages);
+      }
+    }
+  }, {
+    key: "addReaction",
+    value: function addReaction(reaction, message) {
+      var messages = this.messages;
+      if (!message) return;
+      var parent_id = message.parent_id,
+          show_in_channel = message.show_in_channel;
+
+      if (parent_id && this.threads[parent_id]) {
+        var thread = this.threads[parent_id];
+
+        for (var i = 0; i < thread.length; i++) {
+          var _message2 = thread[i];
+          _message2 = this._addReactionToMessage(_message2, reaction);
+
+          if (!_message2) {
+            continue;
+          }
+
+          this.threads = this.threads.set(parent_id, thread.set(i, _message2));
+          break;
+        }
+      }
+
+      if (!show_in_channel && !parent_id || show_in_channel) {
+        for (var _i3 = 0; _i3 < messages.length; _i3++) {
+          var _message3 = messages[_i3];
+          _message3 = this._addReactionToMessage(_message3, reaction);
+
+          if (!_message3) {
+            continue;
+          }
+
+          this.messages = messages.set(_i3, _message3);
+          break;
+        }
+      }
+    }
+  }, {
+    key: "_addReactionToMessage",
+    value: function _addReactionToMessage(message, reaction) {
+      var idMatch = message.id && message.id === reaction.message_id;
+
+      if (!idMatch) {
+        return false;
+      }
+
+      message = this._removeReactionFromMessage(message, reaction);
+
+      if (this._channel.getClient().userID === reaction.user.id) {
+        message = message.update('own_reactions', function () {
+          var old = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+          return old.concat([reaction]);
+        });
+      }
+
+      message = message.update('latest_reactions', function () {
+        var old = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+        return old.concat([reaction]);
+      });
+      message = message.updateIn(['reaction_counts', reaction.type], function (old) {
+        return old ? old + 1 : 1;
+      });
+      return message;
+    }
+  }, {
+    key: "_removeReactionFromMessage",
+    value: function _removeReactionFromMessage(message, reaction) {
+      var filterReaction = function filterReaction(old) {
+        return old.filter(function (item) {
+          return item.type !== reaction.type || item.user.id !== reaction.user.id;
+        });
+      };
+
+      message = message.update('own_reactions', filterReaction);
+      message = message.update('latest_reactions', filterReaction);
+      return message;
+    }
+  }, {
+    key: "removeReaction",
+    value: function removeReaction(reaction, message) {
+      var messages = this.messages;
+      if (!message) return;
+      var parent_id = message.parent_id,
+          show_in_channel = message.show_in_channel;
+
+      if (parent_id && this.threads[parent_id]) {
+        var thread = this.threads[parent_id];
+
+        for (var i = 0; i < thread.length; i++) {
+          var _message4 = thread[i];
+          var idMatch = _message4.id && _message4.id === reaction.message_id;
+
+          if (!idMatch) {
+            continue;
+          }
+
+          _message4 = this._removeReactionFromMessage(_message4, reaction);
+          _message4 = _message4.updateIn(['reaction_counts', reaction.type], function (old) {
+            return old ? old - 1 : 0;
+          });
+          this.threads = this.threads.set(parent_id, thread.set(i, _message4));
+          break;
+        }
+      }
+
+      if (!show_in_channel && !parent_id || show_in_channel) {
+        for (var _i4 = 0; _i4 < messages.length; _i4++) {
+          var _message5 = messages[_i4];
+
+          var _idMatch = _message5.id && _message5.id === reaction.message_id;
+
+          if (!_idMatch) {
+            continue;
+          }
+
+          _message5 = this._removeReactionFromMessage(_message5, reaction);
+          _message5 = _message5.updateIn(['reaction_counts', reaction.type], function (old) {
+            return old ? old - 1 : 0;
+          });
+          this.messages = messages.set(_i4, _message5);
+          break;
+        }
+      }
+    }
+    /**
+     * _addToMessageList - Adds a message to a list of messages, tries to update first, appends if message isnt found
+     *
+     * @param {array} messages A list of messages
+     * @param {object} newMessage The new message
+     *
+     */
+
+  }, {
+    key: "_addToMessageList",
+    value: function _addToMessageList(messages, newMessage) {
+      var updated = false;
+
+      for (var i = 0; i < messages.length; i++) {
+        var message = messages[i];
+        var idMatch = message.id && newMessage.id && message.id === newMessage.id;
+
+        if (idMatch) {
+          messages = messages.set(i, newMessage);
+          updated = true;
+        }
+      }
+
+      if (!updated) {
+        messages = messages.concat([newMessage]);
+      }
+
+      return messages;
+    }
+    /**
+     * removeMessage - Description
+     *
+     * @param {type} messageToRemove Object of the message to remove. Needs to have at id specified.
+     *
+     * @return {boolean} Returns if the message was removed
+     */
+
+  }, {
+    key: "removeMessage",
+    value: function removeMessage(messageToRemove) {
+      var removed = false;
+      var messages = this.messages.flatMap(function (message) {
+        var idMatch = message.id && messageToRemove.id && message.id === messageToRemove.id;
+
+        if (idMatch) {
+          return [];
+        } else {
+          removed = true;
+          return message;
+        }
+      });
+      this.messages = messages;
+      return removed;
+    }
+    /**
+     * filterErrorMessages - Removes error messages from the channel state.
+     *
+     */
+
+  }, {
+    key: "filterErrorMessages",
+    value: function filterErrorMessages() {
+      var filteredMessages = this.messages.flatMap(function (message) {
+        if (message.type !== 'error') {
+          return message;
+        } else {
+          return [];
+        }
+      });
+      this.messages = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(filteredMessages);
+    }
+    /**
+     * clean - Remove stale data such as users that stayed in typing state for more than 5 seconds
+     */
+
+  }, {
+    key: "clean",
+    value: function clean() {
+      var now = new Date(); // prevent old users from showing up as typing
+
+      for (var _i5 = 0, _Object$entries = Object.entries(this.typing); _i5 < _Object$entries.length; _i5++) {
+        var _Object$entries$_i = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_Object$entries[_i5], 2),
+            userID = _Object$entries$_i[0],
+            lastEvent = _Object$entries$_i[1];
+
+        var since = now - new Date(lastEvent.received_at);
+
+        if (since > 7000) {
+          this.typing = this.typing.without(userID);
+
+          this._channel.getClient().dispatchEvent({
+            type: 'typing.stop',
+            user: {
+              id: userID
+            },
+            cid: this._channel.cid
+          });
+        }
+      }
+    }
+  }, {
+    key: "clearMessages",
+    value: function clearMessages() {
+      this.messages = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()([]);
+    }
+  }]);
+
+  return ChannelState;
+}();
+
+var EVENT_MAP = {
+  'user.presence.changed': true,
+  'user.watching.start': true,
+  'user.watching.stop': true,
+  'user.updated': true,
+  'typing.start': true,
+  'typing.stop': true,
+  'message.new': true,
+  'message.updated': true,
+  'message.deleted': true,
+  'message.read': true,
+  'reaction.new': true,
+  'reaction.deleted': true,
+  'member.added': true,
+  'member.updated': true,
+  'member.removed': true,
+  'channel.updated': true,
+  'channel.deleted': true,
+  'channel.truncated': true,
+  'channel.created': true,
+  'channel.hidden': true,
+  'health.check': true,
+  'notification.message_new': true,
+  'notification.mark_read': true,
+  'notification.invited': true,
+  'notification.invite_accepted': true,
+  'notification.added_to_channel': true,
+  'notification.removed_from_channel': true,
+  'notification.mutes_updated': true,
+  'notification.channel_deleted': true,
+  'notification.channel_truncated': true,
+  // local events
+  'connection.changed': true,
+  'connection.recovered': true
+};
+function isValidEventType(eventType) {
+  if (eventType === 'all') {
+    return true;
+  }
+
+  return EVENT_MAP[eventType] || false;
+}
+
+/**
+ * logChatPromiseExecution - utility function for logging the execution of a promise..
+ *  use this when you want to run the promise and handle errors by logging a warning
+ *
+ * @param {type} promise The promise you want to run and log
+ * @param {type} name    A descriptive name of what the promise does for log output
+ *
+ */
+function logChatPromiseExecution(promise, name) {
+  promise.then(function () {// do nothing...
+  }).catch(function (error) {
+    console.warn("failed to do ".concat(name, ", ran into error: "), error);
+  });
+}
+var sleep = function sleep(m) {
+  return new Promise(function (r) {
+    return setTimeout(r, m);
+  });
+};
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+/**
+ * Channel - The Channel class manages it's own state.
+ */
+
+var Channel =
+/*#__PURE__*/
+function () {
+  /**
+   * constructor - Create a channel
+   *
+   * @param {Client} client the chat client
+   * @param {string} type  the type of channel
+   * @param {string} [id]  the id of the chat
+   * @param {type} custom any additional custom params
+   *
+   * @return {Channel} Returns a new uninitialized channel
+   */
+  function Channel(client, type, id, data) {
+    var _this = this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, Channel);
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "create",
+    /*#__PURE__*/
+    _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
+      var options;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              options = {
+                watch: false,
+                state: false,
+                presence: false
+              };
+              _context.next = 3;
+              return _this.query(options);
+
+            case 3:
+              return _context.abrupt("return", _context.sent);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_callChannelListeners", function (event) {
+      var channel = _this; // gather and call the listeners
+
+      var listeners = [];
+
+      if (channel.listeners.all) {
+        listeners.push.apply(listeners, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(channel.listeners.all));
+      }
+
+      if (channel.listeners[event.type]) {
+        listeners.push.apply(listeners, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(channel.listeners[event.type]));
+      } // call the event and send it to the listeners
+
+
+      for (var _i = 0, _listeners = listeners; _i < _listeners.length; _i++) {
+        var listener = _listeners[_i];
+        listener(event);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_channelURL", function () {
+      if (!_this.id) {
+        throw new Error('channel id is not defined');
+      }
+
+      return "".concat(_this.getClient().baseURL, "/channels/").concat(_this.type, "/").concat(_this.id);
+    });
+
+    var validTypeRe = /^[\w_-]+$/;
+    var validIDRe = /^[\w!_-]+$/;
+
+    if (!validTypeRe.test(type)) {
+      throw new Error("Invalid chat type ".concat(type, ", letters, numbers and \"_-\" are allowed"));
+    }
+
+    if (!validIDRe.test(id)) {
+      throw new Error("Invalid chat id ".concat(id, ", letters, numbers and \"!-_\" are allowed"));
+    }
+
+    this._client = client;
+    this.type = type;
+    this.id = id; // used by the frontend, gets updated:
+
+    this.data = data; // this._data is used for the requests...
+
+    this._data = _objectSpread({}, data);
+    this.cid = "".concat(type, ":").concat(id);
+    this.listeners = {}; // perhaps the state variable should be private
+
+    this.state = new ChannelState(this);
+    this.initialized = false;
+    this.lastTypingEvent = null;
+    this.isTyping = false;
+    this.disconnected = false;
+  }
+  /**
+   * getClient - Get the chat client for this channel. If client.disconnect() was called, this function will error
+   *
+   * @return {object}
+   */
+
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default()(Channel, [{
+    key: "getClient",
+    value: function getClient() {
+      if (this.disconnected === true) {
+        throw Error("You can't use a channel after client.disconnect() was called");
+      }
+
+      return this._client;
+    }
+    /**
+     * getConfig - Get the configs for this channel type
+     *
+     * @return {object}
+     */
+
+  }, {
+    key: "getConfig",
+    value: function getConfig() {
+      var client = this.getClient();
+      return client.configs[this.type];
+    }
+    /**
+     * sendMessage - Send a message to this channel
+     *
+     * @param {object} message The Message object
+     *
+     * @return {object} The Server Response
+     */
+
+  }, {
+    key: "sendMessage",
+    value: function () {
+      var _sendMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee2(message) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return this.getClient().post(this._channelURL() + '/message', {
+                  message: message
+                });
+
+              case 2:
+                return _context2.abrupt("return", _context2.sent);
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function sendMessage(_x) {
+        return _sendMessage.apply(this, arguments);
+      }
+
+      return sendMessage;
+    }()
+  }, {
+    key: "sendFile",
+    value: function sendFile(uri, name, contentType, user) {
+      return this.getClient().sendFile("".concat(this._channelURL(), "/file"), uri, name, contentType, user);
+    }
+  }, {
+    key: "sendImage",
+    value: function sendImage(uri, name, contentType, user) {
+      return this.getClient().sendFile("".concat(this._channelURL(), "/image"), uri, name, contentType, user);
+    }
+  }, {
+    key: "deleteFile",
+    value: function deleteFile(url) {
+      return this.getClient().delete("".concat(this._channelURL(), "/file"), {
+        url: url
+      });
+    }
+  }, {
+    key: "deleteImage",
+    value: function deleteImage(url) {
+      return this.getClient().delete("".concat(this._channelURL(), "/image"), {
+        url: url
+      });
+    }
+    /**
+     * sendEvent - Send an event on this channel
+     *
+     * @param {object} event for example {type: 'message.read'}
+     *
+     * @return {object} The Server Response
+     */
+
+  }, {
+    key: "sendEvent",
+    value: function () {
+      var _sendEvent = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee3(event) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                this._checkInitialized();
+
+                _context3.next = 3;
+                return this.getClient().post(this._channelURL() + '/event', {
+                  event: event
+                });
+
+              case 3:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function sendEvent(_x2) {
+        return _sendEvent.apply(this, arguments);
+      }
+
+      return sendEvent;
+    }()
+    /**
+     * sendReaction - Send a reaction about a message
+     *
+     * @param {string} messageID the message id
+     * @param {object} reaction the reaction object for instance {type: 'love'}
+     * @param {string} user_id the id of the user (used only for server side request) default null
+     *
+     * @return {object} The Server Response
+     */
+
+  }, {
+    key: "sendReaction",
+    value: function () {
+      var _sendReaction = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee4(messageID, reaction, user_id) {
+        var body;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                if (messageID) {
+                  _context4.next = 2;
+                  break;
+                }
+
+                throw Error("Message id is missing");
+
+              case 2:
+                if (!(!reaction || Object.keys(reaction).length === 0)) {
+                  _context4.next = 4;
+                  break;
+                }
+
+                throw Error("Reaction object is missing");
+
+              case 4:
+                body = {
+                  reaction: reaction
+                };
+
+                if (user_id != null) {
+                  body.reaction = _objectSpread({}, reaction, {
+                    user: {
+                      id: user_id
+                    }
+                  });
+                }
+
+                _context4.next = 8;
+                return this.getClient().post(this.getClient().baseURL + "/messages/".concat(messageID, "/reaction"), body);
+
+              case 8:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 9:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function sendReaction(_x3, _x4, _x5) {
+        return _sendReaction.apply(this, arguments);
+      }
+
+      return sendReaction;
+    }()
+    /**
+     * deleteReaction - Delete a reaction by user and type
+     *
+     * @param {string} messageID the id of the message from which te remove the reaction
+     * @param {string} reactionType the type of reaction that should be removed
+     * @param {string} user_id the id of the user (used only for server side request) default null
+     *
+     * @return {object} The Server Response
+     */
+
+  }, {
+    key: "deleteReaction",
+    value: function deleteReaction(messageID, reactionType, user_id) {
+      this._checkInitialized();
+
+      if (!reactionType || !messageID) {
+        throw Error('Deleting a reaction requires specifying both the message and reaction type');
+      }
+
+      var url = this.getClient().baseURL + "/messages/".concat(messageID, "/reaction/").concat(reactionType); //provided when server side request
+
+      if (user_id) {
+        return this.getClient().delete(url, {
+          user_id: user_id
+        });
+      }
+
+      return this.getClient().delete(url);
+    }
+    /**
+     * update - Edit the channel's custom properties
+     *
+     * @param {object} channelData The object to update the custom properties of this channel with
+     * @param {object} updateMessage Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "update",
+    value: function () {
+      var _update = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee5(channelData, updateMessage) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  message: updateMessage,
+                  data: channelData
+                });
+
+              case 2:
+                data = _context5.sent;
+                this.data = data.channel;
+                return _context5.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function update(_x6, _x7) {
+        return _update.apply(this, arguments);
+      }
+
+      return update;
+    }()
+    /**
+     * delete - Delete the channel. Messages are permanently removed.
+     *
+     * @return {object} The server response
+     */
+
+  }, {
+    key: "delete",
+    value: function () {
+      var _delete2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee6() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.next = 2;
+                return this.getClient().delete(this._channelURL());
+
+              case 2:
+                return _context6.abrupt("return", _context6.sent);
+
+              case 3:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this);
+      }));
+
+      function _delete() {
+        return _delete2.apply(this, arguments);
+      }
+
+      return _delete;
+    }()
+    /**
+     * truncate - Removes all messages from the channel
+     *
+     * @return {object} The server response
+     */
+
+  }, {
+    key: "truncate",
+    value: function () {
+      var _truncate = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee7() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                _context7.next = 2;
+                return this.getClient().post(this._channelURL() + '/truncate');
+
+              case 2:
+                return _context7.abrupt("return", _context7.sent);
+
+              case 3:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7, this);
+      }));
+
+      function truncate() {
+        return _truncate.apply(this, arguments);
+      }
+
+      return truncate;
+    }()
+    /**
+     * acceptInvite - accept invitation to the channel
+     *
+     * @param {object} options The object to update the custom properties of this channel with
+     *
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "acceptInvite",
+    value: function () {
+      var _acceptInvite = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee8() {
+        var options,
+            data,
+            _args8 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                options = _args8.length > 0 && _args8[0] !== undefined ? _args8[0] : {};
+                _context8.next = 3;
+                return this.getClient().post(this._channelURL(), _objectSpread({
+                  accept_invite: true
+                }, options));
+
+              case 3:
+                data = _context8.sent;
+                this.data = data.channel;
+                return _context8.abrupt("return", data);
+
+              case 6:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8, this);
+      }));
+
+      function acceptInvite() {
+        return _acceptInvite.apply(this, arguments);
+      }
+
+      return acceptInvite;
+    }()
+    /**
+     * acceptInvite - reject invitation to the channel
+     *
+     * @param {object} options The object to update the custom properties of this channel with
+     *
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "rejectInvite",
+    value: function () {
+      var _rejectInvite = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee9() {
+        var options,
+            data,
+            _args9 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                options = _args9.length > 0 && _args9[0] !== undefined ? _args9[0] : {};
+                _context9.next = 3;
+                return this.getClient().post(this._channelURL(), _objectSpread({
+                  reject_invite: true
+                }, options));
+
+              case 3:
+                data = _context9.sent;
+                this.data = data.channel;
+                return _context9.abrupt("return", data);
+
+              case 6:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this);
+      }));
+
+      function rejectInvite() {
+        return _rejectInvite.apply(this, arguments);
+      }
+
+      return rejectInvite;
+    }()
+    /**
+     * addMembers - add members to the channel
+     *
+     * @param {array} members An array of member identifiers
+     * @param {object} message Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "addMembers",
+    value: function () {
+      var _addMembers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee10(members, message) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee10$(_context10) {
+          while (1) {
+            switch (_context10.prev = _context10.next) {
+              case 0:
+                _context10.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  add_members: members,
+                  message: message
+                });
+
+              case 2:
+                data = _context10.sent;
+                this.data = data.channel;
+                return _context10.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context10.stop();
+            }
+          }
+        }, _callee10, this);
+      }));
+
+      function addMembers(_x8, _x9) {
+        return _addMembers.apply(this, arguments);
+      }
+
+      return addMembers;
+    }()
+    /**
+     * addModerators - add moderators to the channel
+     *
+     * @param {array} members An array of member identifiers
+     * @param {object} message Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "addModerators",
+    value: function () {
+      var _addModerators = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee11(members, message) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                _context11.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  add_moderators: members,
+                  message: message
+                });
+
+              case 2:
+                data = _context11.sent;
+                this.data = data.channel;
+                return _context11.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11, this);
+      }));
+
+      function addModerators(_x10, _x11) {
+        return _addModerators.apply(this, arguments);
+      }
+
+      return addModerators;
+    }()
+    /**
+     * inviteMembers - invite members to the channel
+     *
+     * @param {array} members An array of member identifiers
+     * @param {object} message Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "inviteMembers",
+    value: function () {
+      var _inviteMembers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee12(members, message) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee12$(_context12) {
+          while (1) {
+            switch (_context12.prev = _context12.next) {
+              case 0:
+                _context12.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  invites: members,
+                  message: message
+                });
+
+              case 2:
+                data = _context12.sent;
+                this.data = data.channel;
+                return _context12.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context12.stop();
+            }
+          }
+        }, _callee12, this);
+      }));
+
+      function inviteMembers(_x12, _x13) {
+        return _inviteMembers.apply(this, arguments);
+      }
+
+      return inviteMembers;
+    }()
+    /**
+     * removeMembers - remove members from channel
+     *
+     * @param {array} members An array of member identifiers
+     * @param {object} message Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "removeMembers",
+    value: function () {
+      var _removeMembers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee13(members, message) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee13$(_context13) {
+          while (1) {
+            switch (_context13.prev = _context13.next) {
+              case 0:
+                _context13.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  remove_members: members,
+                  message: message
+                });
+
+              case 2:
+                data = _context13.sent;
+                this.data = data.channel;
+                return _context13.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context13.stop();
+            }
+          }
+        }, _callee13, this);
+      }));
+
+      function removeMembers(_x14, _x15) {
+        return _removeMembers.apply(this, arguments);
+      }
+
+      return removeMembers;
+    }()
+    /**
+     * demoteModerators - remove moderator role from channel members
+     *
+     * @param {array} members An array of member identifiers
+     * @param {object} message Optional message object for channel members notification
+     * @return {type} The server response
+     */
+
+  }, {
+    key: "demoteModerators",
+    value: function () {
+      var _demoteModerators = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee14(members, message) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee14$(_context14) {
+          while (1) {
+            switch (_context14.prev = _context14.next) {
+              case 0:
+                _context14.next = 2;
+                return this.getClient().post(this._channelURL(), {
+                  demote_moderators: members,
+                  message: message
+                });
+
+              case 2:
+                data = _context14.sent;
+                this.data = data.channel;
+                return _context14.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context14.stop();
+            }
+          }
+        }, _callee14, this);
+      }));
+
+      function demoteModerators(_x16, _x17) {
+        return _demoteModerators.apply(this, arguments);
+      }
+
+      return demoteModerators;
+    }()
+  }, {
+    key: "sendAction",
+    value: function sendAction(messageID, formData) {
+      this._checkInitialized();
+
+      if (!messageID) {
+        throw Error("Message id is missing");
+      }
+
+      return this.getClient().post(this.getClient().baseURL + "/messages/".concat(messageID, "/action"), {
+        message_id: messageID,
+        form_data: formData,
+        id: this.id,
+        type: this.type
+      });
+    }
+    /**
+     * keystroke - First of the typing.start and typing.stop events based on the users keystrokes.
+     *  Call this on every keystroke
+     */
+
+  }, {
+    key: "keystroke",
+    value: function () {
+      var _keystroke = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee15() {
+        var now, diff;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee15$(_context15) {
+          while (1) {
+            switch (_context15.prev = _context15.next) {
+              case 0:
+                if (this.getConfig().typing_events) {
+                  _context15.next = 2;
+                  break;
+                }
+
+                return _context15.abrupt("return");
+
+              case 2:
+                now = new Date();
+                diff = now - this.lastTypingEvent;
+                this.lastKeyStroke = now;
+                this.isTyping = true; // send a typing.start every 2 seconds
+
+                if (!(diff > 2000)) {
+                  _context15.next = 10;
+                  break;
+                }
+
+                this.lastTypingEvent = new Date();
+                _context15.next = 10;
+                return this.sendEvent({
+                  type: 'typing.start'
+                });
+
+              case 10:
+              case "end":
+                return _context15.stop();
+            }
+          }
+        }, _callee15, this);
+      }));
+
+      function keystroke() {
+        return _keystroke.apply(this, arguments);
+      }
+
+      return keystroke;
+    }()
+    /**
+     * stopTyping - Sets last typing to null and sends the typing.stop event
+     */
+
+  }, {
+    key: "stopTyping",
+    value: function () {
+      var _stopTyping = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee16() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee16$(_context16) {
+          while (1) {
+            switch (_context16.prev = _context16.next) {
+              case 0:
+                if (this.getConfig().typing_events) {
+                  _context16.next = 2;
+                  break;
+                }
+
+                return _context16.abrupt("return");
+
+              case 2:
+                this.lastTypingEvent = null;
+                this.isTyping = false;
+                _context16.next = 6;
+                return this.sendEvent({
+                  type: 'typing.stop'
+                });
+
+              case 6:
+              case "end":
+                return _context16.stop();
+            }
+          }
+        }, _callee16, this);
+      }));
+
+      function stopTyping() {
+        return _stopTyping.apply(this, arguments);
+      }
+
+      return stopTyping;
+    }()
+    /**
+     * lastMessage - return the last message, takes into account that last few messages might not be perfectly sorted
+     *
+     * @return {type} Description
+     */
+
+  }, {
+    key: "lastMessage",
+    value: function lastMessage() {
+      // get last 5 messages, sort, return the latest
+      // get a slice of the last 5
+      var min = this.state.messages.length - 5;
+
+      if (min < 0) {
+        min = 0;
+      }
+
+      var max = this.state.messages.length + 1;
+      var messageSlice = this.state.messages.slice(min, max).asMutable(); // sort by pk desc
+
+      messageSlice.sort(function (a, b) {
+        return b.created_at - a.created_at;
+      });
+      var lastMessage;
+
+      if (messageSlice.length > 0) {
+        lastMessage = messageSlice[0];
+      }
+
+      return lastMessage;
+    }
+    /**
+     * markRead - Send the mark read event for this user, only works if the `read_events` setting is enabled
+     *
+     * @return {Promise} Description
+     */
+
+  }, {
+    key: "markRead",
+    value: function () {
+      var _markRead = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee17() {
+        var data,
+            _args17 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee17$(_context17) {
+          while (1) {
+            switch (_context17.prev = _context17.next) {
+              case 0:
+                data = _args17.length > 0 && _args17[0] !== undefined ? _args17[0] : {};
+
+                this._checkInitialized();
+
+                if (this.getConfig().read_events) {
+                  _context17.next = 4;
+                  break;
+                }
+
+                return _context17.abrupt("return", Promise.resolve(null));
+
+              case 4:
+                _context17.next = 6;
+                return this.getClient().post(this._channelURL() + '/read', _objectSpread({}, data));
+
+              case 6:
+                return _context17.abrupt("return", _context17.sent);
+
+              case 7:
+              case "end":
+                return _context17.stop();
+            }
+          }
+        }, _callee17, this);
+      }));
+
+      function markRead() {
+        return _markRead.apply(this, arguments);
+      }
+
+      return markRead;
+    }()
+    /**
+     * clean - Cleans the channel state and fires stop typing if needed
+     */
+
+  }, {
+    key: "clean",
+    value: function clean() {
+      if (this.lastKeyStroke) {
+        var now = new Date();
+        var diff = now - this.lastKeyStroke;
+
+        if (diff > 1000 && this.isTyping) {
+          logChatPromiseExecution(this.stopTyping(), 'stop typing event');
+        }
+      }
+
+      this.state.clean();
+    }
+    /**
+     * watch - Loads the initial channel state and watches for changes
+     *
+     * @param {object} options additional options for the query endpoint
+     *
+     * @return {object} The server response
+     */
+
+  }, {
+    key: "watch",
+    value: function () {
+      var _watch = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee18(options) {
+        var defaultOptions, combined, state;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee18$(_context18) {
+          while (1) {
+            switch (_context18.prev = _context18.next) {
+              case 0:
+                defaultOptions = {
+                  state: true,
+                  watch: true,
+                  presence: false
+                }; // Make sure we wait for the connect promise if there is a pending one
+
+                _context18.next = 3;
+                return this.getClient().wsPromise;
+
+              case 3:
+                if (!this.getClient()._hasConnectionID()) {
+                  defaultOptions.watch = false;
+                }
+
+                combined = _objectSpread({}, defaultOptions, {}, options);
+                _context18.next = 7;
+                return this.query(combined);
+
+              case 7:
+                state = _context18.sent;
+                this.initialized = true;
+
+                this._initializeState(state);
+
+                this.data = state.channel;
+
+                this._client.logger('info', "channel:watch() - started watching channel ".concat(this.cid), {
+                  tags: ['channel'],
+                  channel: this
+                });
+
+                return _context18.abrupt("return", state);
+
+              case 13:
+              case "end":
+                return _context18.stop();
+            }
+          }
+        }, _callee18, this);
+      }));
+
+      function watch(_x18) {
+        return _watch.apply(this, arguments);
+      }
+
+      return watch;
+    }()
+    /**
+     * stopwatching - Stops watching the channel
+     *
+     * @return {object} The server response
+     */
+
+  }, {
+    key: "stopWatching",
+    value: function () {
+      var _stopWatching = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee19() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee19$(_context19) {
+          while (1) {
+            switch (_context19.prev = _context19.next) {
+              case 0:
+                _context19.next = 2;
+                return this.getClient().post(this._channelURL() + '/stop-watching', {});
+
+              case 2:
+                response = _context19.sent;
+
+                this._client.logger('info', "channel:watch() - stopped watching channel ".concat(this.cid), {
+                  tags: ['channel'],
+                  channel: this
+                });
+
+                return _context19.abrupt("return", response);
+
+              case 5:
+              case "end":
+                return _context19.stop();
+            }
+          }
+        }, _callee19, this);
+      }));
+
+      function stopWatching() {
+        return _stopWatching.apply(this, arguments);
+      }
+
+      return stopWatching;
+    }()
+    /**
+     * getReplies - List the message replies for a parent message
+     *
+     * @param {type} parent_id The message parent id, ie the top of the thread
+     * @param {type} options   Pagination params, ie {limit:10, idlte: 10}
+     *
+     * @return {type} A response with a list of messages
+     */
+
+  }, {
+    key: "getReplies",
+    value: function () {
+      var _getReplies = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee20(parent_id, options) {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee20$(_context20) {
+          while (1) {
+            switch (_context20.prev = _context20.next) {
+              case 0:
+                _context20.next = 2;
+                return this.getClient().get(this.getClient().baseURL + "/messages/".concat(parent_id, "/replies"), _objectSpread({}, options));
+
+              case 2:
+                data = _context20.sent;
+
+                // add any messages to our thread state
+                if (data.messages) {
+                  this.state.addMessagesSorted(data.messages);
+                }
+
+                return _context20.abrupt("return", data);
+
+              case 5:
+              case "end":
+                return _context20.stop();
+            }
+          }
+        }, _callee20, this);
+      }));
+
+      function getReplies(_x19, _x20) {
+        return _getReplies.apply(this, arguments);
+      }
+
+      return getReplies;
+    }()
+    /**
+     * getReactions - List the reactions, supports pagination
+     *
+     * @param {string} message_id The message id
+     * @param {object} options    The pagination options
+     *
+     * @return {object} Server response
+     */
+
+  }, {
+    key: "getReactions",
+    value: function getReactions(message_id, options) {
+      return this.getClient().get(this.getClient().baseURL + "/messages/".concat(message_id, "/reactions"), _objectSpread({}, options));
+    }
+    /**
+     * getMessagesById - Retrieves a list of messages by ID
+     *
+     * @param {string} messageIds The ids of the messages to retrieve from this channel
+     *
+     * @return {object} Server response
+     */
+
+  }, {
+    key: "getMessagesById",
+    value: function getMessagesById(messageIds) {
+      return this.getClient().get(this._channelURL() + '/messages', {
+        ids: messageIds.join(',')
+      });
+    }
+    /**
+     * lastRead - returns the last time the user marked the channel as read if the user never marked the channel as read, this will return null
+     * @return {date}
+     */
+
+  }, {
+    key: "lastRead",
+    value: function lastRead() {
+      this._checkInitialized();
+
+      return this.state.read[this.getClient().userID] ? this.state.read[this.getClient().userID].last_read : null;
+    }
+    /**
+     * countUnread - Count the number of messages with a date thats newer than the last read timestamp
+     *
+     * @param [date] lastRead the time that the user read a message, defaults to current user's read state
+     *
+     * @return {int} Unread count
+     */
+
+  }, {
+    key: "countUnread",
+    value: function countUnread(lastRead) {
+      if (lastRead == null) {
+        lastRead = this.lastRead();
+      }
+
+      var count = 0;
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.state.messages[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var m = _step.value;
+
+          if (this.getClient().userID === m.user.id) {
+            continue;
+          }
+
+          if (lastRead == null) {
+            count++;
+            continue;
+          }
+
+          if (m.created_at > lastRead) {
+            count++;
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return != null) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      return count;
+    }
+    /**
+     * countUnread - Count the number of unread messages mentioning the current user
+     *
+     * @return {int} Unread mentions count
+     */
+
+  }, {
+    key: "countUnreadMentions",
+    value: function countUnreadMentions() {
+      var _this2 = this;
+
+      var lastRead = this.lastRead();
+      var count = 0;
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = this.state.messages[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var m = _step2.value;
+
+          if (this.getClient().userID === m.user.id) {
+            continue;
+          }
+
+          if (lastRead == null) {
+            count++;
+            continue;
+          }
+
+          if (m.created_at > lastRead) {
+            (function () {
+              var userID = _this2.getClient().userID;
+
+              if (m.mentioned_users.findIndex(function (u) {
+                return u.id === userID;
+              }) !== -1) {
+                count++;
+              }
+            })();
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+
+      return count;
+    }
+    /**
+     * create - Creates a new channel
+     *
+     * @return {type} The Server Response
+     */
+
+  }, {
+    key: "query",
+
+    /**
+     * query - Query the API, get messages, members or other channel fields
+     *
+     * @param {object} options The query options
+     *
+     * @return {object} Returns a query response
+     */
+    value: function () {
+      var _query = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee21(options) {
+        var queryURL, state;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee21$(_context21) {
+          while (1) {
+            switch (_context21.prev = _context21.next) {
+              case 0:
+                _context21.next = 2;
+                return this.getClient().wsPromise;
+
+              case 2:
+                queryURL = "".concat(this.getClient().baseURL, "/channels/").concat(this.type);
+
+                if (this.id) {
+                  queryURL += "/".concat(this.id);
+                }
+
+                _context21.next = 6;
+                return this.getClient().post(queryURL + '/query', _objectSpread({
+                  data: this._data,
+                  state: true
+                }, options));
+
+              case 6:
+                state = _context21.sent;
+
+                // update the channel id if it was missing
+                if (!this.id) {
+                  this.id = state.channel.id;
+                  this.cid = state.channel.cid; // set the channel as active...
+
+                  if (!(this.cid in this.getClient().activeChannels)) {
+                    this.getClient().activeChannels[this.cid] = this;
+                  }
+                }
+
+                this.getClient()._addChannelConfig(state); // add any messages to our channel state
+
+
+                this._initializeState(state);
+
+                return _context21.abrupt("return", state);
+
+              case 11:
+              case "end":
+                return _context21.stop();
+            }
+          }
+        }, _callee21, this);
+      }));
+
+      function query(_x21) {
+        return _query.apply(this, arguments);
+      }
+
+      return query;
+    }()
+    /**
+     * banUser - Bans a user from a channel
+     *
+     * @param targetUserID
+     * @param options
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "banUser",
+    value: function () {
+      var _banUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee22(targetUserID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee22$(_context22) {
+          while (1) {
+            switch (_context22.prev = _context22.next) {
+              case 0:
+                this._checkInitialized();
+
+                _context22.next = 3;
+                return this.getClient().banUser(targetUserID, _objectSpread({}, options, {
+                  type: this.type,
+                  id: this.id
+                }));
+
+              case 3:
+                return _context22.abrupt("return", _context22.sent);
+
+              case 4:
+              case "end":
+                return _context22.stop();
+            }
+          }
+        }, _callee22, this);
+      }));
+
+      function banUser(_x22, _x23) {
+        return _banUser.apply(this, arguments);
+      }
+
+      return banUser;
+    }()
+    /**
+     * hides the channel from queryChannels for the user until a message is added
+     * If clearHistory is set to true - all messages will be removed for the user
+     *
+     * @param userId
+     * @param clearHistory
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "hide",
+    value: function () {
+      var _hide = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee23() {
+        var userId,
+            clearHistory,
+            _args23 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee23$(_context23) {
+          while (1) {
+            switch (_context23.prev = _context23.next) {
+              case 0:
+                userId = _args23.length > 0 && _args23[0] !== undefined ? _args23[0] : null;
+                clearHistory = _args23.length > 1 && _args23[1] !== undefined ? _args23[1] : false;
+
+                this._checkInitialized();
+
+                _context23.next = 5;
+                return this.getClient().post("".concat(this._channelURL(), "/hide"), {
+                  user_id: userId,
+                  clear_history: clearHistory
+                });
+
+              case 5:
+                return _context23.abrupt("return", _context23.sent);
+
+              case 6:
+              case "end":
+                return _context23.stop();
+            }
+          }
+        }, _callee23, this);
+      }));
+
+      function hide() {
+        return _hide.apply(this, arguments);
+      }
+
+      return hide;
+    }()
+    /**
+     * removes the hidden status for a channel
+     *
+     * @param userId
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "show",
+    value: function () {
+      var _show = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee24() {
+        var userId,
+            _args24 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee24$(_context24) {
+          while (1) {
+            switch (_context24.prev = _context24.next) {
+              case 0:
+                userId = _args24.length > 0 && _args24[0] !== undefined ? _args24[0] : null;
+
+                this._checkInitialized();
+
+                _context24.next = 4;
+                return this.getClient().post("".concat(this._channelURL(), "/show"), {
+                  user_id: userId
+                });
+
+              case 4:
+                return _context24.abrupt("return", _context24.sent);
+
+              case 5:
+              case "end":
+                return _context24.stop();
+            }
+          }
+        }, _callee24, this);
+      }));
+
+      function show() {
+        return _show.apply(this, arguments);
+      }
+
+      return show;
+    }()
+    /**
+     * banUser - Removes the bans for a user on a channel
+     *
+     * @param targetUserID
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "unbanUser",
+    value: function () {
+      var _unbanUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee25(targetUserID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee25$(_context25) {
+          while (1) {
+            switch (_context25.prev = _context25.next) {
+              case 0:
+                this._checkInitialized();
+
+                _context25.next = 3;
+                return this.getClient().unbanUser(targetUserID, {
+                  type: this.type,
+                  id: this.id
+                });
+
+              case 3:
+                return _context25.abrupt("return", _context25.sent);
+
+              case 4:
+              case "end":
+                return _context25.stop();
+            }
+          }
+        }, _callee25, this);
+      }));
+
+      function unbanUser(_x24) {
+        return _unbanUser.apply(this, arguments);
+      }
+
+      return unbanUser;
+    }()
+    /**
+     * on - Listen to events on this channel.
+     *
+     * channel.on('message.new', event => {console.log("my new message", event, channel.state.messages)})
+     * or
+     * channel.on(event => {console.log(event.type)})
+     *
+     * @param {string} callbackOrString  The event type to listen for (optional)
+     * @param {function} callbackOrNothing The callback to call
+     *
+     * @return {type} Description
+     */
+
+  }, {
+    key: "on",
+    value: function on(callbackOrString, callbackOrNothing) {
+      var key = callbackOrNothing ? callbackOrString : 'all';
+      var valid = isValidEventType(key);
+
+      if (!valid) {
+        throw Error("Invalid event type ".concat(key));
+      }
+
+      var callback = callbackOrNothing ? callbackOrNothing : callbackOrString;
+
+      if (!(key in this.listeners)) {
+        this.listeners[key] = [];
+      }
+
+      this._client.logger('info', "Attaching listener for ".concat(key, " event on channel ").concat(this.cid), {
+        tags: ['event', 'channel'],
+        channel: this
+      });
+
+      this.listeners[key].push(callback);
+    }
+    /**
+     * off - Remove the event handler
+     *
+     */
+
+  }, {
+    key: "off",
+    value: function off(callbackOrString, callbackOrNothing) {
+      var key = callbackOrNothing ? callbackOrString : 'all';
+      var valid = isValidEventType(key);
+
+      if (!valid) {
+        throw Error("Invalid event type ".concat(key));
+      }
+
+      var callback = callbackOrNothing ? callbackOrNothing : callbackOrString;
+
+      if (!(key in this.listeners)) {
+        this.listeners[key] = [];
+      }
+
+      this._client.logger('info', "Removing listener for ".concat(key, " event from channel ").concat(this.cid), {
+        tags: ['event', 'channel'],
+        channel: this
+      });
+
+      this.listeners[key] = this.listeners[key].filter(function (value) {
+        return value !== callback;
+      });
+    }
+  }, {
+    key: "_handleChannelEvent",
+    value: function _handleChannelEvent(event) {
+      var channel = this;
+
+      this._client.logger('info', "channel:_handleChannelEvent - Received event of type { ".concat(event.type, " } on ").concat(this.cid), {
+        tags: ['event', 'channel'],
+        channel: this
+      });
+
+      var s = channel.state;
+
+      switch (event.type) {
+        case 'typing.start':
+          s.typing = s.typing.set(event.user.id, seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(event));
+          break;
+
+        case 'typing.stop':
+          s.typing = s.typing.without(event.user.id);
+          break;
+
+        case 'message.read':
+          s.read = s.read.set(event.user.id, seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({
+            user: _objectSpread({}, event.user),
+            last_read: event.received_at
+          }));
+          break;
+
+        case 'user.watching.start':
+        case 'user.updated':
+          s.watchers = s.watchers.set(event.user.id, seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(event.user));
+          break;
+
+        case 'user.watching.stop':
+          s.watchers = s.watchers.without(event.user.id);
+          break;
+
+        case 'message.new':
+        case 'message.updated':
+        case 'message.deleted':
+          s.addMessageSorted(event.message);
+          break;
+
+        case 'channel.truncated':
+          s.clearMessages();
+          break;
+
+        case 'member.added':
+        case 'member.updated':
+          s.members = s.members.set(event.member.user_id, seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(event.member));
+          break;
+
+        case 'member.removed':
+          s.members = s.members.without(event.user.id);
+          break;
+
+        case 'channel.updated':
+          channel.data = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(event.channel);
+          break;
+
+        case 'reaction.new':
+          s.addReaction(event.reaction, event.message);
+          break;
+
+        case 'reaction.deleted':
+          s.removeReaction(event.reaction, event.message);
+          break;
+
+        case 'channel.hidden':
+          if (event.clear_history) {
+            s.clearMessages();
+          }
+
+          break;
+
+        default:
+      } // any event can send over the online count
+
+
+      if (event.watcher_count !== undefined) {
+        channel.state.watcher_count = event.watcher_count;
+      }
+    }
+  }, {
+    key: "_checkInitialized",
+    value: function _checkInitialized() {
+      if (!this.initialized && !this.getClient()._isUsingServerAuth()) {
+        throw Error("Channel ".concat(this.cid, " hasn't been initialized yet. Make sure to call .watch() and wait for it to resolve"));
+      }
+    }
+  }, {
+    key: "_initializeState",
+    value: function _initializeState(state) {
+      // add the Users
+      if (state.members) {
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+          for (var _iterator3 = state.members[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            var m = _step3.value;
+            this.getClient().state.updateUserReference(m.user, this.cid);
+          }
+        } catch (err) {
+          _didIteratorError3 = true;
+          _iteratorError3 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+              _iterator3.return();
+            }
+          } finally {
+            if (_didIteratorError3) {
+              throw _iteratorError3;
+            }
+          }
+        }
+      }
+
+      if (state.watchers) {
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
+
+        try {
+          for (var _iterator4 = state.watchers[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var w = _step4.value;
+            this.getClient().state.updateUserReference(w.user, this.cid);
+          }
+        } catch (err) {
+          _didIteratorError4 = true;
+          _iteratorError4 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+              _iterator4.return();
+            }
+          } finally {
+            if (_didIteratorError4) {
+              throw _iteratorError4;
+            }
+          }
+        }
+      } // immutable list of maps
+
+
+      var messages = state.messages || [];
+
+      if (!this.state.messages) {
+        this.state.messages = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()([]);
+      }
+
+      this.state.addMessagesSorted(messages, true);
+      this.state.watcher_count = state.watcher_count; // convert the arrays into objects for easier syncing...
+
+      if (state.watchers) {
+        var _iteratorNormalCompletion5 = true;
+        var _didIteratorError5 = false;
+        var _iteratorError5 = undefined;
+
+        try {
+          for (var _iterator5 = state.watchers[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+            var watcher = _step5.value;
+            this.state.watchers = this.state.watchers.set(watcher.id, watcher);
+          }
+        } catch (err) {
+          _didIteratorError5 = true;
+          _iteratorError5 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion5 && _iterator5.return != null) {
+              _iterator5.return();
+            }
+          } finally {
+            if (_didIteratorError5) {
+              throw _iteratorError5;
+            }
+          }
+        }
+      }
+
+      if (state.read) {
+        if (this.getClient().userID != null) {
+          this.state.read = this.state.read.set(this.getClient().user.id, new Date(0));
+        }
+
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = undefined;
+
+        try {
+          for (var _iterator6 = state.read[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+            var read = _step6.value;
+
+            var parsedRead = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()(_objectSpread({}, read));
+
+            parsedRead.last_read = new Date(read.last_read);
+            this.state.read = this.state.read.set(read.user.id, parsedRead);
+          }
+        } catch (err) {
+          _didIteratorError6 = true;
+          _iteratorError6 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion6 && _iterator6.return != null) {
+              _iterator6.return();
+            }
+          } finally {
+            if (_didIteratorError6) {
+              throw _iteratorError6;
+            }
+          }
+        }
+      }
+
+      if (state.members) {
+        var _iteratorNormalCompletion7 = true;
+        var _didIteratorError7 = false;
+        var _iteratorError7 = undefined;
+
+        try {
+          for (var _iterator7 = state.members[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+            var _m = _step7.value;
+            this.state.members = this.state.members.set(_m.user.id, _m);
+          }
+        } catch (err) {
+          _didIteratorError7 = true;
+          _iteratorError7 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion7 && _iterator7.return != null) {
+              _iterator7.return();
+            }
+          } finally {
+            if (_didIteratorError7) {
+              throw _iteratorError7;
+            }
+          }
+        }
+      }
+    }
+  }, {
+    key: "_disconnect",
+    value: function _disconnect() {
+      this._client.logger('info', "channel:disconnect() - Disconnecting the channel ".concat(this.cid), {
+        tags: ['connection', 'channel'],
+        channel: this
+      });
+
+      this.disconnected = true;
+    }
+  }]);
+
+  return Channel;
+}();
+
+/**
+ * ClientState - A container class for the client state.
+ */
+
+var ClientState =
+/*#__PURE__*/
+function () {
+  function ClientState() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, ClientState);
+
+    // show the status for a certain user...
+    // ie online, offline etc
+    this.users = seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()({}); // store which channels contain references to the specified user...
+
+    this.userChannelReferences = {};
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default()(ClientState, [{
+    key: "updateUsers",
+    value: function updateUsers(users) {
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = users[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var user = _step.value;
+          this.updateUser(user);
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return != null) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    }
+  }, {
+    key: "updateUser",
+    value: function updateUser(user) {
+      if (user != null) {
+        this.users = this.users.set(user.id, seamless_immutable__WEBPACK_IMPORTED_MODULE_12___default()(user));
+      }
+    }
+  }, {
+    key: "updateUserReference",
+    value: function updateUserReference(user, channelID) {
+      if (user == null) {
+        return;
+      }
+
+      this.updateUser(user);
+
+      if (!this.userChannelReferences[user.id]) {
+        this.userChannelReferences[user.id] = {};
+      }
+
+      this.userChannelReferences[user.id][channelID] = true;
+    }
+  }]);
+
+  return ClientState;
+}();
+
+/**
+ * StableWSConnection - A WS connection that reconnects upon failure.
+ * - the browser will sometimes report that you're online or offline
+ * - the WS connection can break and fail (there is a 30s health check)
+ * - sometimes your WS connection will seem to work while the user is in fact offline
+ * - to speed up online/offline detection you can use the window.addEventListener('offline');
+ *
+ * There are 4 ways in which a connection can become unhealthy:
+ * - websocket.onerror is called
+ * - websocket.onclose is called
+ * - the health check fails and no event is received for ~40 seconds
+ * - the browser indicates the connection is now offline
+ *
+ * There are 2 assumptions we make about the server:
+ * - state can be recovered by querying the channel again
+ * - if the servers fails to publish a message to the client, the WS connection is destroyed
+ */
+
+var StableWSConnection =
+/*#__PURE__*/
+function () {
+  function StableWSConnection(_ref) {
+    var _this = this;
+
+    var wsURL = _ref.wsURL,
+        clientID = _ref.clientID,
+        userID = _ref.userID,
+        messageCallback = _ref.messageCallback,
+        recoverCallback = _ref.recoverCallback,
+        eventCallback = _ref.eventCallback,
+        logger = _ref.logger;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, StableWSConnection);
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "onlineStatusChanged", function (event) {
+      if (event.type === 'offline') {
+        // mark the connection as down
+        _this.logger('info', 'connection:onlineStatusChanged() - Status changing to offline', {
+          tags: ['connection']
+        });
+
+        _this._setHealth(false);
+      } else if (event.type === 'online') {
+        // retry right now...
+        // We check this.isHealthy, not sure if it's always
+        // smart to create a new WS connection if the old one is still up and running.
+        // it's possible we didnt miss any messages, so this process is just expensive and not needed.
+        _this.logger('info', "connection:onlineStatusChanged() - Status changing to online. isHealthy: ".concat(_this.isHealthy), {
+          tags: ['connection']
+        });
+
+        if (!_this.isHealthy) {
+          _this._reconnect(10);
+        }
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "onopen", function (wsID) {
+      if (_this.wsID !== wsID) return;
+
+      _this.logger('info', 'connection:onopen() - onopen callback', {
+        tags: ['connection'],
+        wsID: wsID
+      }); // set healthy..
+
+
+      _this._setHealth(true);
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "onmessage", function (wsID, event) {
+      if (_this.wsID !== wsID) return; // we wait till the first message before we consider the connection open..
+      // the reason for this is that auth errors and similar errors trigger a ws.onopen and immediately
+      // after that a ws.onclose..
+
+      if (!_this.isResolved) {
+        _this.resolvePromise(event);
+      } // trigger the event..
+
+
+      _this.lastEvent = new Date();
+
+      _this.logger('info', 'connection:onmessage() - onmessage callback', {
+        tags: ['connection'],
+        event: event,
+        wsID: wsID
+      });
+
+      _this.messageCallback(event);
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "onclose", function (wsID, event) {
+      _this.logger('info', 'connection:onclose() - onclose callback', {
+        tags: ['connection'],
+        event: event,
+        wsID: wsID
+      });
+
+      if (_this.wsID !== wsID) return;
+
+      if (event.code === 1000) {
+        // this is a permanent error raised by stream..
+        // usually caused by invalid auth details
+        var error = new Error("WS connection reject with error ".concat(event.reason));
+        error.reason = event.reason;
+
+        _this.rejectPromise(error);
+
+        _this.logger('info', "connection:onclose() - WS connection reject with error ".concat(event.reason), {
+          tags: ['connection'],
+          event: event
+        });
+      } else {
+        _this.consecutiveFailures += 1;
+        _this.totalFailures += 1;
+
+        _this._setHealth(false);
+
+        _this.rejectPromise(_this._errorFromWSEvent(event));
+
+        _this.logger('info', "connection:onclose() - WS connection closed. Calling reconnect ...", {
+          tags: ['connection'],
+          event: event
+        }); // reconnect if its an abnormal failure
+
+
+        _this._reconnect();
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "onerror", function (wsID, event) {
+      if (_this.wsID !== wsID) return;
+      _this.consecutiveFailures += 1;
+      _this.totalFailures += 1;
+
+      _this._setHealth(false);
+
+      _this.rejectPromise(_this._errorFromWSEvent(event));
+
+      _this.logger('info', "connection:onerror() - WS connection resulted into error", {
+        tags: ['connection'],
+        event: event
+      });
+
+      _this._reconnect();
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_setHealth", function (healthy) {
+      if (healthy && !_this.isHealthy) {
+        // yee we are online:
+        _this.isHealthy = true;
+
+        _this.eventCallback({
+          type: 'connection.changed',
+          online: true
+        });
+      }
+
+      if (!healthy && _this.isHealthy) {
+        // bummer we are offline
+        _this.isHealthy = false;
+        setTimeout(function () {
+          if (!_this.isHealthy) {
+            _this.eventCallback({
+              type: 'connection.changed',
+              online: false
+            });
+          }
+        }, 5000);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_errorFromWSEvent", function (event) {
+      _this.logger('error', "connection:onclose() - WS failed with code ".concat(event.code), {
+        tags: ['connection'],
+        event: event
+      });
+
+      var error = new Error("WS failed with code ".concat(event.code));
+      error.code = event.code;
+      error.isWSFailure = true;
+      return error;
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_listenForConnectionChanges", function () {
+      if (typeof window !== 'undefined' && window != null && window.addEventListener != null) {
+        window.addEventListener('offline', _this.onlineStatusChanged);
+        window.addEventListener('online', _this.onlineStatusChanged);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_removeConnectionListeners", function () {
+      if (typeof window !== 'undefined' && window != null && window.addEventListener != null) {
+        window.removeEventListener('offline', _this.onlineStatusChanged);
+        window.removeEventListener('online', _this.onlineStatusChanged);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_setupConnectionPromise", function () {
+      var that = _this;
+      _this.isResolved = false;
+      /** a promise that is resolved once ws.open is called */
+
+      _this.connectionOpen = new Promise(function (resolve, reject) {
+        that.resolvePromise = resolve;
+        that.rejectPromise = reject;
+      }).then(function (e) {
+        var data = JSON.parse(e.data);
+
+        if (data.error != null) {
+          throw new Error(JSON.stringify(data.error));
+        }
+
+        return data;
+      });
+    });
+
+    this.wsURL = wsURL;
+    this.clientID = clientID;
+    this.userID = userID;
+    /** consecutive failures influence the duration of the timeout */
+
+    this.consecutiveFailures = 0;
+    /** keep track of the total number of failures */
+
+    this.totalFailures = 0;
+    /** We only make 1 attempt to reconnect at the same time.. */
+
+    this.isConnecting = false;
+    /** Boolean that indicates if we have a working connection to the server */
+
+    this.isHealthy = false;
+    /** Callback when the connection fails and recovers */
+
+    this.recoverCallback = recoverCallback;
+    this.messageCallback = messageCallback;
+    this.eventCallback = eventCallback;
+    this.logger = logger;
+    /** Incremented when a new WS connection is made */
+
+    this.wsID = 1;
+    /** Store the last event time for health checks */
+
+    this.lastEvent = null;
+    /** Send a health check message every 30 seconds */
+
+    this.healthCheckInterval = 30 * 1000;
+    /** Every second we verify that we didn't miss any health checks */
+
+    this.monitorInterval = 1 * 1000;
+
+    this._listenForConnectionChanges();
+  }
+  /**
+   * connect - Connect to the WS URL
+   *
+   * @return {promise} Promise that completes once the first health check message is received
+   */
+
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default()(StableWSConnection, [{
+    key: "connect",
+    value: function () {
+      var _connect2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
+        var healthCheck;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!this.isConnecting) {
+                  _context.next = 2;
+                  break;
+                }
+
+                throw Error("You've called connect twice, can only attempt 1 connection at the time");
+
+              case 2:
+                _context.prev = 2;
+                this.isConnecting = true;
+                _context.next = 6;
+                return this._connect();
+
+              case 6:
+                healthCheck = _context.sent;
+                this.isConnecting = false;
+                this.consecutiveFailures = 0;
+
+                this._startMonitor();
+
+                this._startHealthCheck();
+
+                this.logger('info', "connection:connect() - Established ws connection with healthcheck: ".concat(healthCheck), {
+                  tags: ['connection']
+                });
+                return _context.abrupt("return", healthCheck);
+
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](2);
+                this.isConnecting = false;
+
+                if (_context.t0.isWSFailure) {
+                  _context.next = 20;
+                  break;
+                }
+
+                throw _context.t0;
+
+              case 20:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[2, 15]]);
+      }));
+
+      function connect() {
+        return _connect2.apply(this, arguments);
+      }
+
+      return connect;
+    }()
+    /**
+     * disconnect - Disconnect the connection and doesn't recover...
+     *
+     */
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {
+      var _this2 = this;
+
+      this.logger('info', "connection:disconnect() - Closing the websocket connection for wsID ".concat(this.wsID), {
+        tags: ['connection']
+      }); // start by removing all the listeners
+
+      if (this.healthCheckIntervalRef) {
+        clearInterval(this.healthCheckIntervalRef);
+      }
+
+      if (this.monitorIntervalRef) {
+        clearInterval(this.monitorIntervalRef);
+      }
+
+      this._removeConnectionListeners(); // reset the wsID;
+
+
+      this.wsID = 1;
+      this.isHealthy = false; // remove ws handlers...
+
+      if (this.ws && this.ws.removeAllListeners) {
+        this.ws.removeAllListeners();
+      }
+
+      var isClosedPromise; // and finally close...
+      // Assigning to local here because we will remove it from this before the
+      // promise resolves.
+
+      var ws = this.ws;
+
+      if (ws && ws.close && ws.readyState === ws.OPEN) {
+        isClosedPromise = new Promise(function (resolve) {
+          ws.onclose = function () {
+            _this2.logger('info', "connection:disconnect() - resolving isClosedPromise", {
+              tags: ['connection']
+            });
+
+            resolve();
+          };
+        });
+        this.logger('info', "connection:disconnect() - Manually closed connection by calling client.disconnect()", {
+          tags: ['connection']
+        });
+        ws.close(1000, 'Manually closed connection by calling client.disconnect()');
+      } else {
+        this.logger('info', "connection:disconnect() - ws connection doesn't exist or it is already closed.", {
+          tags: ['connection']
+        });
+        isClosedPromise = Promise.resolve();
+      }
+
+      delete this.ws;
+      return isClosedPromise;
+    }
+    /**
+     * _connect - Connect to the WS endpoint
+     *
+     * @return {promise} Promise that completes once the first health check message is received
+     */
+
+  }, {
+    key: "_connect",
+    value: function () {
+      var _connect3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                this._setupConnectionPromise();
+
+                this.ws = new isomorphic_ws__WEBPACK_IMPORTED_MODULE_13___default.a(this.wsURL);
+                this.ws.onopen = this.onopen.bind(this, this.wsID);
+                this.ws.onclose = this.onclose.bind(this, this.wsID);
+                this.ws.onerror = this.onerror.bind(this, this.wsID);
+                this.ws.onmessage = this.onmessage.bind(this, this.wsID);
+                _context2.next = 8;
+                return this.connectionOpen;
+
+              case 8:
+                response = _context2.sent;
+                this.connectionID = response.connection_id;
+                return _context2.abrupt("return", response);
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function _connect() {
+        return _connect3.apply(this, arguments);
+      }
+
+      return _connect;
+    }()
+    /**
+     * _reconnect - Description
+     *
+     * @param {int} interval number of ms to wait before connecting
+     */
+
+  }, {
+    key: "_reconnect",
+    value: function () {
+      var _reconnect2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee3(interval) {
+        var open;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                this.logger('info', 'connection:_reconnect() - Initiating the reconnect', {
+                  tags: ['connection']
+                }); // only allow 1 connection at the time
+
+                if (!(this.isConnecting || this.isHealthy)) {
+                  _context3.next = 4;
+                  break;
+                }
+
+                this.logger('info', 'connection:_reconnect() - Abort (1) since already connecting or healthy', {
+                  tags: ['connection']
+                });
+                return _context3.abrupt("return");
+
+              case 4:
+                // reconnect in case of on error or on close
+                // also reconnect if the health check cycle fails
+                if (interval === undefined) {
+                  interval = this._retryInterval();
+                } // reconnect, or try again after a little while...
+
+
+                _context3.next = 7;
+                return sleep(interval);
+
+              case 7:
+                if (!(this.isConnecting || this.isHealthy)) {
+                  _context3.next = 10;
+                  break;
+                }
+
+                this.logger('info', 'connection:_reconnect() - Abort (2) since already connecting or healthy', {
+                  tags: ['connection']
+                });
+                return _context3.abrupt("return");
+
+              case 10:
+                this.isConnecting = true; // cleanup the old connection
+
+                this.logger('info', 'connection:_reconnect() - Destroying current WS connection', {
+                  tags: ['connection']
+                });
+
+                this._destroyCurrentWSConnection();
+
+                _context3.prev = 13;
+                _context3.next = 16;
+                return this._connect();
+
+              case 16:
+                open = _context3.sent;
+
+                if (!this.recoverCallback) {
+                  _context3.next = 22;
+                  break;
+                }
+
+                this.logger('info', 'connection:_reconnect() - Waiting for recoverCallBack', {
+                  tags: ['connection']
+                });
+                _context3.next = 21;
+                return this.recoverCallback(open);
+
+              case 21:
+                this.logger('info', 'connection:_reconnect() - Finished recoverCallBack', {
+                  tags: ['connection']
+                });
+
+              case 22:
+                this.isConnecting = false;
+                this.consecutiveFailures = 0;
+                _context3.next = 30;
+                break;
+
+              case 26:
+                _context3.prev = 26;
+                _context3.t0 = _context3["catch"](13);
+                this.isConnecting = false; // reconnect on WS failures, dont reconnect if there is a code bug
+
+                if (_context3.t0.isWSFailure) {
+                  this.logger('info', 'connection:_reconnect() - WS failure, so going to try to reconnect', {
+                    tags: ['connection']
+                  });
+
+                  this._reconnect();
+                }
+
+              case 30:
+                this.logger('info', 'connection:_reconnect() - == END ==', {
+                  tags: ['connection']
+                });
+
+              case 31:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this, [[13, 26]]);
+      }));
+
+      function _reconnect(_x) {
+        return _reconnect2.apply(this, arguments);
+      }
+
+      return _reconnect;
+    }()
+    /**
+     * onlineStatusChanged - this function is called when the browser connects or disconnects from the internet.
+     *
+     * @param {object} event Event with type online or offline
+     *
+     */
+
+  }, {
+    key: "_destroyCurrentWSConnection",
+
+    /**
+     * _destroyCurrentWSConnection - Removes the current WS connnection
+     *
+     */
+    value: function _destroyCurrentWSConnection() {
+      // increment the ID, meaning we will ignore all messages from the old
+      // ws connection from now on.
+      this.wsID += 1;
+
+      try {
+        if (this.ws && this.ws.removeAllListeners) {
+          this.ws.removeAllListeners();
+        }
+
+        if (this.ws && this.ws.close) {
+          this.ws.close();
+        }
+      } catch (e) {// we dont care
+      }
+    }
+    /**
+     * _retryInterval - A retry interval which increases after consecutive failures
+     *
+     * @return {int} Duration to wait in milliseconds
+     */
+
+  }, {
+    key: "_retryInterval",
+    value: function _retryInterval() {
+      // try to reconnect in 0-5 seconds (random to spread out the load from failures)
+      var max = Math.min(500 + this.consecutiveFailures * 2000, 25000);
+      var min = Math.min(Math.max(250, (this.consecutiveFailures - 1) * 2000), 25000);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+    /**
+     * _setupPromise - sets up the this.connectOpen promise
+     */
+
+  }, {
+    key: "_startHealthCheck",
+
+    /**
+     * _startHealthCheck - Sends a message every 30s or so to see if the ws connection still works
+     *
+     */
+    value: function _startHealthCheck() {
+      var that = this; // 30 seconds is the recommended interval (messenger uses this)
+
+      this.healthCheckIntervalRef = setInterval(function () {
+        // send the healthcheck.., server replies with a health check event
+        var data = [{
+          type: 'health.check',
+          client_id: that.clientID,
+          user_id: that.userID
+        }]; // try to send on the connection
+
+        try {
+          that.ws.send(JSON.stringify(data));
+        } catch (e) {// error will already be detected elsewhere
+        }
+      }, that.healthCheckInterval);
+    }
+    /**
+     * _startMonitor - Verifies we didn't miss any events. Marks the connection as failed in case we did.
+     *
+     */
+
+  }, {
+    key: "_startMonitor",
+    value: function _startMonitor() {
+      var _this3 = this;
+
+      var that = this;
+      this.monitorIntervalRef = setInterval(function () {
+        var now = new Date(); // means we missed a health check
+
+        if (now - that.lastEvent > _this3.healthCheckInterval + 10 * 1000) {
+          _this3.logger('info', 'connection:_startMonitor - going to reconnect', {
+            tags: ['connection']
+          });
+
+          that._setHealth(false);
+
+          that._reconnect();
+        }
+      }, that.monitorInterval);
+    }
+  }]);
+
+  return StableWSConnection;
+}();
+
+var jwt = null;
+
+var crypto = null;
+
+var map = function map(arr, callback) {
+  var res = [];
+  var kValue, mappedValue;
+
+  for (var k = 0, len = arr.length; k < len; k++) {
+    if (typeof arr === 'string' && !!arr.charAt(k)) {
+      kValue = arr.charAt(k);
+      mappedValue = callback(kValue, k, arr);
+      res[k] = mappedValue;
+    } else if (typeof arr !== 'string' && k in arr) {
+      kValue = arr[k];
+      mappedValue = callback(kValue, k, arr);
+      res[k] = mappedValue;
+    }
+  }
+
+  return res;
+};
+
+function encodeBase64(data) {
+  return Object(base64_js__WEBPACK_IMPORTED_MODULE_14__["fromByteArray"])(map(data, function (char) {
+    return char.charCodeAt(0);
+  }));
+} // base-64 decoder throws exception if encoded string is not padded by '=' to make string length
+// in multiples of 4. So gonna use our own method for this purpose to keep backwards compatibility
+// https://github.com/beatgammit/base64-js/blob/master/index.js#L26
+
+function decodeBase64(s) {
+  var e = {},
+      w = String.fromCharCode,
+      L = s.length;
+  var i,
+      b = 0,
+      c,
+      x,
+      l = 0,
+      a,
+      r = '';
+  var A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+  for (i = 0; i < 64; i++) {
+    e[A.charAt(i)] = i;
+  }
+
+  for (x = 0; x < L; x++) {
+    c = e[s.charAt(x)];
+    b = (b << 6) + c;
+    l += 6;
+
+    while (l >= 8) {
+      ((a = b >>> (l -= 8) & 0xff) || x < L - 2) && (r += w(a));
+    }
+  }
+
+  return r;
+}
+
+function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(source, true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+/**
+ * Creates the JWT token that can be used for a UserSession
+ * @method JWTUserSessionToken
+ * @memberof signing
+ * @private
+ * @param {string} apiSecret - API Secret key
+ * @param {string} userId - The user_id key in the JWT payload
+ * @param {object} [extraData] - Extra that should be part of the JWT token
+ * @param {object} [jwtOptions] - Options that can be past to jwt.sign
+ * @return {string} JWT Token
+ */
+
+function JWTUserToken(apiSecret, userId) {
+  var extraData = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var jwtOptions = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+  if (typeof userId !== 'string') {
+    throw new TypeError('userId should be a string');
+  }
+
+  var payload = _objectSpread$1({
+    user_id: userId
+  }, extraData); // make sure we return a clear error when jwt is shimmed (ie. browser build)
+
+
+  {
+    throw Error("Unable to find jwt crypto, if you are getting this error is probably because you are trying to generate tokens on browser or React Native (or other environment where crypto functions are not available). Please Note: token should only be generated server-side.");
+  }
+
+  var opts = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    algorithm: 'HS256',
+    noTimestamp: true
+  }, jwtOptions);
+
+  return jwt.sign(payload, apiSecret, opts);
+}
+function JWTServerToken(apiSecret) {
+  var jwtOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var payload = {
+    server: true
+  };
+
+  var opts = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    algorithm: 'HS256',
+    noTimestamp: true
+  }, jwtOptions);
+
+  return jwt.sign(payload, apiSecret, opts);
+}
+/**
+ * @return {string}
+ */
+
+function UserFromToken(token) {
+  var fragments = token.split('.');
+
+  if (fragments.length !== 3) {
+    return '';
+  }
+
+  var b64Payload = fragments[1];
+  var payload = decodeBase64(b64Payload);
+  var data = JSON.parse(payload);
+  return data.user_id;
+}
+/**
+ *
+ * @param userId {string} the id of the user
+ * @return {string}
+ */
+
+function DevToken(userId) {
+  return ['eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9', //{"alg": "HS256", "typ": "JWT"}
+  encodeBase64(JSON.stringify({
+    user_id: userId
+  })), 'devtoken' // hardcoded signature
+  ].join('.');
+}
+/**
+ *
+ * @param body {string} the signed message
+ * @param secret {string} the shared secret used to generate the signature (Stream API secret)
+ * @param signature {string} the signature to validate
+ * @return {boolean}
+ */
+
+function CheckSignature(body, secret, signature) {
+  var key = Buffer.from(secret, 'ascii');
+  var hash = crypto.createHmac('sha256', key).update(body).digest('hex');
+  return hash === signature;
+}
+
+var http = null;
+
+var https = null;
+
+var name = "stream-chat";
+var version = "1.3.3";
+var description = "JS SDK for the Stream Chat API";
+var author = "GetStream";
+var homepage = "https://getstream.io/chat/";
+var repository = "https://github.com/GetStream/stream-chat-js.git";
+var main = "./dist/index.js";
+var module$1 = "./dist/index.es.js";
+var types = "./types/stream-chat/index.d.ts";
+var browser = {
+	"./dist/index.es.js": "./dist/browser.es.js",
+	"./dist/index.js": "./dist/browser.js"
+};
+var jsdelivr = "./dist/browser.full-bundle.min.js";
+var license = "SEE LICENSE IN LICENSE";
+var keywords = [
+	"chat",
+	"messaging",
+	"conversation",
+	"react",
+	"stream",
+	"getstream",
+	"getstream.io"
+];
+var files = [
+	"/dist",
+	"/types/stream-chat/index.d.ts",
+	"readme.md",
+	"license"
+];
+var dependencies = {
+	"@babel/runtime": "^7.3.1",
+	axios: "^0.18.1",
+	"base64-js": "^1.3.1",
+	"chai-arrays": "^2.0.0",
+	"cross-fetch": "^3.0.0",
+	"form-data": "^2.3.3",
+	"isomorphic-ws": "^4.0.1",
+	jsonwebtoken: "^8.3.0",
+	"seamless-immutable": "^7.1.4",
+	uuid: "^3.3.2",
+	ws: "^6.1.3"
+};
+var devDependencies = {
+	"@babel/cli": "^7.6.0",
+	"@babel/core": "^7.6.0",
+	"@babel/node": "^7.2.2",
+	"@babel/plugin-proposal-class-properties": "^7.1.0",
+	"@babel/plugin-transform-async-to-generator": "^7.2.0",
+	"@babel/plugin-transform-object-assign": "^7.2.0",
+	"@babel/plugin-transform-runtime": "^7.2.0",
+	"@babel/preset-env": "^7.1.6",
+	"@babel/register": "^7.0.0",
+	"@types/babel__core": "^7.1.3",
+	"@types/bluebird": "^3.5.29",
+	"@types/chai": "^4.2.5",
+	"@types/chai-arrays": "^1.0.3",
+	"@types/chai-as-promised": "^7.1.2",
+	"@types/chai-like": "^1.1.0",
+	"@types/eslint": "6.1.3",
+	"@types/faker": "^4.1.7",
+	"@types/jsonwebtoken": "^8.3.5",
+	"@types/mocha": "^5.2.7",
+	"@types/prettier": "^1.18.4",
+	"@types/rollup-plugin-json": "^3.0.2",
+	"@types/rollup-plugin-peer-deps-external": "^2.2.0",
+	"@types/rollup-plugin-url": "^2.2.0",
+	"@types/seamless-immutable": "7.1.10",
+	"@types/sinon": "^7.5.1",
+	"@types/uuid": "^3.4.5",
+	"@types/ws": "^6.0.3",
+	"babel-eslint": "^10.0.1",
+	bluebird: "^3.5.3",
+	chai: "^4.2.0",
+	"chai-as-promised": "^7.1.1",
+	"chai-like": "^1.1.1",
+	"chai-sorted": "^0.2.0",
+	dtslint: "^2.0.5",
+	eslint: "5.6.0",
+	"eslint-plugin-babel": "^5.3.0",
+	"eslint-plugin-markdown": "^1.0.0",
+	"eslint-plugin-sonarjs": "^0.5.0",
+	faker: "^4.1.0",
+	husky: "^1.3.1",
+	"lint-staged": "^8.1.0",
+	longjohn: "^0.2.12",
+	mocha: "^5.2.0",
+	mockttp: "^0.19.0",
+	prettier: "^1.15.2",
+	rollup: "^0.68.2",
+	"rollup-plugin-babel": "^4.0.3",
+	"rollup-plugin-commonjs": "^9.1.8",
+	"rollup-plugin-json": "^3.1.0",
+	"rollup-plugin-node-resolve": "^4.0.0",
+	"rollup-plugin-peer-deps-external": "^2.2.0",
+	"rollup-plugin-replace": "^2.1.0",
+	"rollup-plugin-scss": "^0.4.0",
+	"rollup-plugin-terser": "^4.0.4",
+	"rollup-plugin-url": "^2.0.0",
+	sinon: "^7.2.3"
+};
+var scripts = {
+	start: "rollup -c -w",
+	build: "rollup -c",
+	prettier: "npx prettier --list-different '**/*.{js,ts,md,css,scss,json}' .eslintrc.json .prettierrc .babelrc",
+	"prettier-fix": "npx prettier --write '**/*.{js,ts,md,css,scss,json}' .eslintrc.json .prettierrc .babelrc",
+	"test-api-dts": "node types/stream-chat/api-response-tests/index.js && npx prettier --write 'types/stream-chat/api-response-tests/data.ts' .eslintrc.json .prettierrc .babelrc && tsc types/stream-chat/api-response-tests/data.ts && rm types/stream-chat/api-response-tests/data.js && dtslint types/stream-chat",
+	eslint: "npx eslint '**/*.{js,md}' --max-warnings 0",
+	test: "NODE_ENV=test mocha --exit --bail --timeout 15000 --require @babel/register test/*.js -- --async-stack-traces",
+	testall: "NODE_ENV=test mocha --exit --timeout 3000 --require @babel/register test/*.js -- --async-stack-traces",
+	testwatch: "NODE_ENV=test nodemon ./node_modules/.bin/mocha --timeout 15000 --require test-entry.js test/test.js",
+	lint: "npx prettier --list-different '**/*.{js,ts,css,scss,json}' .eslintrc.json .prettierrc .babelrc && npx eslint 'src/*.js' --max-warnings 0",
+	"lint-fix": "npx prettier --write '**/*.{js,ts,css,scss,json}' .eslintrc.json .prettierrc .babelrc && npx eslint --fix 'src/*.js' --max-warnings 0",
+	prepare: "rm -rf dist && yarn run build",
+	preversion: "yarn && yarn lint",
+	version: "git add yarn.lock",
+	postversion: "git push && git push --tags && npm publish"
+};
+var husky = {
+	hooks: {
+		"pre-commit": "./dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
+	}
+};
+var pkg = {
+	name: name,
+	version: version,
+	description: description,
+	author: author,
+	homepage: homepage,
+	repository: repository,
+	main: main,
+	module: module$1,
+	"jsnext:main": "./dist/index.es.js",
+	types: types,
+	browser: browser,
+	"react-native": {
+	"./dist/index.es.js": "./dist/browser.es.js",
+	"./dist/index.js": "./dist/browser.js"
+},
+	jsdelivr: jsdelivr,
+	license: license,
+	keywords: keywords,
+	files: files,
+	dependencies: dependencies,
+	devDependencies: devDependencies,
+	scripts: scripts,
+	husky: husky
+};
+
+function ownKeys$2(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread$2(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$2(source, true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$2(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function isReadableStream(obj) {
+  return obj !== null && _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9___default()(obj) === 'object' && typeof obj._read === 'function' && _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9___default()(obj._readableState) === 'object';
+}
+
+function isFunction(value) {
+  return value && (Object.prototype.toString.call(value) === '[object Function]' || 'function' === typeof value || value instanceof Function);
+}
+
+var StreamChat =
+/*#__PURE__*/
+function () {
+  function StreamChat(key, secretOrOptions, options) {
+    var _this = this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, StreamChat);
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_hasConnectionID", function () {
+      return Boolean(_this.connectionID);
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "dispatchEvent", function (event) {
+      // client event handlers
+      _this._handleClientEvent(event); // channel event handlers
+
+
+      var cid = event.cid;
+      var channel = _this.activeChannels[cid];
+
+      if (channel) {
+        channel._handleChannelEvent(event);
+      }
+
+      _this._callClientListeners(event);
+
+      if (channel) {
+        channel._callChannelListeners(event);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "handleEvent", function (messageEvent) {
+      // dispatch the event to the channel listeners
+      var jsonString = messageEvent.data;
+      var event = JSON.parse(jsonString);
+      event.received_at = new Date();
+
+      _this.dispatchEvent(event);
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_callClientListeners", function (event) {
+      var client = _this; // gather and call the listeners
+
+      var listeners = [];
+
+      if (client.listeners.all) {
+        listeners.push.apply(listeners, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(client.listeners.all));
+      }
+
+      if (client.listeners[event.type]) {
+        listeners.push.apply(listeners, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(client.listeners[event.type]));
+      } // call the event and send it to the listeners
+
+
+      for (var _i = 0, _listeners = listeners; _i < _listeners.length; _i++) {
+        var listener = _listeners[_i];
+        listener(event);
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "recoverState",
+    /*#__PURE__*/
+    _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
+      var cids, lastMessageIDs, _i2, _Object$values, c, lastMessage, lastMessageId;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.logger('info', "client:recoverState() - Start of recoverState with connectionID ".concat(_this.wsConnection.connectionID), {
+                tags: ['connection']
+              });
+
+              _this.connectionID = _this.wsConnection.connectionID;
+              cids = Object.keys(_this.activeChannels);
+              lastMessageIDs = {};
+
+              for (_i2 = 0, _Object$values = Object.values(_this.activeChannels); _i2 < _Object$values.length; _i2++) {
+                c = _Object$values[_i2];
+                lastMessage = c.lastMessage();
+                lastMessageId = void 0;
+
+                if (lastMessage) {
+                  lastMessageId = lastMessage.id;
+                }
+
+                lastMessageIDs[c.cid] = lastMessageId;
+              }
+
+              if (!cids.length) {
+                _context.next = 11;
+                break;
+              }
+
+              _this.logger('info', "client:recoverState() - Start the querying of ".concat(cids.length, " channels"), {
+                tags: ['connection', 'client']
+              });
+
+              _context.next = 9;
+              return _this.queryChannels({
+                cid: {
+                  $in: cids
+                }
+              }, {
+                last_message_at: -1
+              }, {
+                limit: 30,
+                recovery: true,
+                last_message_ids: lastMessageIDs
+              });
+
+            case 9:
+              _this.logger('info', 'client:recoverState() - Querying channels finished', {
+                tags: ['connection', 'client']
+              });
+
+              _this.dispatchEvent({
+                type: 'connection.recovered'
+              });
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(this, "_isUsingServerAuth", function () {
+      return !!_this.secret;
+    });
+
+    // set the key
+    this.key = key;
+    this.userToken = null;
+    this.secret = null;
+    this.listeners = {};
+    this.state = new ClientState(); // set the secret
+
+    if (secretOrOptions && secretOrOptions.indexOf) {
+      this.secret = secretOrOptions;
+    } // set the options... and figure out defaults...
+
+
+    options = options || secretOrOptions;
+
+    if (!options) {
+      options = {};
+    }
+
+    this.browser = typeof options.browser !== 'undefined' ? options.browser : typeof window !== 'undefined';
+    this.node = !this.browser;
+    var defaultOptions = {
+      timeout: 3000
+    };
+
+    if (this.node) {
+      var nodeOptions = {
+        httpAgent: new http.Agent({
+          keepAlive: 3000
+        }),
+        httpsAgent: new https.Agent({
+          keepAlive: 3000
+        })
+      };
+      this.options = _objectSpread$2({}, nodeOptions, {}, defaultOptions, {}, options);
+    } else {
+      this.options = _objectSpread$2({}, defaultOptions, {}, options);
+      delete this.options.httpAgent;
+      delete this.options.httpsAgent;
+    }
+
+    this.setBaseURL('https://chat-us-east-1.stream-io-api.com');
+
+    if (typeof process !== 'undefined' && process.env.STREAM_LOCAL_TEST_RUN) {
+      this.setBaseURL('http://localhost:3030');
+    } // WS connection is initialized when setUser is called
+
+
+    this.wsConnection = null;
+    this.wsPromise = null; // keeps a reference to all the channels that are in use
+
+    this.activeChannels = {}; // mapping between channel groups and configs
+
+    this.configs = {};
+    this.anonymous = false;
+    /**
+     * logger function should accept 3 parameters:
+     * @param logLevel string
+     * @param message   string
+     * @param extraData object
+     *
+     * e.g.,
+     * const client = new StreamChat('api_key', {}, {
+     * 		logger = (logLevel, message, extraData) => {
+     * 			console.log(message);
+     * 		}
+     * })
+     *
+     * extraData contains tags array attached to log message. Tags can have one/many of following values:
+     * 1. api
+     * 2. api_request
+     * 3. api_response
+     * 4. client
+     * 5. channel
+     * 6. connection
+     * 7. event
+     *
+     * It may also contains some extra data, some examples have been mentioned below:
+     * 1. {
+     * 		tags: ['api', 'api_request', 'client'],
+     * 		url: string,
+     * 		payload: object,
+     * 		config: object
+     * }
+     * 2. {
+     * 		tags: ['api', 'api_response', 'client'],
+     * 		url: string,
+     * 		response: object
+     * }
+     * 3. {
+     * 		tags: ['api', 'api_response', 'client'],
+     * 		url: string,
+     * 		error: object
+     * }
+     * 4. {
+     * 		tags: ['event', 'client'],
+     * 		event: object
+     * }
+     * 5. {
+     * 		tags: ['channel'],
+     * 		channel: object
+     * }
+     */
+
+    this.logger = isFunction(options.logger) ? options.logger : function () {};
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_7___default()(StreamChat, [{
+    key: "devToken",
+    value: function devToken(userID) {
+      return DevToken(userID);
+    }
+  }, {
+    key: "getAuthType",
+    value: function getAuthType() {
+      return this.anonymous ? 'anonymous' : 'jwt';
+    }
+  }, {
+    key: "setBaseURL",
+    value: function setBaseURL(baseURL) {
+      this.baseURL = baseURL;
+      this.wsBaseURL = this.baseURL.replace('http', 'ws');
+    }
+  }, {
+    key: "_setupConnection",
+    value: function _setupConnection() {
+      this.UUID = uuid_v4__WEBPACK_IMPORTED_MODULE_11___default()();
+      this.clientID = "".concat(this.userID, "--").concat(this.UUID);
+      this.wsPromise = this.connect();
+
+      this._startCleaning();
+
+      return this.wsPromise;
+    }
+  }, {
+    key: "setUser",
+
+    /**
+     * setUser - Set the current user, this triggers a connection to the API
+     *
+     * @param {object} user Data about this user. IE {name: "john"}
+     * @param {string} userToken   Token
+     *
+     * @return {promise} Returns a promise that resolves when the connection is setup
+     */
+    value: function setUser(user, userToken) {
+      if (this.userID) {
+        throw new Error('Use client.disconnect() before trying to connect as a different user. setUser was called twice.');
+      } // we generate the client id client side
+
+
+      this.userID = user.id;
+
+      if (!this.userID) {
+        throw new Error('The "id" field on the user is missing');
+      }
+
+      this.userToken = userToken;
+
+      if (userToken == null && this.secret != null) {
+        this.userToken = this.createToken(this.userID);
+      }
+
+      if (this.userToken == null) {
+        throw new Error('both userToken and api secret are not provided');
+      }
+
+      var tokenUserId = UserFromToken(this.userToken);
+
+      if (userToken != null && (tokenUserId == null || tokenUserId === '' || tokenUserId !== user.id)) {
+        throw new Error('userToken does not have a user_id or is not matching with user.id');
+      }
+
+      this._setUser(user);
+
+      this.anonymous = false;
+      return this._setupConnection();
+    }
+  }, {
+    key: "_setUser",
+    value: function _setUser(user) {
+      // this one is used by the frontend
+      this.user = user; // this one is actually used for requests...
+
+      this._user = _objectSpread$2({}, user);
+    }
+    /**
+     * updateAppSettings - updates application settings
+     *
+     * @param {object} options App settings.
+     * 		IE: {
+      			"apn_config": {
+    				"auth_type": "token",
+    				"auth_key": fs.readFileSync(
+    					'./apn-push-auth-key.p8',
+    					'utf-8',
+    				),
+    				"key_id": "keyid",
+    				"team_id": "teamid", //either ALL these 3
+    				"notification_template": "notification handlebars template",
+    				"bundle_id": "com.apple.your.app",
+    				"development": true
+    			},
+    			"firebase_config": {
+    				"server_key": "server key from fcm",
+    				"notification_template": "notification handlebars template"
+    				"data_template": "data handlebars template"
+    			},
+    			"webhook_url": "https://acme.com/my/awesome/webhook/"
+    		}
+     */
+
+  }, {
+    key: "updateAppSettings",
+    value: function () {
+      var _updateAppSettings = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee2(options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (options.apn_config && options.apn_config.p12_cert) {
+                  options.apn_config.p12_cert = Buffer.from(options.apn_config.p12_cert).toString('base64');
+                }
+
+                _context2.next = 3;
+                return this.patch(this.baseURL + '/app', options);
+
+              case 3:
+                return _context2.abrupt("return", _context2.sent);
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function updateAppSettings(_x) {
+        return _updateAppSettings.apply(this, arguments);
+      }
+
+      return updateAppSettings;
+    }()
+    /**
+     * getAppSettings - retrieves application settings
+     */
+
+  }, {
+    key: "getAppSettings",
+    value: function () {
+      var _getAppSettings = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return this.get(this.baseURL + '/app');
+
+              case 2:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function getAppSettings() {
+        return _getAppSettings.apply(this, arguments);
+      }
+
+      return getAppSettings;
+    }()
+    /**
+     * testPushSettings - Tests the push settings for a user with a random chat message and the configured push templates
+     *
+     * @param {string} userID User ID. If user has no devices, it will error
+     * @param {object} [data] Overrides for push templates/message used
+     * 		IE: {
+    			  messageID: 'id-of-message',//will error if message does not exist
+    			  apnTemplate: '{}', //if app doesn't have apn configured it will error
+    			  firebaseTemplate: '{}', //if app doesn't have firebase configured it will error
+    			  firebaseDataTemplate: '{}', //if app doesn't have firebase configured it will error
+    		}
+     */
+
+  }, {
+    key: "testPushSettings",
+    value: function () {
+      var _testPushSettings = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee4(userID) {
+        var data,
+            _args4 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                data = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : {};
+                _context4.next = 3;
+                return this.post(this.baseURL + '/check_push', _objectSpread$2({
+                  user_id: userID
+                }, data.messageID ? {
+                  message_id: data.messageID
+                } : {}, {}, data.apnTemplate ? {
+                  apn_template: data.apnTemplate
+                } : {}, {}, data.firebaseTemplate ? {
+                  firebase_template: data.firebaseTemplate
+                } : {}, {}, data.firebaseDataTemplate ? {
+                  firebase_data_template: data.firebaseDataTemplate
+                } : {}));
+
+              case 3:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 4:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function testPushSettings(_x2) {
+        return _testPushSettings.apply(this, arguments);
+      }
+
+      return testPushSettings;
+    }()
+    /**
+     * disconnect - closes the WS connection
+     */
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {
+      this.logger('info', 'client:disconnect() - Disconnecting the client', {
+        tags: ['connection', 'client']
+      }); // remove the user specific fields
+
+      delete this.user;
+      delete this._user;
+      delete this.userID;
+
+      if (this.cleaningIntervalRef != null) {
+        clearInterval(this.cleaningIntervalRef);
+        this.cleaningIntervalRef = null;
+      }
+
+      this.anonymous = false;
+      this.userToken = null;
+      this.connectionEstablishedCount = 0;
+
+      for (var _i3 = 0, _Object$values2 = Object.values(this.activeChannels); _i3 < _Object$values2.length; _i3++) {
+        var channel = _Object$values2[_i3];
+
+        channel._disconnect();
+      } // ensure we no longer return inactive channels
+
+
+      this.activeChannels = {}; // reset client state
+
+      this.state = new ClientState(); // close the WS connection
+
+      if (this.wsConnection) {
+        return this.wsConnection.disconnect();
+      }
+
+      return Promise.resolve();
+    }
+  }, {
+    key: "setAnonymousUser",
+    value: function setAnonymousUser() {
+      this.anonymous = true;
+      this.userID = uuid_v4__WEBPACK_IMPORTED_MODULE_11___default()();
+
+      this._setUser({
+        id: this.userID,
+        anon: true
+      });
+
+      return this._setupConnection();
+    }
+    /**
+     * setGuestUser - Setup a temporary guest user
+     *
+     * @param {object} user Data about this user. IE {name: "john"}
+     *
+     * @return {promise} Returns a promise that resolves when the connection is setup
+     */
+
+  }, {
+    key: "setGuestUser",
+    value: function () {
+      var _setGuestUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee5(user) {
+        var response, _response$user, created_at, updated_at, last_active, online, guestUser;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                this.anonymous = true;
+                _context5.prev = 1;
+                _context5.next = 4;
+                return this.post(this.baseURL + '/guest', {
+                  user: user
+                });
+
+              case 4:
+                response = _context5.sent;
+                _context5.next = 11;
+                break;
+
+              case 7:
+                _context5.prev = 7;
+                _context5.t0 = _context5["catch"](1);
+                this.anonymous = false;
+                throw _context5.t0;
+
+              case 11:
+                this.anonymous = false;
+                _response$user = response.user, created_at = _response$user.created_at, updated_at = _response$user.updated_at, last_active = _response$user.last_active, online = _response$user.online, guestUser = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_response$user, ["created_at", "updated_at", "last_active", "online"]);
+                _context5.next = 15;
+                return this.setUser(guestUser, response.access_token);
+
+              case 15:
+                return _context5.abrupt("return", _context5.sent);
+
+              case 16:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this, [[1, 7]]);
+      }));
+
+      function setGuestUser(_x3) {
+        return _setGuestUser.apply(this, arguments);
+      }
+
+      return setGuestUser;
+    }()
+    /**
+     * createToken - Creates a token to authenticate this user. This function is used server side.
+     * The resulting token should be passed to the client side when the users registers or logs in
+     *
+     * @param {string}   userID         The User ID
+     * @param {string}   exp            The expiration time for the token expressed in the number of seconds since the epoch
+     *
+     * @return {string} Returns a token
+     */
+
+  }, {
+    key: "createToken",
+    value: function createToken(userID, exp) {
+      if (this.secret == null) {
+        throw Error("tokens can only be created server-side using the API Secret");
+      }
+
+      var extra = {};
+
+      if (exp != null) {
+        extra.exp = exp;
+      }
+
+      return JWTUserToken(this.secret, userID, extra, {});
+    }
+    /**
+     * on - Listen to events on all channels and users your watching
+     *
+     * client.on('message.new', event => {console.log("my new message", event, channel.state.messages)})
+     * or
+     * client.on(event => {console.log(event.type)})
+     *
+     * @param {string} callbackOrString  The event type to listen for (optional)
+     * @param {function} callbackOrNothing The callback to call
+     *
+     * @return {type} Description
+     */
+
+  }, {
+    key: "on",
+    value: function on(callbackOrString, callbackOrNothing) {
+      var _this2 = this;
+
+      var key = callbackOrNothing ? callbackOrString : 'all';
+      var valid = isValidEventType(key);
+
+      if (!valid) {
+        throw Error("Invalid event type ".concat(key));
+      }
+
+      var callback = callbackOrNothing ? callbackOrNothing : callbackOrString;
+
+      if (!(key in this.listeners)) {
+        this.listeners[key] = [];
+      }
+
+      this.logger('info', "Attaching listener for ".concat(key, " event"), {
+        tags: ['event', 'client']
+      });
+      this.listeners[key].push(callback);
+      return {
+        unsubscribe: function unsubscribe() {
+          _this2.listeners[key] = _this2.listeners[key].filter(function (el) {
+            return el !== callback;
+          });
+        }
+      };
+    }
+    /**
+     * off - Remove the event handler
+     *
+     */
+
+  }, {
+    key: "off",
+    value: function off(callbackOrString, callbackOrNothing) {
+      var key = callbackOrNothing ? callbackOrString : 'all';
+      var valid = isValidEventType(key);
+
+      if (!valid) {
+        throw Error("Invalid event type ".concat(key));
+      }
+
+      var callback = callbackOrNothing ? callbackOrNothing : callbackOrString;
+
+      if (!(key in this.listeners)) {
+        this.listeners[key] = [];
+      }
+
+      this.logger('info', "Removing listener for ".concat(key, " event"), {
+        tags: ['event', 'client']
+      });
+      this.listeners[key] = this.listeners[key].filter(function (value) {
+        return value !== callback;
+      });
+    }
+  }, {
+    key: "_logApiRequest",
+    value: function _logApiRequest(type, url, data, config) {
+      this.logger('info', "client: ".concat(type, " - Request - ").concat(url), {
+        tags: ['api', 'api_request', 'client'],
+        url: url,
+        payload: data,
+        config: config
+      });
+    }
+  }, {
+    key: "_logApiResponse",
+    value: function _logApiResponse(type, url, response) {
+      this.logger('info', "client:".concat(type, " - Response - url: ").concat(url, " > status ").concat(response.status), {
+        tags: ['api', 'api_response', 'client'],
+        url: url,
+        response: response
+      });
+    }
+  }, {
+    key: "_logApiError",
+    value: function _logApiError(type, url, error) {
+      this.logger('error', "client:".concat(type, " - Error - url: ").concat(url), {
+        tags: ['api', 'api_response', 'client'],
+        url: url,
+        error: error
+      });
+    }
+  }, {
+    key: "get",
+    value: function () {
+      var _get = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee6(url, params) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.prev = 0;
+
+                this._logApiRequest('get', url, {}, this._addClientParams(params));
+
+                _context6.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(url, this._addClientParams(params));
+
+              case 4:
+                response = _context6.sent;
+
+                this._logApiResponse('get', url, response);
+
+                return _context6.abrupt("return", this.handleResponse(response));
+
+              case 9:
+                _context6.prev = 9;
+                _context6.t0 = _context6["catch"](0);
+
+                this._logApiError('get', url, _context6.t0);
+
+                if (!_context6.t0.response) {
+                  _context6.next = 16;
+                  break;
+                }
+
+                return _context6.abrupt("return", this.handleResponse(_context6.t0.response));
+
+              case 16:
+                throw _context6.t0;
+
+              case 17:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this, [[0, 9]]);
+      }));
+
+      function get(_x4, _x5) {
+        return _get.apply(this, arguments);
+      }
+
+      return get;
+    }()
+  }, {
+    key: "put",
+    value: function () {
+      var _put = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee7(url, data) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                _context7.prev = 0;
+
+                this._logApiRequest('put', url, data, this._addClientParams());
+
+                _context7.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.put(url, data, this._addClientParams());
+
+              case 4:
+                response = _context7.sent;
+
+                this._logApiResponse('put', url, response);
+
+                return _context7.abrupt("return", this.handleResponse(response));
+
+              case 9:
+                _context7.prev = 9;
+                _context7.t0 = _context7["catch"](0);
+
+                this._logApiError('get', url, _context7.t0);
+
+                if (!_context7.t0.response) {
+                  _context7.next = 16;
+                  break;
+                }
+
+                return _context7.abrupt("return", this.handleResponse(_context7.t0.response));
+
+              case 16:
+                throw _context7.t0;
+
+              case 17:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7, this, [[0, 9]]);
+      }));
+
+      function put(_x6, _x7) {
+        return _put.apply(this, arguments);
+      }
+
+      return put;
+    }()
+  }, {
+    key: "post",
+    value: function () {
+      var _post = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee8(url, data) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                _context8.prev = 0;
+
+                this._logApiRequest('post', url, data, this._addClientParams());
+
+                _context8.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(url, data, this._addClientParams());
+
+              case 4:
+                response = _context8.sent;
+
+                this._logApiResponse('post', url, response);
+
+                return _context8.abrupt("return", this.handleResponse(response));
+
+              case 9:
+                _context8.prev = 9;
+                _context8.t0 = _context8["catch"](0);
+
+                this._logApiError('post', url, _context8.t0);
+
+                if (!_context8.t0.response) {
+                  _context8.next = 16;
+                  break;
+                }
+
+                return _context8.abrupt("return", this.handleResponse(_context8.t0.response));
+
+              case 16:
+                throw _context8.t0;
+
+              case 17:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8, this, [[0, 9]]);
+      }));
+
+      function post(_x8, _x9) {
+        return _post.apply(this, arguments);
+      }
+
+      return post;
+    }()
+  }, {
+    key: "patch",
+    value: function () {
+      var _patch = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee9(url, data) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                _context9.prev = 0;
+
+                this._logApiRequest('patch', url, data, this._addClientParams());
+
+                _context9.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.patch(url, data, this._addClientParams());
+
+              case 4:
+                response = _context9.sent;
+
+                this._logApiResponse('patch', url, response);
+
+                return _context9.abrupt("return", this.handleResponse(response));
+
+              case 9:
+                _context9.prev = 9;
+                _context9.t0 = _context9["catch"](0);
+
+                this._logApiError('patch', url, _context9.t0);
+
+                if (!_context9.t0.response) {
+                  _context9.next = 16;
+                  break;
+                }
+
+                return _context9.abrupt("return", this.handleResponse(_context9.t0.response));
+
+              case 16:
+                throw _context9.t0;
+
+              case 17:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this, [[0, 9]]);
+      }));
+
+      function patch(_x10, _x11) {
+        return _patch.apply(this, arguments);
+      }
+
+      return patch;
+    }()
+  }, {
+    key: "delete",
+    value: function () {
+      var _delete2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee10(url, params) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee10$(_context10) {
+          while (1) {
+            switch (_context10.prev = _context10.next) {
+              case 0:
+                _context10.prev = 0;
+
+                this._logApiRequest('delete', url, {}, this._addClientParams());
+
+                _context10.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.delete(url, this._addClientParams(params));
+
+              case 4:
+                response = _context10.sent;
+
+                this._logApiResponse('delete', url, response);
+
+                return _context10.abrupt("return", this.handleResponse(response));
+
+              case 9:
+                _context10.prev = 9;
+                _context10.t0 = _context10["catch"](0);
+
+                this._logApiError('delete', url, _context10.t0);
+
+                if (!_context10.t0.response) {
+                  _context10.next = 16;
+                  break;
+                }
+
+                return _context10.abrupt("return", this.handleResponse(_context10.t0.response));
+
+              case 16:
+                throw _context10.t0;
+
+              case 17:
+              case "end":
+                return _context10.stop();
+            }
+          }
+        }, _callee10, this, [[0, 9]]);
+      }));
+
+      function _delete(_x12, _x13) {
+        return _delete2.apply(this, arguments);
+      }
+
+      return _delete;
+    }()
+  }, {
+    key: "sendFile",
+    value: function () {
+      var _sendFile = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee11(url, uri, name$$1, contentType, user) {
+        var data, fileField, params, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                data = new form_data__WEBPACK_IMPORTED_MODULE_16___default.a();
+                params = this._addClientParams();
+
+                if (isReadableStream(uri) || uri instanceof File) {
+                  fileField = uri;
+                } else {
+                  fileField = {
+                    uri: uri,
+                    name: name$$1 || uri.split('/').reverse()[0]
+                  };
+
+                  if (contentType != null) {
+                    fileField.type = contentType;
+                  }
+                }
+
+                if (user != null) {
+                  data.append('user', JSON.stringify(user));
+                }
+
+                data.append('file', fileField);
+                _context11.next = 7;
+                return cross_fetch__WEBPACK_IMPORTED_MODULE_15___default()("".concat(url, "?api_key=").concat(this.key), {
+                  method: 'post',
+                  body: data,
+                  headers: new cross_fetch__WEBPACK_IMPORTED_MODULE_15__["Headers"]({
+                    Authorization: params.headers.Authorization,
+                    'stream-auth-type': this.getAuthType()
+                  })
+                });
+
+              case 7:
+                response = _context11.sent;
+                _context11.next = 10;
+                return response.json();
+
+              case 10:
+                response.data = _context11.sent;
+                return _context11.abrupt("return", this.handleResponse(response));
+
+              case 12:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11, this);
+      }));
+
+      function sendFile(_x14, _x15, _x16, _x17, _x18) {
+        return _sendFile.apply(this, arguments);
+      }
+
+      return sendFile;
+    }()
+  }, {
+    key: "errorFromResponse",
+    value: function errorFromResponse(response) {
+      var err;
+      err = new Error("StreamChat error HTTP code: ".concat(response.status));
+
+      if (response.data && response.data.code) {
+        err = new Error("StreamChat error code ".concat(response.data.code, ": ").concat(response.data.message));
+        err.code = response.data.code;
+      }
+
+      err.response = response;
+      err.status = response.status;
+      return err;
+    }
+  }, {
+    key: "handleResponse",
+    value: function handleResponse(response) {
+      var data = response.data;
+
+      if ((response.status + '')[0] !== '2') {
+        throw this.errorFromResponse(response);
+      }
+
+      return data;
+    }
+  }, {
+    key: "_handleClientEvent",
+    value: function _handleClientEvent(event) {
+      var client = this;
+      this.logger('info', "client:_handleClientEvent - Received event of type { ".concat(event.type, " }"), {
+        tags: ['event', 'client'],
+        event: event
+      }); // update the client.state with any changes to users
+
+      if (event.type === 'user.presence.changed' || event.type === 'user.updated') {
+        if (event.user.id === this.userID) {
+          this.user = _objectSpread$2({}, this.user, {}, event.user); // Updating only available properties in _user object.
+
+          Object.keys(event.user).forEach(function (key) {
+            if (key in client._user) {
+              client._user[key] = event.user[key];
+            }
+          });
+        }
+
+        client.state.updateUser(event.user);
+
+        client._updateUserReferences(event.user);
+      }
+
+      if (event.type === 'health.check' && event.me) {
+        client.user = event.me;
+        client.state.updateUser(event.me);
+      }
+
+      if (event.type === 'notification.message_new') {
+        this.configs[event.channel.type] = event.channel.config;
+      }
+    }
+  }, {
+    key: "_updateUserReferences",
+
+    /*
+    _updateUserReferences updates the members and watchers of the currently active channels
+    that contain this user
+    */
+    value: function _updateUserReferences(user) {
+      var refMap = this.state.userChannelReferences[user.id] || {};
+      var refs = Object.keys(refMap);
+
+      for (var _i4 = 0, _refs = refs; _i4 < _refs.length; _i4++) {
+        var channelID = _refs[_i4];
+        var c = this.activeChannels[channelID]; // search the members and watchers and update as needed...
+
+        if (c && c.state) {
+          if (c.state.members[user.id]) {
+            c.state.members = c.state.members.setIn([user.id, 'user'], user);
+          }
+
+          if (c.state.watchers[user.id]) {
+            c.state.watchers = c.state.watchers.setIn([user.id, 'user'], user);
+          }
+        }
+      }
+    }
+  }, {
+    key: "connect",
+    value: function () {
+      var _connect = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee12() {
+        var client, params, qs, token, authType, handshake;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee12$(_context12) {
+          while (1) {
+            switch (_context12.prev = _context12.next) {
+              case 0:
+                this.connecting = true;
+                client = this;
+                this.failures = 0;
+
+                if (!(client.userID == null)) {
+                  _context12.next = 5;
+                  break;
+                }
+
+                throw Error('Call setUser or setAnonymousUser before starting the connection');
+
+              case 5:
+                params = {
+                  client_id: client.client_id,
+                  user_id: client.userID,
+                  user_details: client._user,
+                  user_token: client.userToken,
+                  server_determines_connection_id: true
+                };
+                qs = encodeURIComponent(JSON.stringify(params));
+
+                if (!(qs.length > 1900)) {
+                  _context12.next = 9;
+                  break;
+                }
+
+                throw Error('User object is too large');
+
+              case 9:
+                token = this._getToken();
+                authType = this.getAuthType();
+                client.wsURL = "".concat(client.wsBaseURL, "/connect?json=").concat(qs, "&api_key=").concat(this.key, "&authorization=").concat(token, "&stream-auth-type=").concat(authType, "&x-stream-client=").concat(this._userAgent()); // The StableWSConnection handles all the reconnection logic.
+
+                this.wsConnection = new StableWSConnection({
+                  wsURL: client.wsURL,
+                  clientID: this.clientID,
+                  userID: this.userID,
+                  recoverCallback: this.recoverState,
+                  messageCallback: this.handleEvent,
+                  eventCallback: this.dispatchEvent,
+                  logger: this.logger
+                });
+                _context12.next = 15;
+                return this.wsConnection.connect();
+
+              case 15:
+                handshake = _context12.sent;
+                this.connectionID = this.wsConnection.connectionID;
+                return _context12.abrupt("return", handshake);
+
+              case 18:
+              case "end":
+                return _context12.stop();
+            }
+          }
+        }, _callee12, this);
+      }));
+
+      function connect() {
+        return _connect.apply(this, arguments);
+      }
+
+      return connect;
+    }()
+    /**
+     * queryUsers - Query users and watch user presence
+     *
+     * @param {object} filterConditions MongoDB style filter conditions
+     * @param {object} sort             Sort options, for instance {last_active: -1}
+     * @param {object} options          Option object, {presence: true}
+     *
+     * @return {object} User Query Response
+     */
+
+  }, {
+    key: "queryUsers",
+    value: function () {
+      var _queryUsers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee13(filterConditions, sort, options) {
+        var sortFields, _i5, _Object$entries, _Object$entries$_i, k, v, defaultOptions, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee13$(_context13) {
+          while (1) {
+            switch (_context13.prev = _context13.next) {
+              case 0:
+                if (!sort) {
+                  sort = {};
+                }
+
+                if (!options) {
+                  options = {};
+                }
+
+                sortFields = [];
+
+                for (_i5 = 0, _Object$entries = Object.entries(sort); _i5 < _Object$entries.length; _i5++) {
+                  _Object$entries$_i = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_Object$entries[_i5], 2), k = _Object$entries$_i[0], v = _Object$entries$_i[1];
+                  sortFields.push({
+                    field: k,
+                    direction: v
+                  });
+                }
+
+                defaultOptions = {
+                  presence: true
+                }; // Make sure we wait for the connect promise if there is a pending one
+
+                _context13.next = 7;
+                return this.wsPromise;
+
+              case 7:
+                if (!this._hasConnectionID()) {
+                  defaultOptions.presence = false;
+                } // Return a list of users
+
+
+                _context13.next = 10;
+                return this.get(this.baseURL + '/users', {
+                  payload: _objectSpread$2({
+                    filter_conditions: filterConditions,
+                    sort: sortFields
+                  }, defaultOptions, {}, options)
+                });
+
+              case 10:
+                data = _context13.sent;
+                this.state.updateUsers(data.users);
+                return _context13.abrupt("return", data);
+
+              case 13:
+              case "end":
+                return _context13.stop();
+            }
+          }
+        }, _callee13, this);
+      }));
+
+      function queryUsers(_x19, _x20, _x21) {
+        return _queryUsers.apply(this, arguments);
+      }
+
+      return queryUsers;
+    }()
+  }, {
+    key: "queryChannels",
+    value: function () {
+      var _queryChannels = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee14(filterConditions) {
+        var sort,
+            options,
+            sortFields,
+            _i6,
+            _Object$entries2,
+            _Object$entries2$_i,
+            k,
+            v,
+            defaultOptions,
+            payload,
+            data,
+            channels,
+            _iteratorNormalCompletion,
+            _didIteratorError,
+            _iteratorError,
+            _iterator,
+            _step,
+            channelState,
+            _iteratorNormalCompletion2,
+            _didIteratorError2,
+            _iteratorError2,
+            _iterator2,
+            _step2,
+            _channelState,
+            c,
+            _args14 = arguments;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee14$(_context14) {
+          while (1) {
+            switch (_context14.prev = _context14.next) {
+              case 0:
+                sort = _args14.length > 1 && _args14[1] !== undefined ? _args14[1] : {};
+                options = _args14.length > 2 && _args14[2] !== undefined ? _args14[2] : {};
+                sortFields = [];
+
+                for (_i6 = 0, _Object$entries2 = Object.entries(sort); _i6 < _Object$entries2.length; _i6++) {
+                  _Object$entries2$_i = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_Object$entries2[_i6], 2), k = _Object$entries2$_i[0], v = _Object$entries2$_i[1];
+                  sortFields.push({
+                    field: k,
+                    direction: v
+                  });
+                }
+
+                defaultOptions = {
+                  state: true,
+                  watch: true,
+                  presence: false
+                }; // Make sure we wait for the connect promise if there is a pending one
+
+                _context14.next = 7;
+                return this.wsPromise;
+
+              case 7:
+                if (!this._hasConnectionID()) {
+                  defaultOptions.watch = false;
+                } // Return a list of channels
+
+
+                payload = _objectSpread$2({
+                  filter_conditions: filterConditions,
+                  sort: sortFields,
+                  user_details: this._user
+                }, defaultOptions, {}, options);
+                _context14.next = 11;
+                return this.get(this.baseURL + '/channels', {
+                  payload: payload
+                });
+
+              case 11:
+                data = _context14.sent;
+                channels = []; // update our cache of the configs
+
+                _iteratorNormalCompletion = true;
+                _didIteratorError = false;
+                _iteratorError = undefined;
+                _context14.prev = 16;
+
+                for (_iterator = data.channels[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                  channelState = _step.value;
+
+                  this._addChannelConfig(channelState);
+                }
+
+                _context14.next = 24;
+                break;
+
+              case 20:
+                _context14.prev = 20;
+                _context14.t0 = _context14["catch"](16);
+                _didIteratorError = true;
+                _iteratorError = _context14.t0;
+
+              case 24:
+                _context14.prev = 24;
+                _context14.prev = 25;
+
+                if (!_iteratorNormalCompletion && _iterator.return != null) {
+                  _iterator.return();
+                }
+
+              case 27:
+                _context14.prev = 27;
+
+                if (!_didIteratorError) {
+                  _context14.next = 30;
+                  break;
+                }
+
+                throw _iteratorError;
+
+              case 30:
+                return _context14.finish(27);
+
+              case 31:
+                return _context14.finish(24);
+
+              case 32:
+                _iteratorNormalCompletion2 = true;
+                _didIteratorError2 = false;
+                _iteratorError2 = undefined;
+                _context14.prev = 35;
+
+                for (_iterator2 = data.channels[Symbol.iterator](); !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                  _channelState = _step2.value;
+                  c = this.channel(_channelState.channel.type, _channelState.channel.id);
+                  c.data = _channelState.channel;
+                  c.initialized = true;
+
+                  c._initializeState(_channelState);
+
+                  channels.push(c);
+                }
+
+                _context14.next = 43;
+                break;
+
+              case 39:
+                _context14.prev = 39;
+                _context14.t1 = _context14["catch"](35);
+                _didIteratorError2 = true;
+                _iteratorError2 = _context14.t1;
+
+              case 43:
+                _context14.prev = 43;
+                _context14.prev = 44;
+
+                if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+                  _iterator2.return();
+                }
+
+              case 46:
+                _context14.prev = 46;
+
+                if (!_didIteratorError2) {
+                  _context14.next = 49;
+                  break;
+                }
+
+                throw _iteratorError2;
+
+              case 49:
+                return _context14.finish(46);
+
+              case 50:
+                return _context14.finish(43);
+
+              case 51:
+                return _context14.abrupt("return", channels);
+
+              case 52:
+              case "end":
+                return _context14.stop();
+            }
+          }
+        }, _callee14, this, [[16, 20, 24, 32], [25,, 27, 31], [35, 39, 43, 51], [44,, 46, 50]]);
+      }));
+
+      function queryChannels(_x22) {
+        return _queryChannels.apply(this, arguments);
+      }
+
+      return queryChannels;
+    }()
+  }, {
+    key: "search",
+    value: function () {
+      var _search = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee15(filterConditions, query) {
+        var options,
+            payload,
+            _args15 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee15$(_context15) {
+          while (1) {
+            switch (_context15.prev = _context15.next) {
+              case 0:
+                options = _args15.length > 2 && _args15[2] !== undefined ? _args15[2] : {};
+                // Return a list of channels
+                payload = _objectSpread$2({
+                  filter_conditions: filterConditions,
+                  query: query
+                }, options); // Make sure we wait for the connect promise if there is a pending one
+
+                _context15.next = 4;
+                return this.wsPromise;
+
+              case 4:
+                _context15.next = 6;
+                return this.get(this.baseURL + '/search', {
+                  payload: payload
+                });
+
+              case 6:
+                return _context15.abrupt("return", _context15.sent);
+
+              case 7:
+              case "end":
+                return _context15.stop();
+            }
+          }
+        }, _callee15, this);
+      }));
+
+      function search(_x23, _x24) {
+        return _search.apply(this, arguments);
+      }
+
+      return search;
+    }()
+    /**
+     * addDevice - Adds a push device for a user.
+     *
+     * @param {string} id the device id
+     * @param {string} push_provider the push provider (apn or firebase)
+     * @param {string} [userID] the user id (defaults to current user)
+     *
+     */
+
+  }, {
+    key: "addDevice",
+    value: function () {
+      var _addDevice = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee16(id, push_provider) {
+        var userID,
+            _args16 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee16$(_context16) {
+          while (1) {
+            switch (_context16.prev = _context16.next) {
+              case 0:
+                userID = _args16.length > 2 && _args16[2] !== undefined ? _args16[2] : null;
+                _context16.next = 3;
+                return this.post(this.baseURL + '/devices', _objectSpread$2({
+                  id: id,
+                  push_provider: push_provider
+                }, userID != null ? {
+                  user_id: userID
+                } : {}));
+
+              case 3:
+                return _context16.abrupt("return", _context16.sent);
+
+              case 4:
+              case "end":
+                return _context16.stop();
+            }
+          }
+        }, _callee16, this);
+      }));
+
+      function addDevice(_x25, _x26) {
+        return _addDevice.apply(this, arguments);
+      }
+
+      return addDevice;
+    }()
+    /**
+     * getDevices - Returns the devices associated with a current user
+     *
+     * @param {string} [userID] User ID. Only works on serversidex
+     *
+     * @return {devices} Array of devices
+     */
+
+  }, {
+    key: "getDevices",
+    value: function () {
+      var _getDevices = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee17(userID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee17$(_context17) {
+          while (1) {
+            switch (_context17.prev = _context17.next) {
+              case 0:
+                _context17.next = 2;
+                return this.get(this.baseURL + '/devices', userID ? {
+                  user_id: userID
+                } : {});
+
+              case 2:
+                return _context17.abrupt("return", _context17.sent);
+
+              case 3:
+              case "end":
+                return _context17.stop();
+            }
+          }
+        }, _callee17, this);
+      }));
+
+      function getDevices(_x27) {
+        return _getDevices.apply(this, arguments);
+      }
+
+      return getDevices;
+    }()
+    /**
+     * removeDevice - Removes the device with the given id. Clientside users can only delete their own devices
+     *
+     * @param {string} id The device id
+     * @param {string} [userID] The user id. Only specify this for serverside requests
+     *
+     */
+
+  }, {
+    key: "removeDevice",
+    value: function () {
+      var _removeDevice = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee18(id) {
+        var userID,
+            _args18 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee18$(_context18) {
+          while (1) {
+            switch (_context18.prev = _context18.next) {
+              case 0:
+                userID = _args18.length > 1 && _args18[1] !== undefined ? _args18[1] : null;
+                _context18.next = 3;
+                return this.delete(this.baseURL + '/devices', _objectSpread$2({
+                  id: id
+                }, userID ? {
+                  user_id: userID
+                } : {}));
+
+              case 3:
+                return _context18.abrupt("return", _context18.sent);
+
+              case 4:
+              case "end":
+                return _context18.stop();
+            }
+          }
+        }, _callee18, this);
+      }));
+
+      function removeDevice(_x28) {
+        return _removeDevice.apply(this, arguments);
+      }
+
+      return removeDevice;
+    }()
+  }, {
+    key: "_addChannelConfig",
+    value: function _addChannelConfig(channelState) {
+      this.configs[channelState.channel.type] = channelState.channel.config;
+    }
+    /**
+     * channel - Returns a new channel with the given type, id and custom data
+     *
+     * If you want to create a unique conversation between 2 or more users; you can leave out the ID parameter
+     * and only provide ID and the list of members
+     *
+     * ie. client.channel("messaging", {members: ["tommaso", "thierry"]})
+     *
+     * @param {string} channelType The channel type
+     * @param {string} channelID   The channel ID, you can leave this out if you want to create a conversation channel
+     * @param {object} [custom]    Custom data to attach to the channel
+     *
+     * @return {channel} The channel object, initialize it using channel.watch()
+     */
+
+  }, {
+    key: "channel",
+    value: function channel(channelType, channelID) {
+      var custom = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+      if (!this.userID && !this._isUsingServerAuth()) {
+        throw Error('Call setUser or setAnonymousUser before creating a channel');
+      }
+
+      if (~channelType.indexOf(':')) {
+        throw Error("Invalid channel group ".concat(channelType, ", can't contain the : character"));
+      } // support channel("messaging", null, {options})
+      // support channel("messaging", undefined, {options})
+      // support channel("messaging", "", {options})
+
+
+      if (channelID == null || channelID === '') {
+        return new Channel(this, channelType, undefined, custom || {});
+      } // support channel("messaging", {options})
+
+
+      if (_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9___default()(channelID) === 'object' && arguments.length === 2) {
+        return new Channel(this, channelType, undefined, channelID);
+      }
+
+      if (typeof channelID === 'string' && ~channelID.indexOf(':')) {
+        throw Error("Invalid channel id ".concat(channelID, ", can't contain the : character"));
+      } // only allow 1 channel object per cid
+
+
+      var cid = "".concat(channelType, ":").concat(channelID);
+
+      if (cid in this.activeChannels) {
+        var _channel = this.activeChannels[cid];
+
+        if (Object.keys(custom).length > 0) {
+          _channel.data = custom;
+          _channel._data = custom;
+        }
+
+        return _channel;
+      }
+
+      var channel = new Channel(this, channelType, channelID, custom);
+      this.activeChannels[channel.cid] = channel;
+      return channel;
+    }
+    /**
+     * updateUser - Update or Create the given user object
+     *
+     * @param {object} A user object, the only required field is the user id. IE {id: "myuser"} is valid
+     *
+     * @return {object}
+     */
+
+  }, {
+    key: "updateUser",
+    value: function () {
+      var _updateUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee19(userObject) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee19$(_context19) {
+          while (1) {
+            switch (_context19.prev = _context19.next) {
+              case 0:
+                _context19.next = 2;
+                return this.updateUsers([userObject]);
+
+              case 2:
+                return _context19.abrupt("return", _context19.sent);
+
+              case 3:
+              case "end":
+                return _context19.stop();
+            }
+          }
+        }, _callee19, this);
+      }));
+
+      function updateUser(_x29) {
+        return _updateUser.apply(this, arguments);
+      }
+
+      return updateUser;
+    }()
+    /**
+     * partialUpdateUser - Update the given user object
+     *
+     * @param {object} Object which should contain id and any of "set" or "unset" params;
+     * example: {id: "user1", set:{field: value}, unset:["field2"]}
+     *
+     * @return {object} list of updated users
+     */
+
+  }, {
+    key: "partialUpdateUser",
+    value: function () {
+      var _partialUpdateUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee20(userObject) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee20$(_context20) {
+          while (1) {
+            switch (_context20.prev = _context20.next) {
+              case 0:
+                _context20.next = 2;
+                return this.partialUpdateUsers([userObject]);
+
+              case 2:
+                return _context20.abrupt("return", _context20.sent);
+
+              case 3:
+              case "end":
+                return _context20.stop();
+            }
+          }
+        }, _callee20, this);
+      }));
+
+      function partialUpdateUser(_x30) {
+        return _partialUpdateUser.apply(this, arguments);
+      }
+
+      return partialUpdateUser;
+    }()
+    /**
+     * updateUsers - Batch update the list of users
+     *
+     * @param {array} A list of users
+     *
+     * @return {object}
+     */
+
+  }, {
+    key: "updateUsers",
+    value: function () {
+      var _updateUsers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee21(users) {
+        var userMap, _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, userObject;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee21$(_context21) {
+          while (1) {
+            switch (_context21.prev = _context21.next) {
+              case 0:
+                userMap = {};
+                _iteratorNormalCompletion3 = true;
+                _didIteratorError3 = false;
+                _iteratorError3 = undefined;
+                _context21.prev = 4;
+                _iterator3 = users[Symbol.iterator]();
+
+              case 6:
+                if (_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done) {
+                  _context21.next = 14;
+                  break;
+                }
+
+                userObject = _step3.value;
+
+                if (userObject.id) {
+                  _context21.next = 10;
+                  break;
+                }
+
+                throw Error('User ID is required when updating a user');
+
+              case 10:
+                userMap[userObject.id] = userObject;
+
+              case 11:
+                _iteratorNormalCompletion3 = true;
+                _context21.next = 6;
+                break;
+
+              case 14:
+                _context21.next = 20;
+                break;
+
+              case 16:
+                _context21.prev = 16;
+                _context21.t0 = _context21["catch"](4);
+                _didIteratorError3 = true;
+                _iteratorError3 = _context21.t0;
+
+              case 20:
+                _context21.prev = 20;
+                _context21.prev = 21;
+
+                if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+                  _iterator3.return();
+                }
+
+              case 23:
+                _context21.prev = 23;
+
+                if (!_didIteratorError3) {
+                  _context21.next = 26;
+                  break;
+                }
+
+                throw _iteratorError3;
+
+              case 26:
+                return _context21.finish(23);
+
+              case 27:
+                return _context21.finish(20);
+
+              case 28:
+                _context21.next = 30;
+                return this.post(this.baseURL + '/users', {
+                  users: userMap
+                });
+
+              case 30:
+                return _context21.abrupt("return", _context21.sent);
+
+              case 31:
+              case "end":
+                return _context21.stop();
+            }
+          }
+        }, _callee21, this, [[4, 16, 20, 28], [21,, 23, 27]]);
+      }));
+
+      function updateUsers(_x31) {
+        return _updateUsers.apply(this, arguments);
+      }
+
+      return updateUsers;
+    }()
+    /**
+     * updateUsers - Batch partial update of users
+     *
+     * @param {array} A list of partial update requests
+     *
+     * @return {object}
+     */
+
+  }, {
+    key: "partialUpdateUsers",
+    value: function () {
+      var _partialUpdateUsers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee22(users) {
+        var _iteratorNormalCompletion4, _didIteratorError4, _iteratorError4, _iterator4, _step4, userObject;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee22$(_context22) {
+          while (1) {
+            switch (_context22.prev = _context22.next) {
+              case 0:
+                _iteratorNormalCompletion4 = true;
+                _didIteratorError4 = false;
+                _iteratorError4 = undefined;
+                _context22.prev = 3;
+                _iterator4 = users[Symbol.iterator]();
+
+              case 5:
+                if (_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done) {
+                  _context22.next = 12;
+                  break;
+                }
+
+                userObject = _step4.value;
+
+                if (userObject.id) {
+                  _context22.next = 9;
+                  break;
+                }
+
+                throw Error('User ID is required when updating a user');
+
+              case 9:
+                _iteratorNormalCompletion4 = true;
+                _context22.next = 5;
+                break;
+
+              case 12:
+                _context22.next = 18;
+                break;
+
+              case 14:
+                _context22.prev = 14;
+                _context22.t0 = _context22["catch"](3);
+                _didIteratorError4 = true;
+                _iteratorError4 = _context22.t0;
+
+              case 18:
+                _context22.prev = 18;
+                _context22.prev = 19;
+
+                if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+                  _iterator4.return();
+                }
+
+              case 21:
+                _context22.prev = 21;
+
+                if (!_didIteratorError4) {
+                  _context22.next = 24;
+                  break;
+                }
+
+                throw _iteratorError4;
+
+              case 24:
+                return _context22.finish(21);
+
+              case 25:
+                return _context22.finish(18);
+
+              case 26:
+                _context22.next = 28;
+                return this.patch(this.baseURL + '/users', {
+                  users: users
+                });
+
+              case 28:
+                return _context22.abrupt("return", _context22.sent);
+
+              case 29:
+              case "end":
+                return _context22.stop();
+            }
+          }
+        }, _callee22, this, [[3, 14, 18, 26], [19,, 21, 25]]);
+      }));
+
+      function partialUpdateUsers(_x32) {
+        return _partialUpdateUsers.apply(this, arguments);
+      }
+
+      return partialUpdateUsers;
+    }()
+  }, {
+    key: "deleteUser",
+    value: function () {
+      var _deleteUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee23(userID, params) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee23$(_context23) {
+          while (1) {
+            switch (_context23.prev = _context23.next) {
+              case 0:
+                _context23.next = 2;
+                return this.delete(this.baseURL + "/users/".concat(userID), params);
+
+              case 2:
+                return _context23.abrupt("return", _context23.sent);
+
+              case 3:
+              case "end":
+                return _context23.stop();
+            }
+          }
+        }, _callee23, this);
+      }));
+
+      function deleteUser(_x33, _x34) {
+        return _deleteUser.apply(this, arguments);
+      }
+
+      return deleteUser;
+    }()
+  }, {
+    key: "reactivateUser",
+    value: function () {
+      var _reactivateUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee24(userID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee24$(_context24) {
+          while (1) {
+            switch (_context24.prev = _context24.next) {
+              case 0:
+                _context24.next = 2;
+                return this.post(this.baseURL + "/users/".concat(userID, "/reactivate"), _objectSpread$2({}, options));
+
+              case 2:
+                return _context24.abrupt("return", _context24.sent);
+
+              case 3:
+              case "end":
+                return _context24.stop();
+            }
+          }
+        }, _callee24, this);
+      }));
+
+      function reactivateUser(_x35, _x36) {
+        return _reactivateUser.apply(this, arguments);
+      }
+
+      return reactivateUser;
+    }()
+  }, {
+    key: "deactivateUser",
+    value: function () {
+      var _deactivateUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee25(userID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee25$(_context25) {
+          while (1) {
+            switch (_context25.prev = _context25.next) {
+              case 0:
+                _context25.next = 2;
+                return this.post(this.baseURL + "/users/".concat(userID, "/deactivate"), _objectSpread$2({}, options));
+
+              case 2:
+                return _context25.abrupt("return", _context25.sent);
+
+              case 3:
+              case "end":
+                return _context25.stop();
+            }
+          }
+        }, _callee25, this);
+      }));
+
+      function deactivateUser(_x37, _x38) {
+        return _deactivateUser.apply(this, arguments);
+      }
+
+      return deactivateUser;
+    }()
+  }, {
+    key: "exportUser",
+    value: function () {
+      var _exportUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee26(userID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee26$(_context26) {
+          while (1) {
+            switch (_context26.prev = _context26.next) {
+              case 0:
+                _context26.next = 2;
+                return this.get(this.baseURL + "/users/".concat(userID, "/export"), _objectSpread$2({}, options));
+
+              case 2:
+                return _context26.abrupt("return", _context26.sent);
+
+              case 3:
+              case "end":
+                return _context26.stop();
+            }
+          }
+        }, _callee26, this);
+      }));
+
+      function exportUser(_x39, _x40) {
+        return _exportUser.apply(this, arguments);
+      }
+
+      return exportUser;
+    }()
+    /** banUser - bans a user from all channels
+     *
+     * @param targetUserID
+     * @param options
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "banUser",
+    value: function () {
+      var _banUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee27(targetUserID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee27$(_context27) {
+          while (1) {
+            switch (_context27.prev = _context27.next) {
+              case 0:
+                _context27.next = 2;
+                return this.post(this.baseURL + '/moderation/ban', _objectSpread$2({
+                  target_user_id: targetUserID
+                }, options));
+
+              case 2:
+                return _context27.abrupt("return", _context27.sent);
+
+              case 3:
+              case "end":
+                return _context27.stop();
+            }
+          }
+        }, _callee27, this);
+      }));
+
+      function banUser(_x41, _x42) {
+        return _banUser.apply(this, arguments);
+      }
+
+      return banUser;
+    }()
+    /** unbanUser - revoke global ban for a user
+     *
+     * @param targetUserID
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "unbanUser",
+    value: function () {
+      var _unbanUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee28(targetUserID, options) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee28$(_context28) {
+          while (1) {
+            switch (_context28.prev = _context28.next) {
+              case 0:
+                _context28.next = 2;
+                return this.delete(this.baseURL + '/moderation/ban', _objectSpread$2({
+                  target_user_id: targetUserID
+                }, options));
+
+              case 2:
+                return _context28.abrupt("return", _context28.sent);
+
+              case 3:
+              case "end":
+                return _context28.stop();
+            }
+          }
+        }, _callee28, this);
+      }));
+
+      function unbanUser(_x43, _x44) {
+        return _unbanUser.apply(this, arguments);
+      }
+
+      return unbanUser;
+    }()
+    /** muteUser - mutes a user
+     *
+     * @param targetID
+     * @param [userID] Only used with serverside auth
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "muteUser",
+    value: function () {
+      var _muteUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee29(targetID) {
+        var userID,
+            _args29 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee29$(_context29) {
+          while (1) {
+            switch (_context29.prev = _context29.next) {
+              case 0:
+                userID = _args29.length > 1 && _args29[1] !== undefined ? _args29[1] : null;
+                _context29.next = 3;
+                return this.post(this.baseURL + '/moderation/mute', _objectSpread$2({
+                  target_id: targetID
+                }, userID ? {
+                  user_id: userID
+                } : {}));
+
+              case 3:
+                return _context29.abrupt("return", _context29.sent);
+
+              case 4:
+              case "end":
+                return _context29.stop();
+            }
+          }
+        }, _callee29, this);
+      }));
+
+      function muteUser(_x45) {
+        return _muteUser.apply(this, arguments);
+      }
+
+      return muteUser;
+    }()
+    /** unmuteUser - unmutes a user
+     *
+     * @param targetID
+     * @param [userID] Only used with serverside auth
+     * @returns {Promise<*>}
+     */
+
+  }, {
+    key: "unmuteUser",
+    value: function () {
+      var _unmuteUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee30(targetID) {
+        var userID,
+            _args30 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee30$(_context30) {
+          while (1) {
+            switch (_context30.prev = _context30.next) {
+              case 0:
+                userID = _args30.length > 1 && _args30[1] !== undefined ? _args30[1] : null;
+                _context30.next = 3;
+                return this.post(this.baseURL + '/moderation/unmute', _objectSpread$2({
+                  target_id: targetID
+                }, userID ? {
+                  user_id: userID
+                } : {}));
+
+              case 3:
+                return _context30.abrupt("return", _context30.sent);
+
+              case 4:
+              case "end":
+                return _context30.stop();
+            }
+          }
+        }, _callee30, this);
+      }));
+
+      function unmuteUser(_x46) {
+        return _unmuteUser.apply(this, arguments);
+      }
+
+      return unmuteUser;
+    }()
+  }, {
+    key: "flagMessage",
+    value: function () {
+      var _flagMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee31(messageID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee31$(_context31) {
+          while (1) {
+            switch (_context31.prev = _context31.next) {
+              case 0:
+                _context31.next = 2;
+                return this.post(this.baseURL + '/moderation/flag', {
+                  target_message_id: messageID
+                });
+
+              case 2:
+                return _context31.abrupt("return", _context31.sent);
+
+              case 3:
+              case "end":
+                return _context31.stop();
+            }
+          }
+        }, _callee31, this);
+      }));
+
+      function flagMessage(_x47) {
+        return _flagMessage.apply(this, arguments);
+      }
+
+      return flagMessage;
+    }()
+  }, {
+    key: "flagUser",
+    value: function () {
+      var _flagUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee32(userID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee32$(_context32) {
+          while (1) {
+            switch (_context32.prev = _context32.next) {
+              case 0:
+                _context32.next = 2;
+                return this.post(this.baseURL + '/moderation/flag', {
+                  target_user_id: userID
+                });
+
+              case 2:
+                return _context32.abrupt("return", _context32.sent);
+
+              case 3:
+              case "end":
+                return _context32.stop();
+            }
+          }
+        }, _callee32, this);
+      }));
+
+      function flagUser(_x48) {
+        return _flagUser.apply(this, arguments);
+      }
+
+      return flagUser;
+    }()
+  }, {
+    key: "unflagMessage",
+    value: function () {
+      var _unflagMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee33(messageID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee33$(_context33) {
+          while (1) {
+            switch (_context33.prev = _context33.next) {
+              case 0:
+                _context33.next = 2;
+                return this.post(this.baseURL + '/moderation/unflag', {
+                  target_message_id: messageID
+                });
+
+              case 2:
+                return _context33.abrupt("return", _context33.sent);
+
+              case 3:
+              case "end":
+                return _context33.stop();
+            }
+          }
+        }, _callee33, this);
+      }));
+
+      function unflagMessage(_x49) {
+        return _unflagMessage.apply(this, arguments);
+      }
+
+      return unflagMessage;
+    }()
+  }, {
+    key: "unflagUser",
+    value: function () {
+      var _unflagUser = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee34(userID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee34$(_context34) {
+          while (1) {
+            switch (_context34.prev = _context34.next) {
+              case 0:
+                _context34.next = 2;
+                return this.post(this.baseURL + '/moderation/unflag', {
+                  target_user_id: userID
+                });
+
+              case 2:
+                return _context34.abrupt("return", _context34.sent);
+
+              case 3:
+              case "end":
+                return _context34.stop();
+            }
+          }
+        }, _callee34, this);
+      }));
+
+      function unflagUser(_x50) {
+        return _unflagUser.apply(this, arguments);
+      }
+
+      return unflagUser;
+    }()
+    /**
+     * markAllRead - marks all channels for this user as read
+     *
+     * @return {Promise} Description
+     */
+
+  }, {
+    key: "markAllRead",
+    value: function () {
+      var _markAllRead = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee35() {
+        var data,
+            response,
+            _args35 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee35$(_context35) {
+          while (1) {
+            switch (_context35.prev = _context35.next) {
+              case 0:
+                data = _args35.length > 0 && _args35[0] !== undefined ? _args35[0] : {};
+                _context35.next = 3;
+                return this.post(this.baseURL + '/channels/read', _objectSpread$2({}, data));
+
+              case 3:
+                response = _context35.sent;
+
+              case 4:
+              case "end":
+                return _context35.stop();
+            }
+          }
+        }, _callee35, this);
+      }));
+
+      function markAllRead() {
+        return _markAllRead.apply(this, arguments);
+      }
+
+      return markAllRead;
+    }()
+  }, {
+    key: "createChannelType",
+    value: function createChannelType(data) {
+      var channelData = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, {
+        commands: ['all']
+      }, data);
+
+      return this.post(this.baseURL + '/channeltypes', channelData);
+    }
+  }, {
+    key: "getChannelType",
+    value: function getChannelType(channelType) {
+      return this.get(this.baseURL + "/channeltypes/".concat(channelType));
+    }
+  }, {
+    key: "updateChannelType",
+    value: function updateChannelType(channelType, data) {
+      return this.put(this.baseURL + "/channeltypes/".concat(channelType), data);
+    }
+  }, {
+    key: "deleteChannelType",
+    value: function deleteChannelType(channelType) {
+      return this.delete(this.baseURL + "/channeltypes/".concat(channelType));
+    }
+  }, {
+    key: "listChannelTypes",
+    value: function listChannelTypes() {
+      return this.get(this.baseURL + "/channeltypes");
+    }
+    /**
+     * updateMessage - Update the given message
+     *
+     * @param {object} message object, id needs to be specified
+     *
+     * @return {object} Response that includes the message
+     */
+
+  }, {
+    key: "updateMessage",
+    value: function () {
+      var _updateMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee36(message, userId) {
+        var clonedMessage, reservedMessageFields;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee36$(_context36) {
+          while (1) {
+            switch (_context36.prev = _context36.next) {
+              case 0:
+                if (message.id) {
+                  _context36.next = 2;
+                  break;
+                }
+
+                throw Error('Please specify the message id when calling updateMesssage');
+
+              case 2:
+                clonedMessage = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, message);
+                delete clonedMessage.id;
+                reservedMessageFields = ['latest_reactions', 'own_reactions', 'reply_count', 'reaction_counts', 'created_at', 'updated_at', 'html', 'command', 'type', 'user'];
+                reservedMessageFields.forEach(function (item) {
+                  if (clonedMessage[item] != null) {
+                    delete clonedMessage[item];
+                  }
+                });
+
+                if (userId != null) {
+                  if (typeof userId == 'string' || userId instanceof String) {
+                    clonedMessage.user_id = userId;
+                  } else {
+                    clonedMessage.user = {
+                      id: userId.id
+                    };
+                  }
+                }
+
+                _context36.next = 9;
+                return this.post(this.baseURL + "/messages/".concat(message.id), {
+                  message: clonedMessage
+                });
+
+              case 9:
+                return _context36.abrupt("return", _context36.sent);
+
+              case 10:
+              case "end":
+                return _context36.stop();
+            }
+          }
+        }, _callee36, this);
+      }));
+
+      function updateMessage(_x51, _x52) {
+        return _updateMessage.apply(this, arguments);
+      }
+
+      return updateMessage;
+    }()
+  }, {
+    key: "deleteMessage",
+    value: function () {
+      var _deleteMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee37(messageID, hardDelete) {
+        var params;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee37$(_context37) {
+          while (1) {
+            switch (_context37.prev = _context37.next) {
+              case 0:
+                params = {};
+
+                if (hardDelete) {
+                  params = {
+                    hard: true
+                  };
+                }
+
+                _context37.next = 4;
+                return this.delete(this.baseURL + "/messages/".concat(messageID), params);
+
+              case 4:
+                return _context37.abrupt("return", _context37.sent);
+
+              case 5:
+              case "end":
+                return _context37.stop();
+            }
+          }
+        }, _callee37, this);
+      }));
+
+      function deleteMessage(_x53, _x54) {
+        return _deleteMessage.apply(this, arguments);
+      }
+
+      return deleteMessage;
+    }()
+  }, {
+    key: "getMessage",
+    value: function () {
+      var _getMessage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee38(messageID) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee38$(_context38) {
+          while (1) {
+            switch (_context38.prev = _context38.next) {
+              case 0:
+                _context38.next = 2;
+                return this.get(this.baseURL + "/messages/".concat(messageID));
+
+              case 2:
+                return _context38.abrupt("return", _context38.sent);
+
+              case 3:
+              case "end":
+                return _context38.stop();
+            }
+          }
+        }, _callee38, this);
+      }));
+
+      function getMessage(_x55) {
+        return _getMessage.apply(this, arguments);
+      }
+
+      return getMessage;
+    }()
+  }, {
+    key: "_userAgent",
+    value: function _userAgent() {
+      return "stream-chat-javascript-client-".concat(this.node ? 'node' : 'browser', "-").concat(pkg.version);
+    }
+    /**
+     * _isUsingServerAuth - Returns true if we're using server side auth
+     */
+
+  }, {
+    key: "_addClientParams",
+    value: function _addClientParams() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      var token = this._getToken();
+
+      return _objectSpread$2({}, this.options, {
+        params: _objectSpread$2({
+          user_id: this.userID
+        }, params, {
+          api_key: this.key,
+          connection_id: this.connectionID
+        }),
+        headers: {
+          Authorization: token,
+          'stream-auth-type': this.getAuthType(),
+          'x-stream-client': this._userAgent()
+        }
+      });
+    }
+  }, {
+    key: "_getToken",
+    value: function _getToken() {
+      if (this.secret == null && this.userToken == null && !this.anonymous) {
+        throw new Error("Both secret and user tokens are not set. Either client.setUser wasn't called or client.disconnect was called");
+      }
+
+      var token = '';
+
+      if (!this.anonymous) {
+        token = this.userToken != null ? this.userToken : JWTServerToken(this.secret);
+      }
+
+      return token;
+    }
+  }, {
+    key: "_startCleaning",
+    value: function _startCleaning() {
+      var that = this;
+
+      if (this.cleaningIntervalRef != null) {
+        return;
+      }
+
+      this.cleaningIntervalRef = setInterval(function () {
+        // call clean on the channel, used for calling the stop.typing event etc.
+        for (var _i7 = 0, _Object$values3 = Object.values(that.activeChannels); _i7 < _Object$values3.length; _i7++) {
+          var channel = _Object$values3[_i7];
+          channel.clean();
+        }
+      }, 500);
+    }
+  }, {
+    key: "verifyWebhook",
+    value: function verifyWebhook(requestBody, xSignature) {
+      return CheckSignature(requestBody, this.secret, xSignature);
+    }
+  }]);
+
+  return StreamChat;
+}();
+
+var Allow = 'Allow';
+var Deny = 'Deny';
+var AnyResource = ['*'];
+var AnyRole = ['*'];
+var MaxPriority = 999;
+var MinPriority = 1;
+var Permission = function Permission(name, priority) {
+  var resources = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : AnyResource;
+  var roles = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : AnyRole;
+  var owner = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+  var action = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : Allow;
+
+  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_6___default()(this, Permission);
+
+  this.name = name;
+  this.action = action;
+  this.owner = owner;
+  this.priority = priority;
+  this.resources = resources;
+  this.roles = roles;
+};
+var AllowAll = new Permission('Allow all', MaxPriority, AnyResource, AnyRole, false, Allow);
+var DenyAll = new Permission('Deny all', MinPriority, AnyResource, AnyRole, false, Deny);
+
+
+//# sourceMappingURL=browser.es.js.map
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../buffer/index.js */ "./node_modules/buffer/index.js").Buffer, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/stream-chat/node_modules/axios/lib/axios.js");
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/adapters/xhr.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/adapters/xhr.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+var settle = __webpack_require__(/*! ./../core/settle */ "./node_modules/stream-chat/node_modules/axios/lib/core/settle.js");
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/buildURL.js");
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/parseHeaders.js");
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/isURLSameOrigin.js");
+var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/stream-chat/node_modules/axios/lib/core/createError.js");
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request.onreadystatechange = function handleLoad() {
+      if (!request || request.readyState !== 4) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        status: request.status,
+        statusText: request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/cookies.js");
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/axios.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/axios.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/bind.js");
+var Axios = __webpack_require__(/*! ./core/Axios */ "./node_modules/stream-chat/node_modules/axios/lib/core/Axios.js");
+var defaults = __webpack_require__(/*! ./defaults */ "./node_modules/stream-chat/node_modules/axios/lib/defaults.js");
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ "./node_modules/stream-chat/node_modules/axios/lib/cancel/Cancel.js");
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ "./node_modules/stream-chat/node_modules/axios/lib/cancel/CancelToken.js");
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ "./node_modules/stream-chat/node_modules/axios/lib/cancel/isCancel.js");
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(/*! ./helpers/spread */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/spread.js");
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/cancel/Cancel.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/cancel/Cancel.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/cancel/CancelToken.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(/*! ./Cancel */ "./node_modules/stream-chat/node_modules/axios/lib/cancel/Cancel.js");
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/cancel/isCancel.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/cancel/isCancel.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/Axios.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/Axios.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(/*! ./../defaults */ "./node_modules/stream-chat/node_modules/axios/lib/defaults.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "./node_modules/stream-chat/node_modules/axios/lib/core/InterceptorManager.js");
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "./node_modules/stream-chat/node_modules/axios/lib/core/dispatchRequest.js");
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/InterceptorManager.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/createError.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/createError.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(/*! ./enhanceError */ "./node_modules/stream-chat/node_modules/axios/lib/core/enhanceError.js");
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/dispatchRequest.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+var transformData = __webpack_require__(/*! ./transformData */ "./node_modules/stream-chat/node_modules/axios/lib/core/transformData.js");
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ "./node_modules/stream-chat/node_modules/axios/lib/cancel/isCancel.js");
+var defaults = __webpack_require__(/*! ../defaults */ "./node_modules/stream-chat/node_modules/axios/lib/defaults.js");
+var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/isAbsoluteURL.js");
+var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/combineURLs.js");
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/enhanceError.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/enhanceError.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/settle.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/settle.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var createError = __webpack_require__(/*! ./createError */ "./node_modules/stream-chat/node_modules/axios/lib/core/createError.js");
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/core/transformData.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/core/transformData.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/defaults.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/defaults.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/normalizeHeaderName.js");
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(/*! ./adapters/xhr */ "./node_modules/stream-chat/node_modules/axios/lib/adapters/xhr.js");
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(/*! ./adapters/http */ "./node_modules/stream-chat/node_modules/axios/lib/adapters/xhr.js");
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/bind.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/bind.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/buildURL.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/buildURL.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/combineURLs.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/cookies.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/cookies.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/isAbsoluteURL.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/isURLSameOrigin.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/normalizeHeaderName.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/parseHeaders.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/stream-chat/node_modules/axios/lib/utils.js");
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/helpers/spread.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/helpers/spread.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/axios/lib/utils.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/axios/lib/utils.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/stream-chat/node_modules/axios/lib/helpers/bind.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/stream-chat/node_modules/is-buffer/index.js");
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/stream-chat/node_modules/is-buffer/index.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/stream-chat/node_modules/is-buffer/index.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -73471,6 +85860,128 @@ function warning(condition, message) {
 
 /***/ }),
 
+/***/ "./node_modules/uuid/lib/bytesToUuid.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/bytesToUuid.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]]
+  ]).join('');
+}
+
+module.exports = bytesToUuid;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/lib/rng-browser.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/rng-browser.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/v4.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v4.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+
+/***/ }),
+
 /***/ "./node_modules/value-equal/esm/value-equal.js":
 /*!*****************************************************!*\
   !*** ./node_modules/value-equal/esm/value-equal.js ***!
@@ -73692,63 +86203,279 @@ if(false) {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _AdminChart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminChart.css */ "./resources/js/components/Admin/AdminChart.css");
-/* harmony import */ var _AdminChart_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_AdminChart_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var stream_chat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stream-chat */ "./node_modules/stream-chat/dist/browser.es.js");
+/* harmony import */ var _AdminChart_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminChart.css */ "./resources/js/components/Admin/AdminChart.css");
+/* harmony import */ var _AdminChart_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_AdminChart_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+
+
+var _this = undefined;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
 var AdminChart = function AdminChart() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      client = _useState2[0],
+      setClient = _useState2[1];
+
+  var clientRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  clientRef.current = client;
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      channel = _useState4[0],
+      setChannel = _useState4[1];
+
+  var channelRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  channelRef.current = channel;
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      message = _useState6[0],
+      setMessage = _useState6[1];
+
+  var messageRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])('');
+  messageRef.current = message;
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      messageData = _useState8[0],
+      setMessageData = _useState8[1];
+
+  var messageDataRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])([]);
+  messageDataRef.current = messageData;
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    initializeClient();
+    createChannel();
+  }, []);
+
+  var initializeClient =
+  /*#__PURE__*/
+  function () {
+    var _ref = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var _ref2, data, client;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.post("api/generate_token", {
+                name: 'admin'
+              });
+
+            case 2:
+              _ref2 = _context.sent;
+              data = _ref2.data;
+              client = new stream_chat__WEBPACK_IMPORTED_MODULE_2__["StreamChat"]("q4akkp28gtp6", {
+                timeout: 6000
+              });
+              _context.next = 7;
+              return client.setUser({
+                id: 'admin',
+                name: 'Eze Sunday'
+              }, data.token);
+
+            case 7:
+              setClient(client);
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function initializeClient() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var createChannel =
+  /*#__PURE__*/
+  function () {
+    var _ref3 = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var _ref4, data, _channel;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.post('api/get_channel', {
+                from_username: "admin",
+                to_username: "client",
+                from: "admin",
+                to: "client"
+              });
+
+            case 2:
+              _ref4 = _context2.sent;
+              data = _ref4.data;
+
+              if (clientRef.current && data) {
+                _channel = clientRef.current.channel('messaging', '', {
+                  name: 'LiveChat channel',
+                  members: ["admin", "client"]
+                });
+
+                _channel.watch().then(function (state) {
+                  _channel.on('message.new', function (event) {
+                    var messages = [].concat(_toConsumableArray(messageDataRef.current), [event.message]);
+                    setMessageData(messages);
+                  });
+                });
+
+                setChannel(_channel);
+              }
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function createChannel() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  var getMessageHandler = function getMessageHandler(e) {
+    setMessage(e.target.value);
+  };
+
+  var sendMessageHandler =
+  /*#__PURE__*/
+  function () {
+    var _ref5 = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(e) {
+      var _message;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              if (!(e.charCode === 13)) {
+                _context3.next = 7;
+                break;
+              }
+
+              if (!channelRef.current) {
+                _context3.next = 7;
+                break;
+              }
+
+              if (!(messageRef.current.trim().length > 0)) {
+                _context3.next = 7;
+                break;
+              }
+
+              _context3.next = 5;
+              return channelRef.current.sendMessage({
+                text: messageRef.current
+              });
+
+            case 5:
+              _message = _context3.sent;
+              setMessage('');
+
+            case 7:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function sendMessageHandler(_x) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "row chat-window col-xs-5 col-md-3 p-0",
     id: "chat_window_1",
     style: {
       marginLeft: '10px'
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "col-xs-12 col-md-12 p-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel panel-default"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-heading admin-top-bar"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "col-md-12 col-xs-12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "panel-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     className: "glyphicon glyphicon-comment"
-  }), " Admin Chart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), " Admin Chart"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-body msg_container_base"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row msg_container base_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-10 col-xs-10"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "messages msg_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "that mongodb thing looks good, huh? tiny master db, and huge document store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("time", {
-    dateTime: "2009-11-13T20:00"
-  }, "Timothy \u2022 51 min")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row msg_container base_receive"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-10 col-xs-10"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "messages msg_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "that mongodb thing looks good, huh? tiny master db, and huge document store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("time", {
-    dateTime: "2009-11-13T20:00"
-  }, "Timothy \u2022 51 min")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), messageData.map(function (message) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      key: message.id,
+      className: "row msg_container ".concat(message.user.id == 'admin' ? 'base_sent' : 'base_receive')
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "col-md-10 col-xs-10"
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "messages msg_sent"
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, message.text), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("time", {
+      dateTime: message.created_at
+    }, message.user.name))));
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-footer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+    onChange: getMessageHandler.bind(_this),
+    onKeyPress: sendMessageHandler,
     id: "btn-input",
     type: "text",
     className: "form-control input-sm chat_input",
-    placeholder: "Write your message here..."
+    placeholder: "Write your message here...",
+    value: message
   })))))))));
 };
 
@@ -73833,12 +86560,31 @@ if(false) {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Chart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chart.css */ "./resources/js/components/Chart/Chart.css");
-/* harmony import */ var _Chart_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Chart_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var stream_chat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stream-chat */ "./node_modules/stream-chat/dist/browser.es.js");
+/* harmony import */ var _Chart_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Chart.css */ "./resources/js/components/Chart/Chart.css");
+/* harmony import */ var _Chart_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Chart_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+
+
+var _this = undefined;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -73851,71 +86597,239 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Chart = function Chart() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
-      _useState2 = _slicedToArray(_useState, 2),
-      token = _useState2[0],
-      setToken = _useState2[1];
 
-  var name = "Hyginus";
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    //generate token
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("api/generate_token", {
-      name: name
-    }).then(function (_ref) {
-      var data = _ref.data;
-      setToken(data.token);
-    }); //
+var Chart = function Chart() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      client = _useState2[0],
+      setClient = _useState2[1];
+
+  var clientRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  clientRef.current = client;
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      channel = _useState4[0],
+      setChannel = _useState4[1];
+
+  var channelRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  channelRef.current = channel;
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      message = _useState6[0],
+      setMessage = _useState6[1];
+
+  var messageRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])('');
+  messageRef.current = message;
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      messageData = _useState8[0],
+      setMessageData = _useState8[1];
+
+  var messageDataRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])([]);
+  messageDataRef.current = messageData;
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    initializeClient();
+    createChannel();
   }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+
+  var initializeClient =
+  /*#__PURE__*/
+  function () {
+    var _ref = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var _ref2, data, client;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.post("api/generate_token", {
+                name: 'client'
+              });
+
+            case 2:
+              _ref2 = _context.sent;
+              data = _ref2.data;
+              client = new stream_chat__WEBPACK_IMPORTED_MODULE_2__["StreamChat"]("q4akkp28gtp6", {
+                timeout: 6000
+              });
+              _context.next = 7;
+              return client.setUser({
+                id: 'client',
+                name: 'Ukeh Hyginus'
+              }, data.token);
+
+            case 7:
+              setClient(client);
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function initializeClient() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var createChannel =
+  /*#__PURE__*/
+  function () {
+    var _ref3 = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var _ref4, data, _channel;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.post('api/get_channel', {
+                from_username: "client",
+                to_username: "admin",
+                from: "client",
+                to: "admin"
+              });
+
+            case 2:
+              _ref4 = _context2.sent;
+              data = _ref4.data;
+
+              if (clientRef.current && data) {
+                _channel = clientRef.current.channel('messaging', '', {
+                  name: 'LiveChat channel',
+                  members: ["client", "admin"]
+                });
+
+                _channel.watch().then(function (state) {
+                  _channel.on('message.new', function (event) {
+                    var messages = [].concat(_toConsumableArray(messageDataRef.current), [event.message]);
+                    setMessageData(messages);
+                  });
+                });
+
+                setChannel(_channel);
+              }
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function createChannel() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  var getMessageHandler = function getMessageHandler(e) {
+    setMessage(e.target.value);
+  };
+
+  var sendMessageHandler =
+  /*#__PURE__*/
+  function () {
+    var _ref5 = _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(e) {
+      var _message;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              if (!(e.charCode === 13)) {
+                _context3.next = 7;
+                break;
+              }
+
+              if (!channelRef.current) {
+                _context3.next = 7;
+                break;
+              }
+
+              if (!(messageRef.current.trim().length > 0)) {
+                _context3.next = 7;
+                break;
+              }
+
+              _context3.next = 5;
+              return channelRef.current.sendMessage({
+                text: messageRef.current
+              });
+
+            case 5:
+              _message = _context3.sent;
+              setMessage('');
+
+            case 7:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function sendMessageHandler(_x) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "row chat-window col-xs-5 col-md-3 p-0",
-    id: "chat_window_1",
-    style: {
-      marginLeft: '10px'
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "chat_window_1"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "col-xs-12 col-md-12 p-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel panel-default"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-heading top-bar"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "col-md-12 col-xs-12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "panel-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     className: "glyphicon glyphicon-comment"
-  }), " Chat now"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), " Client Chat"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-body msg_container_base"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row msg_container base_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-10 col-xs-10"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "messages msg_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "that mongodb thing looks good, huh? tiny master db, and huge document store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("time", {
-    dateTime: "2009-11-13T20:00"
-  }, "Timothy \u2022 51 min")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row msg_container base_receive"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-10 col-xs-10"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "messages msg_sent"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "that mongodb thing looks good, huh? tiny master db, and huge document store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("time", {
-    dateTime: "2009-11-13T20:00"
-  }, "Timothy \u2022 51 min")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), messageData.map(function (message) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      key: message.id,
+      className: "row msg_container ".concat(message.user.id == 'client' ? 'base_sent' : 'base_receive')
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "col-md-10 col-xs-10"
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "messages msg_sent"
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, message.text), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("time", {
+      dateTime: message.created_at
+    }, message.user.name))));
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "panel-footer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+    onChange: getMessageHandler.bind(_this),
+    onKeyPress: sendMessageHandler,
     id: "btn-input",
     type: "text",
     className: "form-control input-sm chat_input",
-    placeholder: "Write your message here..."
+    placeholder: "Write your message here...",
+    value: message
   })))))))));
 };
 
@@ -73941,8 +86855,8 @@ var Chart = function Chart() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\zip\react-laravel-live-chat-application\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\zip\react-laravel-live-chat-application\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! c:\wamp64\www\zip\react-laravel-live-chat-application\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! c:\wamp64\www\zip\react-laravel-live-chat-application\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

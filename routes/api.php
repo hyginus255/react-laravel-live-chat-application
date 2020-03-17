@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('generate_token','ChatMessagesController@generateToken');
+Route::post('get_channel','ChatMessagesController@getChannel');
